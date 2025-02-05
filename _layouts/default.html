@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
+  <head>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <style>
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+      }
+      
+      .prev, .next {
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+        color: #333;
+        transition: background-color 0.3s ease;
+      }
+
+      .prev:hover, .next:hover {
+        background-color: #e9ecef;
+      }
+
+      .post-categories {
+        margin: 15px 0;
+      }
+
+      .category-tag {
+        display: inline-block;
+        padding: 4px 8px;
+        margin-right: 5px;
+        background-color: #e9ecef;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+
+      .top-nav {
+        margin: 15px 0 25px 0;
+        padding-top: 0;
+        border-top: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+      }
+
+      .bottom-nav {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    {%- include header.html -%}
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+    {%- include footer.html -%}
+  </body>
+</html>
