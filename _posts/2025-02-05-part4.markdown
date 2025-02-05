@@ -455,7 +455,6 @@ This pattern-based, algebraic approach provides a clear and elementary entry poi
 ### Up Next
 In Parts V-A and V-B, we'll dive deeper into division properties and explore how they connect to differentiation formulas. Get ready for some fascinating patterns!
 
-Read: [Part V-A: Division Properties and Infinite Series](../part5-a)
 
 End of Article
 

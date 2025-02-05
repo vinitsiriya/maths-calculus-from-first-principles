@@ -132,7 +132,6 @@ By focusing on the visible algebraic structure of the series, this approach not 
 ### Up Next
 Now that we understand L'Hôpital's Rule through patterns, let's explore division properties and infinite series in Part IV. We'll see how these concepts naturally extend our understanding of calculus.
 
-Read: [Part IV: Division Properties and Infinite Series](../part4)
 
 End of Article
 

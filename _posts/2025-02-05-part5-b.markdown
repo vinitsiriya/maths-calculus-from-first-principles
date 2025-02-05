@@ -289,7 +289,5 @@ This article has illustrated the power and elegance of an algebraic, pattern-bas
 ### Up Next
 Ready for integration? In Part VI-A, we'll begin building integration from first principles, using our pattern-based approach.
 
-Read: [Part VI-A: Integration from First Principles](../part6-a)
-
 
 

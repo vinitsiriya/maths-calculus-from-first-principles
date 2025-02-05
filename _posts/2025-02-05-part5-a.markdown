@@ -331,5 +331,4 @@ This expansion not only provides a valuable tool for approximating functions but
 ### Up Next
 Continue exploring division properties in Part V-B, where we'll see how these concepts lead to powerful differentiation formulas.
 
-Read: [Part V-B: Properties with Division Involved](../part5-b)
 
