@@ -2,7 +2,7 @@
 layout: post
 title:  "VI-B. Building Calculus from First Principles - Derivation of Sums of Powers"
 date:   2025-02-05 16:00:48 +0530
-categories: jekyll update
+categories: mathematics calculus series binomial-theorem
 ---
 
 # Derivation of Sums of Powers
