@@ -334,7 +334,6 @@ This approach not only offers a clear, pattern-based entry point to calculus but
 ### Up Next
 Ready to dive deeper? In Part III, we'll explore L'Hôpital's Rule from a pattern-based perspective. We'll see how the same series expansion techniques we used here can elegantly explain what happens when we have an indeterminate form like 0/0.
 
-Read: [Part III: L'Hôpital's Rule via Pattern Recognition](../part3)
 
 End of Article
 
