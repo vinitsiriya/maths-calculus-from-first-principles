@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "IX. Building Calculus from First Principles - Integration by Parts: An Alternative, Pattern-Based Approach"
-date:   2025-02-05 16:30:48 +0530
+title: "IX. Building Calculus from First Principles - Integration by Parts"
+date: 2025-02-05 16:30:48 +0530
 categories: mathematics calculus integration series-expansions
+usemathjax: true
 ---
 
 # Building Calculus from First Principles
@@ -128,7 +129,6 @@ Now, if we consider the standard integration by parts formula, the expression we
 $$
 \int f(x) \, g(x) \, dx = f(x) G(x) - \int G(x) \, f_{A_1}(x) \, dx.
 $$
-
 Our expansion above gives us one piece, and the remainder must come from a careful reorganization of the summation. In our alternative proof approach, we write the integral as a limit of a sum and then group differences in a telescopic manner.
 
 ### 2.3 Rewriting the Integral as a Sum
