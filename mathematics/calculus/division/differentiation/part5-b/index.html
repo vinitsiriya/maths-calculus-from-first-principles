@@ -32,6 +32,12 @@
         }
       };
     </script>
+    <!-- Add KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <!-- Optional: Add KaTeX JS for dynamic rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    
     <style>
       .post-navigation {
         display: flex;
@@ -79,6 +85,15 @@
         margin-top: 30px;
         padding-top: 20px;
         border-top: 1px solid #eee;
+      }
+
+      .math-display {
+        overflow-x: auto;
+        margin: 1em 0;
+      }
+      .math-inline {
+        display: inline-block;
+        vertical-align: middle;
       }
     </style>
   </head>
@@ -129,9 +144,7 @@
 
 <p>In Part V-1, we derived the generalized expansion for functions of the form</p>
 
-<div class="kdmath">$$
-\frac{1}{ax+by} = \frac{1}{by} - \frac{ax}{b^2y^2} + \frac{a^2x^2}{b^3y^3} - \frac{a^3x^3}{b^4y^4} + \cdots,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><msup><mi>b</mi><mn>2</mn></msup><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi>a</mi><mn>2</mn></msup><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><msup><mi>b</mi><mn>3</mn></msup><msup><mi>y</mi><mn>3</mn></msup></mrow></mfrac><mo>−</mo><mfrac><mrow><msup><mi>a</mi><mn>3</mn></msup><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><msup><mi>b</mi><mn>4</mn></msup><msup><mi>y</mi><mn>4</mn></msup></mrow></mfrac><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by} = \frac{1}{by} - \frac{ax}{b^2y^2} + \frac{a^2x^2}{b^3y^3} - \frac{a^3x^3}{b^4y^4} + ...,</annotation></semantics></math></span></div>
 
 <p>which was obtained using elementary algebra, long division, and the geometric series expansion. In this installment, we use similar elementary, algebraic methods to derive several differentiation formulas that involve division. By examining the power series and “peeling off” the coefficients (i.e. matching the terms in the series), we will derive formulas for the derivatives of functions such as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec(x)</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\csc(x)</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tan(x)</annotation></semantics></math></span>, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(x)</annotation></semantics></math></span>. Our focus is on the visible algebraic patterns without invoking geometric notions.</p>
 
@@ -139,40 +152,25 @@ $$</div>
 
 <h3 id="statement">Statement</h3>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x).</annotation></semantics></math></span></div>
 
 <h3 id="proof">Proof</h3>
 
 <p>We start with:</p>
 
-<div class="kdmath">$$
-\begin{align*}
-\sec(x + h) &= \frac{1}{\cos(x + h)} \\
-\because \cos(x + h) &= \cos(x)\cos(h) - \sin(x)\sin(h) \\
-\therefore\quad \sec(x + h) &= \frac{1}{\cos(x)\cos(h) - \sin(x)\sin(h)} \\
-&\approx \frac{1}{\cos(x) - \sin(x)\, h} \quad \text{(for small } h\text{)}.
-\end{align*}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>∵</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>∴</mo><mspace width="1em" /><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>≈</mo><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>h</mi></mrow></mfrac><mspace width="1em" /><mtext>(for small </mtext><mi>h</mi><mtext>)</mtext><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} \sec(x + h) = \frac{1}{\cos(x + h)} \\ \because \cos(x + h) = \cos(x)\cos(h) - \sin(x)\sin(h) \\ \therefore\quad \sec(x + h) = \frac{1}{\cos(x)\cos(h) - \sin(x)\sin(h)} \\ &amp;\approx \frac{1}{\cos(x) - \sin(x)\; h} \quad \text{(for small } h\text{)}. \end{align*}</annotation></semantics></math></span></div>
 
 <p>We then expand <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\cos(x) - \sin(x) h}</annotation></semantics></math></span> as a series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>. Observing the pattern, one can see that this series has a ratio of</p>
 
-<div class="kdmath">$$
-\frac{-\sin(x)h}{\cos(x)},
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\frac{-\sin(x)h}{\cos(x)},</annotation></semantics></math></span></div>
 
 <p>so that the linear (first-order) term in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is:</p>
 
-<div class="kdmath">$$
-\frac{-\sin(x)h}{\cos^2(x)}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow><mrow><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{-\sin(x)h}{\cos^2(x)}.</annotation></semantics></math></span></div>
 
 <p>Thus, by our pattern-based approach, the derivative is determined by this coefficient, and we obtain:</p>
 
-<div class="kdmath">$$
-\boxed{\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x).}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x).}</annotation></semantics></math></span></div>
 
 <h2 id="2-chain-rule-example-using-division">2. Chain Rule Example Using Division</h2>
 
@@ -180,12 +178,7 @@ $$</div>
 
 <p>Let</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-f(x) &= \frac{1}{x}, \\
-g(x) &= \cos(x).
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mo separator="true">,</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} f(x) = \frac{1}{x}, \\ g(x) = \cos(x). \end{array}</annotation></semantics></math></span></div>
 
 <p>We wish to find the expansion of the composite function <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(g(x+h))</annotation></semantics></math></span>.</p>
 
@@ -193,174 +186,110 @@ $$</div>
 
 <p>Consider the expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec(x+h)</annotation></semantics></math></span> (which is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">1/\cos(x+h)</annotation></semantics></math></span>) again:</p>
 
-<div class="kdmath">$$
-\begin{align*}
-\sec(x + h) &= \frac{1}{\cos(x + h)} \\
-&\approx \frac{1}{\cos(x) - \sin(x) h} \quad \text{(for small } h\text{)}.
-\end{align*}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>≈</mo><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac><mspace width="1em" /><mtext>(for small </mtext><mi>h</mi><mtext>)</mtext><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} \sec(x + h) = \frac{1}{\cos(x + h)} \\ &amp;\approx \frac{1}{\cos(x) - \sin(x) h} \quad \text{(for small } h\text{)}. \end{align*}</annotation></semantics></math></span></div>
 
 <p>When we expand <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(g(x+h))</annotation></semantics></math></span>, the idea is that the incremental change in the composite function can be interpreted as the product of the incremental change of the inner function <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math></span> and the derivative of the outer function <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span> evaluated at <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math></span>. In other words, the first-order term in the expansion of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(g(x+h))</annotation></semantics></math></span> is:</p>
 
-<div class="kdmath">$$
-f'(g(x)) \cdot g'(x) \, h.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>⋅</mo><msup><mi>g</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>h</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">f&#x27;(g(x)) \cdot g&#x27;(x) \; h.</annotation></semantics></math></span></div>
 
 <p>This is exactly the chain rule:</p>
 
-<div class="kdmath">$$
-\boxed{\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x).}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>⋅</mo><msup><mi>g</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\frac{d}{dx}[f(g(x))] = f&#x27;(g(x)) \cdot g&#x27;(x).}</annotation></semantics></math></span></div>
 
 <h2 id="3-derivative-of-cscxcscx">3. Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\csc(x)</annotation></semantics></math></span></h2>
 
 <h3 id="statement-1">Statement</h3>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\csc(x)] = -\csc(x) \cot(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mo>−</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cot</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\csc(x)] = -\csc(x) \cot(x).</annotation></semantics></math></span></div>
 
 <h3 id="proof-1">Proof</h3>
 
 <p>We start with:</p>
 
-<div class="kdmath">$$
-\begin{align*}
-\csc(x + h) &= \frac{1}{\sin(x + h)} \\
-\because \sin(x + h) &= \sin(x)\cos(h) + \cos(x)\sin(h) \\
-\therefore\quad \csc(x + h) &= \frac{1}{\sin(x)\cos(h) + \cos(x)\sin(h)} \\
-&\approx \frac{1}{\sin(x) + \cos(x)h} \quad \text{(for small } h\text{)}.
-\end{align*}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>∵</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>∴</mo><mspace width="1em" /><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>≈</mo><mfrac><mn>1</mn><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac><mspace width="1em" /><mtext>(for small </mtext><mi>h</mi><mtext>)</mtext><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} \csc(x + h) = \frac{1}{\sin(x + h)} \\ \because \sin(x + h) = \sin(x)\cos(h) + \cos(x)\sin(h) \\ \therefore\quad \csc(x + h) = \frac{1}{\sin(x)\cos(h) + \cos(x)\sin(h)} \\ &amp;\approx \frac{1}{\sin(x) + \cos(x)h} \quad \text{(for small } h\text{)}. \end{align*}</annotation></semantics></math></span></div>
 
 <p>Here, the expansion of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\sin(x) + \cos(x)h}</annotation></semantics></math></span> reveals that the ratio of the linear term in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is approximately:</p>
 
-<div class="kdmath">$$
-\frac{-\cos(x)h}{\sin^2(x)}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mo>−</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{-\cos(x)h}{\sin^2(x)}.</annotation></semantics></math></span></div>
 
 <p>Thus, the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> in the expansion (which determines the derivative) leads to:</p>
 
-<div class="kdmath">$$
-\boxed{\frac{d}{dx}[\csc(x)] = -\csc(x) \cot(x).}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mo>−</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cot</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\frac{d}{dx}[\csc(x)] = -\csc(x) \cot(x).}</annotation></semantics></math></span></div>
 
 <h2 id="4-derivative-of-tanxtanx">4. Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tan(x)</annotation></semantics></math></span></h2>
 
 <h3 id="statement-2">Statement</h3>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\tan(x)] = \sec^2(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><msup><mrow><mi>sec</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\tan(x)] = \sec^2(x).</annotation></semantics></math></span></div>
 
 <h3 id="proof-2">Proof</h3>
 
 <p>We have:</p>
 
-<div class="kdmath">$$
-\begin{align*}
-\tan(x+h) &= \frac{\sin(x+h)}{\cos(x+h)}.
-\end{align*}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right" columnspacing=""><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mfrac><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} \tan(x+h) = \frac{\sin(x+h)}{\cos(x+h)}. \end{align*}</annotation></semantics></math></span></div>
 
 <p>Using the approximations for small <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>:</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-\sin(x+h) &\approx \sin(x) + \cos(x)h,\\[1mm]
-\cos(x+h) &\approx \cos(x) - \sin(x)h,
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>≈</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi><mo separator="true">,</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>≈</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi><mo separator="true">,</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} \sin(x+h) &amp;\approx \sin(x) + \cos(x)h,\\[1mm] \cos(x+h) &amp;\approx \cos(x) - \sin(x)h, \end{array}</annotation></semantics></math></span></div>
 
 <p>we write:</p>
 
-<div class="kdmath">$$
-\tan(x+h) \approx \frac{\sin(x) + \cos(x)h}{\cos(x) - \sin(x)h}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>≈</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\tan(x+h) \approx \frac{\sin(x) + \cos(x)h}{\cos(x) - \sin(x)h}.</annotation></semantics></math></span></div>
 
 <p>This can be expressed as:</p>
 
-<div class="kdmath">$$
-\tan(x+h) = [\sin(x) + \cos(x)h] \cdot \frac{1}{\cos(x) - \sin(x)h}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">[</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi><mo stretchy="false">]</mo><mo>⋅</mo><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\tan(x+h) = [\sin(x) + \cos(x)h] \cdot \frac{1}{\cos(x) - \sin(x)h}.</annotation></semantics></math></span></div>
 
 <p>Now, expand the reciprocal:</p>
 
-<div class="kdmath">$$
-\frac{1}{\cos(x) - \sin(x)h} = C_0 + C_1 h + \ldots,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub><mi>h</mi><mo>+</mo><mo>…</mo><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\frac{1}{\cos(x) - \sin(x)h} = C_0 + C_1 h + \ldots,</annotation></semantics></math></span></div>
 
 <p>where we define:</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-C_0 &= \frac{1}{\cos(x)}, \\[1mm]
-C_1 &= \frac{\sin(x)}{\cos^2(x)}.
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac><mo separator="true">,</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} C_0 = \frac{1}{\cos(x)}, \\[1mm] C_1 = \frac{\sin(x)}{\cos^2(x)}. \end{array}</annotation></semantics></math></span></div>
 
 <p>Multiplying out, the constant term of the product gives <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\sin(x)C_0</annotation></semantics></math></span> and the first-order term in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> will involve:</p>
 
-<div class="kdmath">$$
-C_0 \cos(x) + C_1 \sin(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">C_0 \cos(x) + C_1 \sin(x).</annotation></semantics></math></span></div>
 
 <p>Substitute the values:</p>
 
-<div class="kdmath">$$
-C_0 \cos(x) + C_1 \sin(x) = \frac{\cos(x)}{\cos(x)} + \frac{\sin(x)}{\cos^2(x)} \sin(x) = 1 + \frac{\sin^2(x)}{\cos^2(x)}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">C_0 \cos(x) + C_1 \sin(x) = \frac{\cos(x)}{\cos(x)} + \frac{\sin(x)}{\cos^2(x)} \sin(x) = 1 + \frac{\sin^2(x)}{\cos^2(x)}.</annotation></semantics></math></span></div>
 
 <p>Recognize that:</p>
 
-<div class="kdmath">$$
-1 + \tan^2(x) = \sec^2(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>1</mn><mo>+</mo><msup><mrow><mi>tan</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mrow><mi>sec</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">1 + \tan^2(x) = \sec^2(x).</annotation></semantics></math></span></div>
 
 <p>Thus,</p>
 
-<div class="kdmath">$$
-\boxed{\frac{d}{dx}[\tan(x)] = \sec^2(x).}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><msup><mrow><mi>sec</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\frac{d}{dx}[\tan(x)] = \sec^2(x).}</annotation></semantics></math></span></div>
 
 <h2 id="5-derivative-of-logxlogx">5. Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(x)</annotation></semantics></math></span></h2>
 
 <h3 id="statement-3">Statement</h3>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\log(x)] = \frac{1}{x}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\log(x)] = \frac{1}{x}.</annotation></semantics></math></span></div>
 
 <h3 id="proof-3">Proof</h3>
 
 <p>We expand <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(x+h)</annotation></semantics></math></span> as follows:</p>
 
-<div class="kdmath">$$
-\begin{align*}
-\log(x + h) &= \log\Bigl(x\Bigl(1 + \frac{h}{x}\Bigr)\Bigr) \\
-&= \log(x) + \log\Bigl(1 + \frac{h}{x}\Bigr) \\
-&\approx \log(x) + \frac{h}{x},
-\end{align*}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mi>log</mi><mo>⁡</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">(</mo><mi>x</mi><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>=</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>log</mi><mo>⁡</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>≈</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo separator="true">,</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} \log(x + h) = \log\Bigl(x\Bigl(1 + \frac{h}{x}\Bigr)\Bigr) \\ = \log(x) + \log\Bigl(1 + \frac{h}{x}\Bigr) \\ &amp;\approx \log(x) + \frac{h}{x}, \end{align*}</annotation></semantics></math></span></div>
 
 <p>where we have used the elementary approximation:</p>
 
-<div class="kdmath">$$
-\log(1+\varepsilon) \approx \varepsilon \quad \text{for small } \varepsilon.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>ε</mi><mo stretchy="false">)</mo><mo>≈</mo><mi>ε</mi><mspace width="1em" /><mtext>for small </mtext><mi>ε</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\log(1+\varepsilon) \approx \varepsilon \quad \text{for small } \varepsilon.</annotation></semantics></math></span></div>
 
 <p>Thus, the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x}</annotation></semantics></math></span>, which implies:</p>
 
-<div class="kdmath">$$
-\boxed{\frac{d}{dx}[\log(x)] = \frac{1}{x}.}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\frac{d}{dx}[\log(x)] = \frac{1}{x}.}</annotation></semantics></math></span></div>
 
 <h2 id="6-conclusion">6. Conclusion</h2>
 
 <p>In this article, we have extended our first-principles, pattern-based approach to derive several differentiation formulas for functions involving division. By examining the series expansions—using elementary methods such as long division and geometric series—we obtained:</p>
 
 <ul>
-  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mspace width="1em"></mspace><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mo>−</mo><msup><mi>x</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{d}{dx}\;x^{-1} = -x^{-2}</annotation></semantics></math></span>.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mtext>  </mtext><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mo>−</mo><msup><mi>x</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{d}{dx}\;x^{-1} = -x^{-2}</annotation></semantics></math></span>.</li>
   <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{d}{dx}[\sec(x)] = \sec(x)\tan(x)</annotation></semantics></math></span>.</li>
   <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mo>−</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cot</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x)</annotation></semantics></math></span>.</li>
   <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><msup><mrow><mi>sec</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{d}{dx}[\tan(x)] = \sec^2(x)</annotation></semantics></math></span>.</li>

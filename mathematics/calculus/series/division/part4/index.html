@@ -32,6 +32,12 @@
         }
       };
     </script>
+    <!-- Add KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <!-- Optional: Add KaTeX JS for dynamic rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    
     <style>
       .post-navigation {
         display: flex;
@@ -80,6 +86,15 @@
         padding-top: 20px;
         border-top: 1px solid #eee;
       }
+
+      .math-display {
+        overflow-x: auto;
+        margin: 1em 0;
+      }
+      .math-inline {
+        display: inline-block;
+        vertical-align: middle;
+      }
     </style>
   </head>
   <body><header class="site-header" role="banner">
@@ -125,7 +140,7 @@
 
 <h3 id="preface">Preface</h3>
 
-<p>In our previous articles, we developed an elementary, algebraic approach to express functions as sums of contributions from different orders of an infinitely small increment. We saw that by “peeling off” the constant term, then the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>, then that of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">D</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(\Delta x)^2</annotation></semantics></math></span>, etc., we arrive naturally at the familiar Taylor series expansion.</p>
+<p>In our previous articles, we developed an elementary, algebraic approach to express functions as sums of contributions from different orders of an infinitely small increment. We saw that by “peeling off” the constant term, then the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>, then that of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(\Delta x)^2</annotation></semantics></math></span>, etc., we arrive naturally at the familiar Taylor series expansion.</p>
 
 <p>In this installment, we extend that approach to functions involving division. We will:</p>
 
@@ -142,17 +157,13 @@
 
 <p>Let us begin by considering the derivative of a reciprocal function:</p>
 
-<div class="kdmath">$$
-\frac{d}{dx}\frac{1}{x} \quad \text{or} \quad \frac{d}{dx}\,x^{-1}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mfrac><mn>1</mn><mi>x</mi></mfrac><mspace width="1em" /><mtext>or</mtext><mspace width="1em" /><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mtext>  </mtext><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}\frac{1}{x} \quad \text{or} \quad \frac{d}{dx}\;x^{-1}.</annotation></semantics></math></span></div>
 
 <p>To understand this from first principles, we wish to expand</p>
 
-<div class="kdmath">$$
-f(x+h) = \frac{1}{x+h}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">f(x+h) = \frac{1}{x+h}</annotation></semantics></math></span></div>
 
-<p>into a power series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> (or <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>) so that we can identify the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>.</p>
+<p>into a power series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> (or <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>) so that we can identify the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>.</p>
 
 <h3 id="11-using-long-division">1.1 Using Long Division</h3>
 
@@ -160,9 +171,7 @@ $$</div>
 
 <p>Long Division RevisionTo perform the long division for, say,</p>
 
-<div class="kdmath">$$
-\frac{x^4 - 4}{x + 2},
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>4</mn></mrow><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfrac><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\frac{x^4 - 4}{x + 2},</annotation></semantics></math></span></div>
 
 <p>follow these steps:</p>
 
@@ -174,37 +183,11 @@ $$</div>
 
 <p>An example of a long division layout in LaTeX is:</p>
 
-<div class="kdmath">$$
-\begin{array}{c|cccc}
-& x^3 & -2x^2 & +4x & -8 \\ 
-\hline
-x + 2 & x^4 & 0 & 0 & -1 \\ 
-& x^4 & +2x^3 & & \\ 
-\hline
-& & -2x^3 & & -1 \\ 
-& & -2x^3 & -4x^2 & \\ 
-\hline
-& & & 4x^2 & -1 \\ 
-& & & 4x^2 & +8x \\ 
-\hline
-& & & & -8x - 1 \\ 
-& & & & -8x - 16 \\ 
-\hline
-& & & & 15 \\ 
-\end{array}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="center center center center center" columnlines="solid none none none" columnspacing="1em" rowlines="solid none solid none solid none solid none solid"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mi>x</mi><mn>3</mn></msup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mn>4</mn><mi>x</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>8</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mi>x</mi><mn>4</mn></msup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mi>x</mi><mn>4</mn></msup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mn>8</mn><mi>x</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>8</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>8</mn><mi>x</mi><mo>−</mo><mn>16</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>15</mn></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{c|cccc} &amp; x^3 &amp; -2x^2 &amp; +4x &amp; -8 \\ \hline x + 2 &amp; x^4 &amp; 0 &amp; 0 &amp; -1 \\ &amp; x^4 &amp; +2x^3 &amp; &amp; \\ \hline &amp; &amp; -2x^3 &amp; &amp; -1 \\ &amp; &amp; -2x^3 &amp; -4x^2 &amp; \\ \hline &amp; &amp; &amp; 4x^2 &amp; -1 \\ &amp; &amp; &amp; 4x^2 &amp; +8x \\ \hline &amp; &amp; &amp; &amp; -8x - 1 \\ &amp; &amp; &amp; &amp; -8x - 16 \\ \hline &amp; &amp; &amp; &amp; 15 \\ \end{array}</annotation></semantics></math></span></div>
 
 <p>A step-by-step breakdown for dividing <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^4 - 1</annotation></semantics></math></span> by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x + 2</annotation></semantics></math></span> is given by:</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-x^4 - 1 & = (x + 2)(x^3) - 2x^3 - 1 \\ 
-& = (x + 2)(x^3) - (x + 2)(2x^2) + 4x^2 - 1 \\ 
-& = (x + 2)(x^3) - (x + 2)(2x^2) + (x + 2)(4x) - 8x - 1 \\ 
-& = (x + 2)(x^3) - (x + 2)(2x^2) + (x + 2)(4x) - (x + 2)(8) - 15 \\ 
-& = (x + 2)(x^3 - 2x^2 + 4x - 8) - 15.
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>−</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>−</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>4</mn><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mn>8</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>−</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo>+</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>4</mn><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>8</mn><mo stretchy="false">)</mo><mo>−</mo><mn>15</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mi>x</mi><mo>−</mo><mn>8</mn><mo stretchy="false">)</mo><mo>−</mo><mn>15.</mn></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} x^4 - 1 &amp; = (x + 2)(x^3) - 2x^3 - 1 \\ &amp; = (x + 2)(x^3) - (x + 2)(2x^2) + 4x^2 - 1 \\ &amp; = (x + 2)(x^3) - (x + 2)(2x^2) + (x + 2)(4x) - 8x - 1 \\ &amp; = (x + 2)(x^3) - (x + 2)(2x^2) + (x + 2)(4x) - (x + 2)(8) - 15 \\ &amp; = (x + 2)(x^3 - 2x^2 + 4x - 8) - 15. \end{array}</annotation></semantics></math></span></div>
 
 <p>This serves as a review for performing long division on polynomials.</p>
 
@@ -212,21 +195,15 @@ $$</div>
 
 <p>We now apply the long division technique to derive the series expansion for the function</p>
 
-<div class="kdmath">$$
-\frac{1}{x+h}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}.</annotation></semantics></math></span></div>
 
 <p>Begin with the expression:</p>
 
-<div class="kdmath">$$
-\frac{1}{x+h}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}.</annotation></semantics></math></span></div>
 
 <p>The idea is to rewrite and expand the expression into a series of the form:</p>
 
-<div class="kdmath">$$
-\frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \ldots.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mo>−</mo><mfrac><mi>h</mi><msup><mi>x</mi><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><msup><mi>h</mi><mn>2</mn></msup><msup><mi>x</mi><mn>3</mn></msup></mfrac><mo>−</mo><mfrac><msup><mi>h</mi><mn>3</mn></msup><msup><mi>x</mi><mn>4</mn></msup></mfrac><mo>+</mo><mo>…</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \ldots.</annotation></semantics></math></span></div>
 
 <p>The derivation follows these steps:</p>
 
@@ -236,9 +213,7 @@ $$</div>
 
 <p>Write <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span> as an expression in powers of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>. One way to proceed is to factor out <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>:</p>
 
-<div class="kdmath">$$
-\frac{1}{x+h} = \frac{1}{x\left(1 + \frac{h}{x}\right)} = \frac{1}{x} \cdot \frac{1}{1 + \frac{h}{x}}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>x</mi><mrow><mo fence="true">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mo>⋅</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{x+h} = \frac{1}{x\left(1 + \frac{h}{x}\right)} = \frac{1}{x} \cdot \frac{1}{1 + \frac{h}{x}}.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Expanding as a Geometric Series:</li>
@@ -246,15 +221,11 @@ $$</div>
 
 <p>For <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\left|\frac{h}{x}\right| &lt; 1</annotation></semantics></math></span>, the expression</p>
 
-<div class="kdmath">$$
-\frac{1}{1 + \frac{h}{x}}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{1 + \frac{h}{x}}</annotation></semantics></math></span></div>
 
 <p>can be expanded as a geometric series:</p>
 
-<div class="kdmath">$$
-\frac{1}{1 + \frac{h}{x}} = \sum_{n=0}^{\infty} \left(-\frac{h}{x}\right)^n.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac></mrow></mfrac><mo>=</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><msup><mrow><mo fence="true">(</mo><mo>−</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true">)</mo></mrow><mi>n</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{1 + \frac{h}{x}} = \sum_{n=0}^{\infty} \left(-\frac{h}{x}\right)^n.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Writing the Final Series:</li>
@@ -262,15 +233,11 @@ $$</div>
 
 <p>Multiplying by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x}</annotation></semantics></math></span> gives:</p>
 
-<div class="kdmath">$$
-\frac{1}{x+h} = \frac{1}{x} \sum_{n=0}^{\infty} \left(-\frac{h}{x}\right)^n = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \cdots.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><msup><mrow><mo fence="true">(</mo><mo>−</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true">)</mo></mrow><mi>n</mi></msup><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mo>−</mo><mfrac><mi>h</mi><msup><mi>x</mi><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><msup><mi>h</mi><mn>2</mn></msup><msup><mi>x</mi><mn>3</mn></msup></mfrac><mo>−</mo><mfrac><msup><mi>h</mi><mn>3</mn></msup><msup><mi>x</mi><mn>4</mn></msup></mfrac><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{x+h} = \frac{1}{x} \sum_{n=0}^{\infty} \left(-\frac{h}{x}\right)^n = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + ....</annotation></semantics></math></span></div>
 
 <p>Notice that the general term in the series is:</p>
 
-<div class="kdmath">$$
-\frac{(-1)^n h^n}{x^{n+1}}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mi>h</mi><mi>n</mi></msup></mrow><msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{(-1)^n h^n}{x^{n+1}}.</annotation></semantics></math></span></div>
 
 <p>Thus, we have derived the series expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span>.</p>
 
@@ -278,15 +245,11 @@ $$</div>
 
 <p>The series expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span> is:</p>
 
-<div class="kdmath">$$
-\frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \cdots.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mo>−</mo><mfrac><mi>h</mi><msup><mi>x</mi><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><msup><mi>h</mi><mn>2</mn></msup><msup><mi>x</mi><mn>3</mn></msup></mfrac><mo>−</mo><mfrac><msup><mi>h</mi><mn>3</mn></msup><msup><mi>x</mi><mn>4</mn></msup></mfrac><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + ....</annotation></semantics></math></span></div>
 
 <p>The coefficient of the first-order term <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> in this expansion is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mn>1</mn><msup><mi>x</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">-\frac{1}{x^2}</annotation></semantics></math></span>. Hence, by our first-principles method, we conclude that:</p>
 
-<div class="kdmath">$$
-\frac{d}{dx}\left(x^{-1}\right) = -\frac{1}{x^2}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo fence="true">(</mo><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo fence="true">)</mo></mrow><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><msup><mi>x</mi><mn>2</mn></msup></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}\left(x^{-1}\right) = -\frac{1}{x^2}.</annotation></semantics></math></span></div>
 
 <h2 id="3-some-infinite-series-formulas">3. Some Infinite Series Formulas</h2>
 
@@ -296,17 +259,13 @@ $$</div>
   <li>Binomial Series (for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|x| &lt; 1</annotation></semantics></math></span>):</li>
 </ol>
 
-<div class="kdmath">$$
-\frac{1}{1+x} = \sum_{n=0}^{\infty} (-1)^n x^n = 1 - x + x^2 - x^3 + x^4 - \ldots.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow></mfrac><mo>=</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><mn>1</mn><mo>−</mo><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mo>…</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{1+x} = \sum_{n=0}^{\infty} (-1)^n x^n = 1 - x + x^2 - x^3 + x^4 - \ldots.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Laurent Series (for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|x| &gt; 1</annotation></semantics></math></span>):</li>
 </ol>
 
-<div class="kdmath">$$
-\frac{1}{1+x} = \frac{1}{x} \sum_{n=0}^{\infty} (-1)^n x^{-n} = \frac{1}{x} - \frac{1}{x^2} + \frac{1}{x^3} - \ldots.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mi>x</mi><mrow><mo>−</mo><mi>n</mi></mrow></msup><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><msup><mi>x</mi><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>x</mi><mn>3</mn></msup></mfrac><mo>−</mo><mo>…</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{1+x} = \frac{1}{x} \sum_{n=0}^{\infty} (-1)^n x^{-n} = \frac{1}{x} - \frac{1}{x^2} + \frac{1}{x^3} - \ldots.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Generalized Form:</li>
@@ -314,17 +273,13 @@ $$</div>
 
 <p>For example, for constants <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span>, one may write:</p>
 
-<div class="kdmath">$$
-\frac{1}{ax+by} = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>n</mi></msup><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by} = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n,</annotation></semantics></math></span></div>
 
 <p>valid when <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\left|\frac{ax}{by}\right| &lt; 1</annotation></semantics></math></span>.</p>
 
 <p>These series are examples of infinite geometric series, where the sum can be expressed as:</p>
 
-<div class="kdmath">$$
-\text{Sum} = \frac{a}{1 - r},
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Sum</mtext><mo>=</mo><mfrac><mi>a</mi><mrow><mn>1</mn><mo>−</mo><mi>r</mi></mrow></mfrac><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\text{Sum} = \frac{a}{1 - r},</annotation></semantics></math></span></div>
 
 <p>with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span> the first term and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span> the common ratio.</p>
 
@@ -334,9 +289,7 @@ $$</div>
 
 <p>Statement:</p>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x).</annotation></semantics></math></span></div>
 
 <p>Proof Sketch:</p>
 
@@ -344,81 +297,59 @@ $$</div>
   <li>Start with:</li>
 </ol>
 
-<div class="kdmath">$$
-\sec(x+h) = \frac{1}{\cos(x+h)}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sec(x+h) = \frac{1}{\cos(x+h)}.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Express <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\cos(x+h)</annotation></semantics></math></span> in its series form:</li>
 </ol>
 
-<div class="kdmath">$$
-\cos(x+h) = \cos(x)\cos(h) - \sin(x)\sin(h).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\cos(x+h) = \cos(x)\cos(h) - \sin(x)\sin(h).</annotation></semantics></math></span></div>
 
 <ol>
   <li>For small <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>, approximate:</li>
 </ol>
 
-<div class="kdmath">$$
-\cos(h) \approx 1 \quad \text{and} \quad \sin(h) \approx h.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo><mo>≈</mo><mn>1</mn><mspace width="1em" /><mtext>and</mtext><mspace width="1em" /><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo><mo>≈</mo><mi>h</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\cos(h) \approx 1 \quad \text{and} \quad \sin(h) \approx h.</annotation></semantics></math></span></div>
 
 <p>Hence:</p>
 
-<div class="kdmath">$$
-\cos(x+h) \approx \cos(x) - \sin(x) h.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>≈</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\cos(x+h) \approx \cos(x) - \sin(x) h.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Then:</li>
 </ol>
 
-<div class="kdmath">$$
-\sec(x+h) \approx \frac{1}{\cos(x) - \sin(x) h}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>≈</mo><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sec(x+h) \approx \frac{1}{\cos(x) - \sin(x) h}.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Expanding this series (using a similar technique as for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span>), one obtains an expansion where the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">-\frac{\sin(x)}{\cos^2(x)}</annotation></semantics></math></span>. Combining this with the constant term <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">1/\cos(x)</annotation></semantics></math></span> leads to the derivative formula:</li>
 </ol>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\sec(x)] = \sec(x)\tan(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\sec(x)] = \sec(x)\tan(x).</annotation></semantics></math></span></div>
 
 <h3 id="42-chain-rule-example-using-secxsecx-and-other-functions">4.2 Chain Rule Example Using <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec(x)</annotation></semantics></math></span> and Other Functions</h3>
 
 <p>Consider the composite function</p>
 
-<div class="kdmath">$$
-f(g(x+h)) = f(B_0 + B_1h + B_2h^2 + \ldots),
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><msub><mi>B</mi><mn>0</mn></msub><mo>+</mo><msub><mi>B</mi><mn>1</mn></msub><mi>h</mi><mo>+</mo><msub><mi>B</mi><mn>2</mn></msub><msup><mi>h</mi><mn>2</mn></msup><mo>+</mo><mo>…</mo><mo stretchy="false">)</mo><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">f(g(x+h)) = f(B_0 + B_1h + B_2h^2 + \ldots),</annotation></semantics></math></span></div>
 
 <p>where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>0</mn></msub><mo>=</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">B_0 = g(x)</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>=</mo><msup><mi>g</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">B_1 = g&#x27;(x)</annotation></semantics></math></span>. By expanding <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span> in a series around <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math></span>, one obtains:</p>
 
-<div class="kdmath">$$
-f(g(x+h)) = C_0 + C_1 (B_1h + B_2h^2 + \ldots) + C_2 (B_1h + B_2h^2 + \ldots)^2 + \cdots.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mo>+</mo><msub><mi>C</mi><mn>1</mn></msub><mo stretchy="false">(</mo><msub><mi>B</mi><mn>1</mn></msub><mi>h</mi><mo>+</mo><msub><mi>B</mi><mn>2</mn></msub><msup><mi>h</mi><mn>2</mn></msup><mo>+</mo><mo>…</mo><mo stretchy="false">)</mo><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo stretchy="false">(</mo><msub><mi>B</mi><mn>1</mn></msub><mi>h</mi><mo>+</mo><msub><mi>B</mi><mn>2</mn></msub><msup><mi>h</mi><mn>2</mn></msup><mo>+</mo><mo>…</mo><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">f(g(x+h)) = C_0 + C_1 (B_1h + B_2h^2 + \ldots) + C_2 (B_1h + B_2h^2 + \ldots)^2 + ....</annotation></semantics></math></span></div>
 
 <p>Collecting the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> yields:</p>
 
-<div class="kdmath">$$
-\text{Coefficient of } h = C_1B_1,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Coefficient of </mtext><mi>h</mi><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><msub><mi>B</mi><mn>1</mn></msub><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\text{Coefficient of } h = C_1B_1,</annotation></semantics></math></span></div>
 
 <p>or in familiar terms,</p>
 
-<div class="kdmath">$$
-\frac{d}{dx}[f(g(x))] = f'(g(x))\,g'(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>g</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[f(g(x))] = f&#x27;(g(x))\;g&#x27;(x).</annotation></semantics></math></span></div>
 
 <h3 id="43-derivative-of-cscxcscx">4.3 Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\csc(x)</annotation></semantics></math></span></h3>
 
 <p>Statement:</p>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mo>−</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cot</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x).</annotation></semantics></math></span></div>
 
 <p>Proof Sketch:</p>
 
@@ -426,42 +357,32 @@ $$</div>
   <li>Start with:</li>
 </ol>
 
-<div class="kdmath">$$
-\csc(x+h) = \frac{1}{\sin(x+h)}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\csc(x+h) = \frac{1}{\sin(x+h)}.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Use the series expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sin(x+h)</annotation></semantics></math></span>:</li>
 </ol>
 
-<div class="kdmath">$$
-\sin(x+h) = \sin(x) + \cos(x) h,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\sin(x+h) = \sin(x) + \cos(x) h,</annotation></semantics></math></span></div>
 
 <p>(ignoring higher order terms).</p>
 <ol>
   <li>Then:</li>
 </ol>
 
-<div class="kdmath">$$
-\csc(x+h) \approx \frac{1}{\sin(x) + \cos(x)h}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>≈</mo><mfrac><mn>1</mn><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\csc(x+h) \approx \frac{1}{\sin(x) + \cos(x)h}.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Expanding in a series shows that the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">-\frac{\cos(x)}{\sin^2(x)}</annotation></semantics></math></span>. This algebraic pattern corresponds to:</li>
 </ol>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mo>−</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cot</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x).</annotation></semantics></math></span></div>
 
 <h3 id="44-derivative-of-tanxtanx">4.4 Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tan(x)</annotation></semantics></math></span></h3>
 
 <p>Statement:</p>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\tan(x)] = \sec^2(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><msup><mrow><mi>sec</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\tan(x)] = \sec^2(x).</annotation></semantics></math></span></div>
 
 <p>Proof Sketch:</p>
 
@@ -469,25 +390,19 @@ $$</div>
   <li>Express:</li>
 </ol>
 
-<div class="kdmath">$$
-\tan(x+h) = \frac{\sin(x+h)}{\cos(x+h)}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\tan(x+h) = \frac{\sin(x+h)}{\cos(x+h)}.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Expand both <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sin(x+h)</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\cos(x+h)</annotation></semantics></math></span> in series:</li>
 </ol>
 
-<div class="kdmath">$$
-\sin(x+h) \approx \sin(x) + \cos(x)h, \quad \cos(x+h) \approx \cos(x) - \sin(x)h.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>≈</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi><mo separator="true">,</mo><mspace width="1em" /><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>≈</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sin(x+h) \approx \sin(x) + \cos(x)h, \quad \cos(x+h) \approx \cos(x) - \sin(x)h.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Write:</li>
 </ol>
 
-<div class="kdmath">$$
-\tan(x+h) \approx \frac{\sin(x) + \cos(x)h}{\cos(x) - \sin(x)h}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>≈</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\tan(x+h) \approx \frac{\sin(x) + \cos(x)h}{\cos(x) - \sin(x)h}.</annotation></semantics></math></span></div>
 
 <ol>
   <li>By finding the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> in this quotient (using an expansion of the reciprocal of the denominator), one finds that it equals <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mi>sec</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec^2(x)</annotation></semantics></math></span>.</li>
@@ -497,9 +412,7 @@ $$</div>
 
 <p>Statement:</p>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\log(x)] = \frac{1}{x}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\log(x)] = \frac{1}{x}.</annotation></semantics></math></span></div>
 
 <p>Proof Sketch:</p>
 
@@ -507,33 +420,25 @@ $$</div>
   <li>Express:</li>
 </ol>
 
-<div class="kdmath">$$
-\log(x+h) = \log\left(x\left(1+\frac{h}{x}\right)\right) = \log(x) + \log\left(1+\frac{h}{x}\right).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mi>log</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mi>x</mi><mrow><mo fence="true">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true">)</mo></mrow><mo fence="true">)</mo></mrow><mo>=</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>log</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true">)</mo></mrow><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\log(x+h) = \log\left(x\left(1+\frac{h}{x}\right)\right) = \log(x) + \log\left(1+\frac{h}{x}\right).</annotation></semantics></math></span></div>
 
 <ol>
   <li>Use the series expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(1+\frac{h}{x})</annotation></semantics></math></span> (which is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>h</mi><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{h}{x}</annotation></semantics></math></span> to first order):</li>
 </ol>
 
-<div class="kdmath">$$
-\log\left(1+\frac{h}{x}\right) \approx \frac{h}{x}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>log</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true">)</mo></mrow><mo>≈</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\log\left(1+\frac{h}{x}\right) \approx \frac{h}{x}.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Therefore,</li>
 </ol>
 
-<div class="kdmath">$$
-\log(x+h) \approx \log(x) + \frac{h}{x}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>≈</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\log(x+h) \approx \log(x) + \frac{h}{x}.</annotation></semantics></math></span></div>
 
 <ol>
   <li>The coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> in this expansion is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x}</annotation></semantics></math></span>, giving</li>
 </ol>
 
-<div class="kdmath">$$
-\frac{d}{dx}[\log(x)] = \frac{1}{x}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{d}{dx}[\log(x)] = \frac{1}{x}.</annotation></semantics></math></span></div>
 
 <h2 id="5-pedagogical-benefits-of-the-pattern-based-approach">5. Pedagogical Benefits of the Pattern-Based Approach</h2>
 

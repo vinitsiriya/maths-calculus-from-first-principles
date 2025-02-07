@@ -32,6 +32,12 @@
         }
       };
     </script>
+    <!-- Add KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <!-- Optional: Add KaTeX JS for dynamic rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    
     <style>
       .post-navigation {
         display: flex;
@@ -79,6 +85,15 @@
         margin-top: 30px;
         padding-top: 20px;
         border-top: 1px solid #eee;
+      }
+
+      .math-display {
+        overflow-x: auto;
+        margin: 1em 0;
+      }
+      .math-inline {
+        display: inline-block;
+        vertical-align: middle;
       }
     </style>
   </head>
@@ -129,17 +144,13 @@
 
 <h3 id="1-a-foundational-definition-of-integration">1. A Foundational Definition of Integration</h3>
 
-<p>Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span> be a function defined on an interval, and consider dividing the interval into a large number of subintervals of equal width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>. If we let</p>
+<p>Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span> be a function defined on an interval, and consider dividing the interval into a large number of subintervals of equal width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>. If we let</p>
 
-<div class="kdmath">$$
-N = \frac{n}{\Delta x},
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>N</mi><mo>=</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">N = \frac{n}{\Delta x},</annotation></semantics></math></span></div>
 
 <p>then we define the integral of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span> over a suitable interval as the limit of a sum of the form</p>
 
-<div class="kdmath">$$
-\int_{0}^{N} f(x)\, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{\frac{n}{\Delta x}} f(i\, \Delta x) \cdot \Delta x.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac></munderover><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mtext>  </mtext><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{N} f(x)\; dx = \lim_{\Delta x \to 0} \sum_{i=0}^{\frac{n}{\Delta x}} f(i\; \Delta x) \cdot \Delta x.</annotation></semantics></math></span></div>
 
 <p>In our approach, we interpret this definition as the exact summing of infinitely many small contributions from <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span>. (For our purposes, we avoid the usual technical terms and focus on the algebraic structure of the sum.)</p>
 
@@ -147,98 +158,59 @@ $$</div>
 
 <p>2.1 Integration of the Constant FunctionConsider the constant function:</p>
 
-<div class="kdmath">$$
-f(x) = 1.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1.</mn></mrow><annotation encoding="application/x-tex">f(x) = 1.</annotation></semantics></math></span></div>
 
 <p>Then the cumulative sum over the interval (from 0 to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>) is</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-\int_{0}^{x} 1 \, dx &= \sum_{i=0}^{\frac{n}{\Delta x}} 1 \cdot \Delta x \\
-&= \left(\frac{n}{\Delta x}\right) \Delta x \\
-&= x.
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>x</mi></msubsup><mn>1</mn><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac></msubsup><mn>1</mn><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><mrow><mo fence="true">(</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><mi>x</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} \int_{0}^{x} 1 \; dx = \sum_{i=0}^{\frac{n}{\Delta x}} 1 \cdot \Delta x \\ = \left(\frac{n}{\Delta x}\right) \Delta x \\ = x. \end{array}</annotation></semantics></math></span></div>
 
 <p>Thus, we obtain</p>
 
-<div class="kdmath">$$
-\boxed{\int 1 \, dx = x + C.}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>∫</mo><mn>1</mn><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>C</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\int 1 \; dx = x + C.}</annotation></semantics></math></span></div>
 
 <p>2.2 Integration of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>Now, consider:</p>
 
-<div class="kdmath">$$
-f(x) = x.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>x</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">f(x) = x.</annotation></semantics></math></span></div>
 
 <p>We form the sum</p>
 
-<div class="kdmath">$$
-\int_{0}^{x} x \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{\frac{n}{\Delta x}} \Bigl(i\, \Delta x\Bigr) \Delta x.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>x</mi></msubsup><mi>x</mi><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">(</mo><mi>i</mi><mtext>  </mtext><mi mathvariant="normal">Δ</mi><mi>x</mi><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">)</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{x} x \; dx = \lim_{\Delta x \to 0} \sum_{i=0}^{\frac{n}{\Delta x}} \Bigl(i\; \Delta x\Bigr) \Delta x.</annotation></semantics></math></span></div>
 
 <p>Recall the well-known summation formula for the first <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span> natural numbers:</p>
 
-<div class="kdmath">$$
-\sum_{i=0}^{N} i = \frac{N(N+1)}{2}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi>N</mi></munderover><mi>i</mi><mo>=</mo><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{N} i = \frac{N(N+1)}{2}.</annotation></semantics></math></span></div>
 
-<p>Interpreting <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">N = \frac{n}{\Delta x}</annotation></semantics></math></span>, we have</p>
+<p>Interpreting <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">N = \frac{n}{\Delta x}</annotation></semantics></math></span>, we have</p>
 
-<div class="kdmath">$$
-\sum_{i=0}^{\frac{n}{\Delta x}} i = \frac{\frac{n}{\Delta x}\left(\frac{n}{\Delta x} + 1\right)}{2}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac></munderover><mi>i</mi><mo>=</mo><mfrac><mrow><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mrow><mo fence="true">(</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mn>1</mn><mo fence="true">)</mo></mrow></mrow><mn>2</mn></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{\frac{n}{\Delta x}} i = \frac{\frac{n}{\Delta x}\left(\frac{n}{\Delta x} + 1\right)}{2}.</annotation></semantics></math></span></div>
 
-<p>Multiplying by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">D</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(\Delta x)^2</annotation></semantics></math></span> (since each term is multiplied by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> from the summation), we obtain</p>
+<p>Multiplying by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(\Delta x)^2</annotation></semantics></math></span> (since each term is multiplied by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> from the summation), we obtain</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-\int_{0}^{x} x \, dx &= \lim_{\Delta x \to 0} \left[ \frac{\frac{n}{\Delta x}\left(\frac{n}{\Delta x} + 1\right)}{2} \cdot (\Delta x)^2 \right] \\
-&= \lim_{\Delta x \to 0} \left[ \frac{n^2}{2\Delta x^2} (\Delta x)^2 + \frac{n}{2\Delta x} (\Delta x)^2 \right] \\
-&= \frac{n^2}{2} + \frac{n\,\Delta x}{2}.
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>x</mi></msubsup><mi>x</mi><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><msub><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></msub><mrow><mo fence="true">[</mo><mfrac><mrow><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mrow><mo fence="true">(</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mn>1</mn><mo fence="true">)</mo></mrow></mrow><mn>2</mn></mfrac><mo>⋅</mo><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo fence="true">]</mo></mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><msub><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></msub><mrow><mo fence="true">[</mo><mfrac><msup><mi>n</mi><mn>2</mn></msup><mrow><mn>2</mn><mi mathvariant="normal">Δ</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mfrac><mi>n</mi><mrow><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo fence="true">]</mo></mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><mfrac><msup><mi>n</mi><mn>2</mn></msup><mn>2</mn></mfrac><mo>+</mo><mfrac><mrow><mi>n</mi><mtext>  </mtext><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><mn>2</mn></mfrac><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} \int_{0}^{x} x \; dx = \lim_{\Delta x \to 0} \left[ \frac{\frac{n}{\Delta x}\left(\frac{n}{\Delta x} + 1\right)}{2} \cdot (\Delta x)^2 \right] \\ = \lim_{\Delta x \to 0} \left[ \frac{n^2}{2\Delta x^2} (\Delta x)^2 + \frac{n}{2\Delta x} (\Delta x)^2 \right] \\ = \frac{n^2}{2} + \frac{n\;\Delta x}{2}. \end{array}</annotation></semantics></math></span></div>
 
-<p>Since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mspace width="1em"></mspace><mi mathvariant="normal">D</mi><mi>x</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">n\;\Delta x = x</annotation></semantics></math></span> and in the limit <processing> the second term vanishes, we deduce that</processing></p>
+<p>Since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mtext>  </mtext><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">n\;\Delta x = x</annotation></semantics></math></span> and in the limit <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta x \to 0</annotation></semantics></math></span> the second term vanishes, we deduce that</p>
 
-<div class="kdmath">$$
-\boxed{\int x \, dx = \frac{1}{2} x^2 + C.}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>∫</mo><mi>x</mi><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>C</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\int x \; dx = \frac{1}{2} x^2 + C.}</annotation></semantics></math></span></div>
 
 <p>2.3 Integration of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^2</annotation></semantics></math></span>Next, consider:</p>
 
-<div class="kdmath">$$
-f(x) = x^2.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">f(x) = x^2.</annotation></semantics></math></span></div>
 
 <p>We express the sum as</p>
 
-<div class="kdmath">$$
-\int_{0}^{x} x^2 \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{\frac{n}{\Delta x}} \Bigl(i\, \Delta x\Bigr)^2 \Delta x.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>x</mi></msubsup><msup><mi>x</mi><mn>2</mn></msup><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">(</mo><mi>i</mi><mtext>  </mtext><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">)</mo><mn>2</mn></msup><mi mathvariant="normal">Δ</mi><mi>x</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{x} x^2 \; dx = \lim_{\Delta x \to 0} \sum_{i=0}^{\frac{n}{\Delta x}} \Bigl(i\; \Delta x\Bigr)^2 \Delta x.</annotation></semantics></math></span></div>
 
 <p>Recall the formula for the sum of the squares of the first <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span> natural numbers:</p>
 
-<div class="kdmath">$$
-\sum_{i=0}^{N} i^2 = \frac{N(N+1)(2N+1)}{6}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi>N</mi></munderover><msup><mi>i</mi><mn>2</mn></msup><mo>=</mo><mfrac><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>2</mn><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>6</mn></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{N} i^2 = \frac{N(N+1)(2N+1)}{6}.</annotation></semantics></math></span></div>
 
-<p>Substitute <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">N = \frac{n}{\Delta x}</annotation></semantics></math></span> and multiply by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">D</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">(\Delta x)^3</annotation></semantics></math></span>:</p>
+<p>Substitute <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">N = \frac{n}{\Delta x}</annotation></semantics></math></span> and multiply by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">(\Delta x)^3</annotation></semantics></math></span>:</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-\int_{0}^{x} x^2 \, dx &= \lim_{\Delta x \to 0} \left[ \frac{\frac{n}{\Delta x}\left(\frac{n}{\Delta x}+1\right)\left(2\frac{n}{\Delta x}+1\right)}{6} \cdot (\Delta x)^3 \right] \\
-&= \frac{n^3}{3},
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>x</mi></msubsup><msup><mi>x</mi><mn>2</mn></msup><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><msub><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></msub><mrow><mo fence="true">[</mo><mfrac><mrow><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mrow><mo fence="true">(</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mn>1</mn><mo fence="true">)</mo></mrow><mrow><mo fence="true">(</mo><mn>2</mn><mfrac><mi>n</mi><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mn>1</mn><mo fence="true">)</mo></mrow></mrow><mn>6</mn></mfrac><mo>⋅</mo><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup><mo fence="true">]</mo></mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><mfrac><msup><mi>n</mi><mn>3</mn></msup><mn>3</mn></mfrac><mo separator="true">,</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} \int_{0}^{x} x^2 \; dx = \lim_{\Delta x \to 0} \left[ \frac{\frac{n}{\Delta x}\left(\frac{n}{\Delta x}+1\right)\left(2\frac{n}{\Delta x}+1\right)}{6} \cdot (\Delta x)^3 \right] \\ = \frac{n^3}{3}, \end{array}</annotation></semantics></math></span></div>
 
-<p>since the lower order terms vanish as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> becomes infinitely small, and noting that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mspace width="1em"></mspace><mi mathvariant="normal">D</mi><mi>x</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">n\;\Delta x = x</annotation></semantics></math></span>. Thus, we conclude that</p>
+<p>since the lower order terms vanish as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> becomes infinitely small, and noting that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mtext>  </mtext><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">n\;\Delta x = x</annotation></semantics></math></span>. Thus, we conclude that</p>
 
-<div class="kdmath">$$
-\boxed{\int x^2 \, dx = \frac{1}{3} x^3 + C.}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>∫</mo><msup><mi>x</mi><mn>2</mn></msup><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mi>C</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\int x^2 \; dx = \frac{1}{3} x^3 + C.}</annotation></semantics></math></span></div>
 
 <p>Note: In these derivations, standard summation formulas for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">\sum i</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msup><mi>i</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum i^2</annotation></semantics></math></span> are used to reveal the pattern. This method of “summing contributions” from infinitesimally small intervals is the cornerstone of our integration approach from first principles.</p>
 
@@ -247,10 +219,10 @@ $$</div>
 <p>In each example, we:</p>
 
 <ul>
-  <li>Divide the interval into many subintervals of width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>.</li>
-  <li>Sum the contributions <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mspace width="1em"></mspace><mi mathvariant="normal">D</mi><mi>x</mi><mo stretchy="false">)</mo><mo>⋅</mo><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">f(i\;\Delta x) \cdot \Delta x</annotation></semantics></math></span> for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo></mrow><annotation encoding="application/x-tex">i = 0, 1, 2, \ldots</annotation></semantics></math></span>.</li>
+  <li>Divide the interval into many subintervals of width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>.</li>
+  <li>Sum the contributions <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mtext>  </mtext><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">f(i\;\Delta x) \cdot \Delta x</annotation></semantics></math></span> for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo></mrow><annotation encoding="application/x-tex">i = 0, 1, 2, \ldots</annotation></semantics></math></span>.</li>
   <li>Use known formulas for the sums of integers and their powers.</li>
-  <li>Take the limit as <processing> to obtain an exact expression for the integral.</processing></li>
+  <li>Take the limit as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta x \to 0</annotation></semantics></math></span> to obtain an exact expression for the integral.</li>
 </ul>
 
 <p>This approach illustrates that integration is the process of summing infinitely many infinitesimal contributions, and that the antiderivative of a function emerges naturally from these summation patterns.</p>
@@ -259,7 +231,7 @@ $$</div>
 
 <ul>
   <li>
-    <p>Clear Algebraic Patterns:By writing the integration process as a limit of sums and then using standard summation formulas, the underlying algebraic structure becomes evident. Students can see how the expressions for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><mn>1</mn><mspace width="1em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int 1\;dx</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><mi>x</mi><mspace width="1em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int x\;dx</annotation></semantics></math></span>, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><msup><mi>x</mi><mn>2</mn></msup><mspace width="1em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int x^2\;dx</annotation></semantics></math></span> arise from basic arithmetic patterns.</p>
+    <p>Clear Algebraic Patterns:By writing the integration process as a limit of sums and then using standard summation formulas, the underlying algebraic structure becomes evident. Students can see how the expressions for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><mn>1</mn><mtext>  </mtext><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int 1\;dx</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><mi>x</mi><mtext>  </mtext><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int x\;dx</annotation></semantics></math></span>, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><msup><mi>x</mi><mn>2</mn></msup><mtext>  </mtext><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int x^2\;dx</annotation></semantics></math></span> arise from basic arithmetic patterns.</p>
   </li>
   <li>
     <p>Elementary Foundation:This method uses only elementary algebra and limits, providing a very accessible entry point to the concept of integration. It avoids technical terminology and focuses on visible patterns, which can be especially beneficial for beginners.</p>
@@ -279,9 +251,9 @@ $$</div>
 <p>Thus, we conclude:</p>
 
 <ul>
-  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∫</mo><mn>1</mn><mspace width="1em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>C</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \int 1\;dx = x + C</annotation></semantics></math></span>,</li>
-  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∫</mo><mi>x</mi><mspace width="1em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>C</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \int x\;dx = \frac{1}{2} x^2 + C</annotation></semantics></math></span>,</li>
-  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∫</mo><msup><mi>x</mi><mn>2</mn></msup><mspace width="1em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mi>C</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \int x^2\;dx = \frac{1}{3} x^3 + C</annotation></semantics></math></span>.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∫</mo><mn>1</mn><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>C</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \int 1\;dx = x + C</annotation></semantics></math></span>,</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∫</mo><mi>x</mi><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>C</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \int x\;dx = \frac{1}{2} x^2 + C</annotation></semantics></math></span>,</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∫</mo><msup><mi>x</mi><mn>2</mn></msup><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mi>C</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \int x^2\;dx = \frac{1}{3} x^3 + C</annotation></semantics></math></span>.</li>
 </ul>
 
 <p>This integration approach, based on recognizing and summing algebraic patterns, provides a fresh, intuitive entry point to calculus—building from first principles and reinforcing the deep connection between differentiation and integration.</p>

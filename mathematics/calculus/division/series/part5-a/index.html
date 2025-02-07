@@ -32,6 +32,12 @@
         }
       };
     </script>
+    <!-- Add KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <!-- Optional: Add KaTeX JS for dynamic rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    
     <style>
       .post-navigation {
         display: flex;
@@ -79,6 +85,15 @@
         margin-top: 30px;
         padding-top: 20px;
         border-top: 1px solid #eee;
+      }
+
+      .math-display {
+        overflow-x: auto;
+        margin: 1em 0;
+      }
+      .math-inline {
+        display: inline-block;
+        vertical-align: middle;
       }
     </style>
   </head>
@@ -145,9 +160,7 @@
 
 <p>Consider the reciprocal function:</p>
 
-<div class="kdmath">$$
-f(x + h) = \frac{1}{x+h}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">f(x + h) = \frac{1}{x+h}.</annotation></semantics></math></span></div>
 
 <p>Our goal is to express this in a form that reveals the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> clearly, leading to its derivative. Long division is a powerful tool here.</p>
 
@@ -157,37 +170,15 @@ $$</div>
 
 <p>Performing the division step by step:</p>
 
-<div class="kdmath">$$
-\begin{array}{c|cccc}
-& x^3 & -2x^2 & +4x & -8 \\
-\hline
-x + 2 & x^4 & 0 & 0 & -1 \\
-& x^4 & +2x^3 & & \\
-\hline
-& & -2x^3 & & -1 \\
-& & -2x^3 & -4x^2 & \\
-\hline
-& & & 4x^2 & -1 \\
-& & & 4x^2 & +8x \\
-\hline
-& & & & -8x - 1 \\
-& & & & -8x - 16 \\
-\hline
-& & & & 15 \\
-\end{array}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="center center center center center" columnlines="solid none none none" columnspacing="1em" rowlines="solid none solid none solid none solid none solid"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mi>x</mi><mn>3</mn></msup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mn>4</mn><mi>x</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>8</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mi>x</mi><mn>4</mn></msup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msup><mi>x</mi><mn>4</mn></msup></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mn>8</mn><mi>x</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>8</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>8</mn><mi>x</mi><mo>−</mo><mn>16</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>15</mn></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{c|cccc} &amp; x^3 &amp; -2x^2 &amp; +4x &amp; -8 \\ \hline x + 2 &amp; x^4 &amp; 0 &amp; 0 &amp; -1 \\ &amp; x^4 &amp; +2x^3 &amp; &amp; \\ \hline &amp; &amp; -2x^3 &amp; &amp; -1 \\ &amp; &amp; -2x^3 &amp; -4x^2 &amp; \\ \hline &amp; &amp; &amp; 4x^2 &amp; -1 \\ &amp; &amp; &amp; 4x^2 &amp; +8x \\ \hline &amp; &amp; &amp; &amp; -8x - 1 \\ &amp; &amp; &amp; &amp; -8x - 16 \\ \hline &amp; &amp; &amp; &amp; 15 \\ \end{array}</annotation></semantics></math></span></div>
 
 <p>The step-by-step breakdown is:</p>
 
-<div class="kdmath">$$
-x^4 - 1 = (x + 2)(x^3) - 2x^3 - 1.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>1</mn><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo stretchy="false">)</mo><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>1.</mn></mrow><annotation encoding="application/x-tex">x^4 - 1 = (x + 2)(x^3) - 2x^3 - 1.</annotation></semantics></math></span></div>
 
 <p>Expanding further:</p>
 
-<div class="kdmath">$$
-(x + 2)(x^3 - 2x^2 + 4x - 8) - 15.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mi>x</mi><mo>−</mo><mn>8</mn><mo stretchy="false">)</mo><mo>−</mo><mn>15.</mn></mrow><annotation encoding="application/x-tex">(x + 2)(x^3 - 2x^2 + 4x - 8) - 15.</annotation></semantics></math></span></div>
 
 <p>This technique will now be applied to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span>.</p>
 
@@ -195,61 +186,43 @@ $$</div>
 
 <p>Rewriting the function:</p>
 
-<div class="kdmath">$$
-\frac{1}{x+h} = \frac{1}{x} \cdot \frac{1}{1+\frac{h}{x}}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mo>⋅</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{x+h} = \frac{1}{x} \cdot \frac{1}{1+\frac{h}{x}}.</annotation></semantics></math></span></div>
 
 <p>Using the geometric series expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{1+y}</annotation></semantics></math></span> when <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>y</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|y| &lt; 1</annotation></semantics></math></span>:</p>
 
-<div class="kdmath">$$
-\frac{1}{1+\frac{h}{x}} = \sum_{n=0}^{\infty} (-1)^n \left(\frac{h}{x}\right)^n.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac></mrow></mfrac><mo>=</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mrow><mo fence="true">(</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true">)</mo></mrow><mi>n</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{1+\frac{h}{x}} = \sum_{n=0}^{\infty} (-1)^n \left(\frac{h}{x}\right)^n.</annotation></semantics></math></span></div>
 
 <p>Multiplying by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x}</annotation></semantics></math></span>, we obtain:</p>
 
-<div class="kdmath">$$
-\frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \frac{h^4}{x^5} - \ldots.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mo>−</mo><mfrac><mi>h</mi><msup><mi>x</mi><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><msup><mi>h</mi><mn>2</mn></msup><msup><mi>x</mi><mn>3</mn></msup></mfrac><mo>−</mo><mfrac><msup><mi>h</mi><mn>3</mn></msup><msup><mi>x</mi><mn>4</mn></msup></mfrac><mo>+</mo><mfrac><msup><mi>h</mi><mn>4</mn></msup><msup><mi>x</mi><mn>5</mn></msup></mfrac><mo>−</mo><mo>…</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \frac{h^4}{x^5} - \ldots.</annotation></semantics></math></span></div>
 
 <p>Each term alternates in sign, following the pattern:</p>
 
-<div class="kdmath">$$
-\frac{(-1)^n h^n}{x^{n+1}}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mi>h</mi><mi>n</mi></msup></mrow><msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{(-1)^n h^n}{x^{n+1}}.</annotation></semantics></math></span></div>
 
 <p>The coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mn>1</mn><msup><mi>x</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">-\frac{1}{x^2}</annotation></semantics></math></span>, so we immediately deduce:</p>
 
-<div class="kdmath">$$
-\boxed{\frac{d}{dx} \left( x^{-1} \right) = -x^{-2}.}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mrow><mo fence="true">(</mo><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo fence="true">)</mo></mrow><mo>=</mo><mo>−</mo><msup><mi>x</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\frac{d}{dx} \left( x^{-1} \right) = -x^{-2}.}</annotation></semantics></math></span></div>
 
 <h2 id="2-infinite-series-and-division-based-differentiation">2. Infinite Series and Division-Based Differentiation</h2>
 
 <h3 id="21-binomial-series-expansion-for-xlt1x-lt-1">2.1 Binomial Series Expansion (for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|x| &lt; 1</annotation></semantics></math></span>)</h3>
 
-<div class="kdmath">$$
-\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n x^n.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mi>x</mi><mi>n</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{x+1} = \sum_{n=0}^{\infty} (-1)^n x^n.</annotation></semantics></math></span></div>
 
 <p>This expands explicitly as:</p>
 
-<div class="kdmath">$$
-1 - x + x^2 - x^3 + x^4 - \ldots,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>1</mn><mo>−</mo><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mo>…</mo><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1 - x + x^2 - x^3 + x^4 - \ldots,</annotation></semantics></math></span></div>
 
 <p>which converges for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|x| &lt; 1</annotation></semantics></math></span>.</p>
 
 <h3 id="22-laurent-series-expansion-for-xgt1x-gt-1">2.2 Laurent Series Expansion (for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|x| &gt; 1</annotation></semantics></math></span>)</h3>
 
-<div class="kdmath">$$
-\frac{1}{x+1} = \sum_{n=1}^{\infty} (-1)^{n+1} x^{-n}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>x</mi><mrow><mo>−</mo><mi>n</mi></mrow></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{x+1} = \sum_{n=1}^{\infty} (-1)^{n+1} x^{-n}.</annotation></semantics></math></span></div>
 
 <p>Expanding explicitly:</p>
 
-<div class="kdmath">$$
-x^{-1} - x^{-2} + x^{-3} - \ldots,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>x</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>x</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup><mo>−</mo><mo>…</mo><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">x^{-1} - x^{-2} + x^{-3} - \ldots,</annotation></semantics></math></span></div>
 
 <p>which converges for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|x| &gt; 1</annotation></semantics></math></span>.</p>
 
@@ -257,65 +230,48 @@ $$</div>
 
 <p>For constants <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span>, the function:</p>
 
-<div class="kdmath">$$
-\frac{1}{ax+by}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by}</annotation></semantics></math></span></div>
 
 <p>has the expansion:</p>
 
-<div class="kdmath">$$
-\frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n, \quad \text{for } \left|\frac{x}{y}\right| < 1.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>n</mi></msup><mo separator="true">,</mo><mspace width="1em" /><mtext>for </mtext><mrow><mo fence="true">∣</mo><mfrac><mi>x</mi><mi>y</mi></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1.</mn></mrow><annotation encoding="application/x-tex">\frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n, \quad \text{for } \left|\frac{x}{y}\right| &lt; 1.</annotation></semantics></math></span></div>
 
-<p>Proof:
-<span class="kdmath">$\begin{aligned}
-\frac{1}{ax+by} &= \frac{1}{by} \cdot \frac{1}{1+\frac{ax}{by}} \\[1mm]
-&= \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n.
-\end{aligned}$</span></p>
+<p>Proof:</p>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo>⋅</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></msubsup><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>n</mi></msup><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} \frac{1}{ax+by} = \frac{1}{by} \cdot \frac{1}{1+\frac{ax}{by}} \\[1mm] = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n. \end{array}</annotation></semantics></math></span></div>
 
 <p>ChatGPTReasoned for a few secondsUnraveling the analysis</p>
 
-<p>Breaking down the expansion of &lt;div class='math-block'&gt;<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by}</annotation></semantics></math></span>&lt;/div&gt;, including geometric series and convergence conditions, to reveal the general term and underlying patterns.</p>
+<p>Breaking down the expansion of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by}</annotation></semantics></math></span>, including geometric series and convergence conditions, to reveal the general term and underlying patterns.</p>
 
 <p>Below is an independent, detailed article devoted to the “Generalized Expansion” for functions of the form</p>
 
-<div class="kdmath">$$
-\frac{1}{ax+by},
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by},</annotation></semantics></math></span></div>
 
 <p>presented in an elementary, algebraic style. This article elaborates on the derivation step by step, explains the underlying patterns, and concludes with remarks on its significance. You can later incorporate this into your series as a standalone section.</p>
 
-<h1 id="a-generalized-expansion-for-div-classmath-block1axbyfrac1axbydiv">A Generalized Expansion for &lt;div class='math-block'&gt;<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by}</annotation></semantics></math></span>&lt;/div&gt;</h1>
+<h1 id="a-generalized-expansion-for-1axbyfrac1axby">A Generalized Expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by}</annotation></semantics></math></span></h1>
 
 <h3 id="1-introduction">1. Introduction</h3>
 
 <p>In many applications, it is useful to express functions in the form of an infinite series. One important example is the reciprocal function. In our approach we have already seen that elementary functions like</p>
 
-<div class="kdmath">$$
-\frac{1}{1+x}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{1+x}</annotation></semantics></math></span></div>
 
 <p>can be expressed as an infinite geometric series. Here, we extend this idea to a more generalized expression,</p>
 
-<div class="kdmath">$$
-\frac{1}{ax+by},
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by},</annotation></semantics></math></span></div>
 
-<p>where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span> are constants, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> are variables. Our goal is to derive an infinite series representation for &lt;div class='math-block'&gt;<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by}</annotation></semantics></math></span>&lt;/div&gt; by elementary means—using long division and geometric series techniques—and to highlight the algebraic patterns that emerge.</p>
+<p>where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span> are constants, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> are variables. Our goal is to derive an infinite series representation for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by}</annotation></semantics></math></span> by elementary means—using long division and geometric series techniques—and to highlight the algebraic patterns that emerge.</p>
 
 <h3 id="2-setting-up-the-expression">2. Setting Up the Expression</h3>
 
 <p>We begin with the function</p>
 
-<div class="kdmath">$$
-\frac{1}{ax+by}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by}.</annotation></semantics></math></span></div>
 
 <p>A common strategy to derive a series expansion is to factor out one of the terms in the denominator so that the remainder appears in a form suitable for applying the geometric series formula. For instance, if we assume that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|\frac{ax}{by}| &lt; 1</annotation></semantics></math></span> (or equivalently, that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">∣</mo><mfrac><mi>x</mi><mi>y</mi></mfrac><mo fence="true">∣</mo></mrow><annotation encoding="application/x-tex">\left|\frac{x}{y}\right|</annotation></semantics></math></span> is sufficiently small relative to the constant ratio), we can factor out <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">by</annotation></semantics></math></span> from the denominator:</p>
 
-<div class="kdmath">$$
-\frac{1}{ax+by} = \frac{1}{by} \cdot \frac{1}{1 + \frac{ax}{by}}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo>⋅</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by} = \frac{1}{by} \cdot \frac{1}{1 + \frac{ax}{by}}.</annotation></semantics></math></span></div>
 
 <p>Here, the term <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{ax}{by}</annotation></semantics></math></span> will serve as our “small” parameter.</p>
 
@@ -323,45 +279,31 @@ $$</div>
 
 <p>Recall that for any number <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span> satisfying <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>t</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|t| &lt; 1</annotation></semantics></math></span>, the geometric series expansion is given by:</p>
 
-<div class="kdmath">$$
-\frac{1}{1+t} = \sum_{n=0}^{\infty} (-1)^n t^n.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>t</mi></mrow></mfrac><mo>=</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mi>t</mi><mi>n</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{1+t} = \sum_{n=0}^{\infty} (-1)^n t^n.</annotation></semantics></math></span></div>
 
 <p>Setting</p>
 
-<div class="kdmath">$$
-t = \frac{ax}{by},
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>t</mi><mo>=</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">t = \frac{ax}{by},</annotation></semantics></math></span></div>
 
 <p>we have</p>
 
-<div class="kdmath">$$
-\frac{1}{1+\frac{ax}{by}} = \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac></mrow></mfrac><mo>=</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>n</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{1+\frac{ax}{by}} = \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n.</annotation></semantics></math></span></div>
 
 <p>Multiplying this series by the prefactor <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{by}</annotation></semantics></math></span>, we obtain:</p>
 
-<div class="kdmath">$$
-\frac{1}{ax+by} = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>n</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by} = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n.</annotation></semantics></math></span></div>
 
 <p>Rearranging, the series becomes:</p>
 
-<div class="kdmath">$$
-\frac{1}{ax+by} = \sum_{n=0}^{\infty} (-1)^n \frac{a^n}{b^{n+1}} \, \frac{x^n}{y^{n+1}}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mo>=</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><mfrac><msup><mi>a</mi><mi>n</mi></msup><msup><mi>b</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><mtext>  </mtext><mfrac><msup><mi>x</mi><mi>n</mi></msup><msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by} = \sum_{n=0}^{\infty} (-1)^n \frac{a^n}{b^{n+1}} \; \frac{x^n}{y^{n+1}}.</annotation></semantics></math></span></div>
 
 <p>Thus, the final series expansion is:</p>
 
-<div class="kdmath">$$
-\boxed{\frac{1}{ax+by} = \frac{1}{by} - \frac{ax}{b^2y^2} + \frac{a^2x^2}{b^3y^3} - \frac{a^3x^3}{b^4y^4} + \cdots,}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><msup><mi>b</mi><mn>2</mn></msup><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi>a</mi><mn>2</mn></msup><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><msup><mi>b</mi><mn>3</mn></msup><msup><mi>y</mi><mn>3</mn></msup></mrow></mfrac><mo>−</mo><mfrac><mrow><msup><mi>a</mi><mn>3</mn></msup><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><msup><mi>b</mi><mn>4</mn></msup><msup><mi>y</mi><mn>4</mn></msup></mrow></mfrac><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\frac{1}{ax+by} = \frac{1}{by} - \frac{ax}{b^2y^2} + \frac{a^2x^2}{b^3y^3} - \frac{a^3x^3}{b^4y^4} + ...,}</annotation></semantics></math></span></div>
 
 <p>with the convergence condition:</p>
 
-<div class="kdmath">$$
-\left|\frac{ax}{by}\right| < 1.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1.</mn></mrow><annotation encoding="application/x-tex">\left|\frac{ax}{by}\right| &lt; 1.</annotation></semantics></math></span></div>
 
 <h3 id="4-discussion-of-the-pattern">4. Discussion of the Pattern</h3>
 
@@ -382,9 +324,7 @@ $$</div>
   </li>
 </ol>
 
-<div class="kdmath">$$
-T_n = (-1)^n \frac{a^n}{b^{n+1}} \, \frac{x^n}{y^{n+1}}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>T</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><mfrac><msup><mi>a</mi><mi>n</mi></msup><msup><mi>b</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><mtext>  </mtext><mfrac><msup><mi>x</mi><mi>n</mi></msup><msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">T_n = (-1)^n \frac{a^n}{b^{n+1}} \; \frac{x^n}{y^{n+1}}.</annotation></semantics></math></span></div>
 
 <p>This pattern is consistent for all <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n \ge 0</annotation></semantics></math></span>.</p>
 
@@ -392,9 +332,7 @@ $$</div>
   <li>Convergence Condition:The series converges provided:</li>
 </ol>
 
-<div class="kdmath">$$
-\left|\frac{ax}{by}\right| < 1,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\left|\frac{ax}{by}\right| &lt; 1,</annotation></semantics></math></span></div>
 
 <p>which controls the relative sizes of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> (and the constants <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span>).</p>
 
@@ -402,15 +340,11 @@ $$</div>
 
 <p>We have derived the generalized infinite series expansion for the function</p>
 
-<div class="kdmath">$$
-\frac{1}{ax+by}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{ax+by}</annotation></semantics></math></span></div>
 
 <p>using elementary methods. The final expansion is:</p>
 
-<div class="kdmath">$$
-\boxed{\frac{1}{ax+by} = \frac{1}{by} - \frac{ax}{b^2y^2} + \frac{a^2x^2}{b^3y^3} - \frac{a^3x^3}{b^4y^4} + \cdots, \quad \text{for } \left|\frac{ax}{by}\right| < 1.}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mfrac><mn>1</mn><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><msup><mi>b</mi><mn>2</mn></msup><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi>a</mi><mn>2</mn></msup><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><msup><mi>b</mi><mn>3</mn></msup><msup><mi>y</mi><mn>3</mn></msup></mrow></mfrac><mo>−</mo><mfrac><mrow><msup><mi>a</mi><mn>3</mn></msup><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><msup><mi>b</mi><mn>4</mn></msup><msup><mi>y</mi><mn>4</mn></msup></mrow></mfrac><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mspace width="1em" /><mtext>for </mtext><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1.</mn></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\frac{1}{ax+by} = \frac{1}{by} - \frac{ax}{b^2y^2} + \frac{a^2x^2}{b^3y^3} - \frac{a^3x^3}{b^4y^4} + ..., \quad \text{for } \left|\frac{ax}{by}\right| &lt; 1.}</annotation></semantics></math></span></div>
 
 <p>This expansion not only provides a valuable tool for approximating functions but also reveals a beautiful algebraic pattern: each term in the series corresponds to a higher power of the small parameter <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{ax}{by}</annotation></semantics></math></span>, and the series is an instance of an infinite geometric series. Recognizing these patterns reinforces the idea that many standard results in calculus—especially those involving division and infinite series—emerge naturally from basic algebraic manipulations.</p>
 

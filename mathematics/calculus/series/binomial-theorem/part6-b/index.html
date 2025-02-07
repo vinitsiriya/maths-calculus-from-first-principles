@@ -32,6 +32,12 @@
         }
       };
     </script>
+    <!-- Add KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <!-- Optional: Add KaTeX JS for dynamic rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    
     <style>
       .post-navigation {
         display: flex;
@@ -80,6 +86,15 @@
         padding-top: 20px;
         border-top: 1px solid #eee;
       }
+
+      .math-display {
+        overflow-x: auto;
+        margin: 1em 0;
+      }
+      .math-inline {
+        display: inline-block;
+        vertical-align: middle;
+      }
     </style>
   </head>
   <body><header class="site-header" role="banner">
@@ -125,15 +140,11 @@
 
 <p>We wish to understand the structure of the sum</p>
 
-<div class="kdmath">$$
-S_p(n) = \sum_{k=1}^{n} k^p,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msup><mi>k</mi><mi>p</mi></msup><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">S_p(n) = \sum_{k=1}^{n} k^p,</annotation></semantics></math></span></div>
 
 <p>which is known to be a polynomial in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> of degree <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p+1</annotation></semantics></math></span>. A key ingredient in deriving the general formula is the binomial identity:</p>
 
-<div class="kdmath">$$
-(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^j.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>p</mi></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>j</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^j.</annotation></semantics></math></span></div>
 
 <p>In this discussion, we will explore the basics of the binomial theorem, derive this identity step by step, and explain how it helps us “build” the general formula by revealing the patterns in the sums.</p>
 
@@ -141,59 +152,41 @@ $$</div>
 
 <p>The Binomial Theorem states that for any nonnegative integer <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span> and any numbers <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span>,</p>
 
-<div class="kdmath">$$
-(a+b)^m = \sum_{j=0}^{m} \binom{m}{j} a^{m-j}b^j,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mi>m</mi></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>m</mi></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mi>m</mi><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>a</mi><mrow><mi>m</mi><mo>−</mo><mi>j</mi></mrow></msup><msup><mi>b</mi><mi>j</mi></msup><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">(a+b)^m = \sum_{j=0}^{m} \binom{m}{j} a^{m-j}b^j,</annotation></semantics></math></span></div>
 
 <p>where the binomial coefficient is defined as</p>
 
-<div class="kdmath">$$
-\binom{m}{j} = \frac{m!}{j!(m-j)!}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mi>m</mi><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>m</mi><mo stretchy="false">!</mo></mrow><mrow><mi>j</mi><mo stretchy="false">!</mo><mo stretchy="false">(</mo><mi>m</mi><mo>−</mo><mi>j</mi><mo stretchy="false">)</mo><mo stretchy="false">!</mo></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\binom{m}{j} = \frac{m!}{j!(m-j)!}.</annotation></semantics></math></span></div>
 
 <p>A particularly simple case is obtained by setting <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">a = n</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">b = 1</annotation></semantics></math></span>. Then,</p>
 
-<div class="kdmath">$$
-(n+1)^m = \sum_{j=0}^{m} \binom{m}{j} n^j.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>m</mi></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>m</mi></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mi>m</mi><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>j</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">(n+1)^m = \sum_{j=0}^{m} \binom{m}{j} n^j.</annotation></semantics></math></span></div>
 
 <p>In our case, we will choose <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mi>p</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m = p+1</annotation></semantics></math></span>, so that:</p>
 
-<div class="kdmath">$$
-(n+1)^{p+1} = \sum_{j=0}^{p+1} \binom{p+1}{j} n^j.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>j</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} = \sum_{j=0}^{p+1} \binom{p+1}{j} n^j.</annotation></semantics></math></span></div>
 
 <h2 id="3-deriving-the-key-binomial-identity">3. Deriving the Key Binomial Identity</h2>
 
 <p>We are interested in the difference:</p>
 
-<div class="kdmath">$$
-(n+1)^{p+1} - n^{p+1}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} - n^{p+1}.</annotation></semantics></math></span></div>
 
 <p>Using the binomial theorem, we write:</p>
 
-<div class="kdmath">$$
-(n+1)^{p+1} = \sum_{j=0}^{p+1} \binom{p+1}{j} n^j.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>j</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} = \sum_{j=0}^{p+1} \binom{p+1}{j} n^j.</annotation></semantics></math></span></div>
 
 <p>Now, notice that the term corresponding to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mi>p</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j = p+1</annotation></semantics></math></span> is</p>
 
-<div class="kdmath">$$
-\binom{p+1}{p+1} n^{p+1} = n^{p+1}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\binom{p+1}{p+1} n^{p+1} = n^{p+1}.</annotation></semantics></math></span></div>
 
 <p>Subtracting <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n^{p+1}</annotation></semantics></math></span> cancels that term:</p>
 
-<div class="kdmath">$$
-(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p+1} \binom{p+1}{j} n^j - n^{p+1}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>j</mi></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p+1} \binom{p+1}{j} n^j - n^{p+1}.</annotation></semantics></math></span></div>
 
 <p>Since the <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mi>p</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j = p+1</annotation></semantics></math></span> term is exactly <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n^{p+1}</annotation></semantics></math></span>, we have:</p>
 
-<div class="kdmath">$$
-(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^j.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>p</mi></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>j</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^j.</annotation></semantics></math></span></div>
 
 <p>Intermediate Steps Explanation:</p>
 
@@ -201,17 +194,13 @@ $$</div>
   <li>Write the full expansion:</li>
 </ol>
 
-<div class="kdmath">$$
-(n+1)^{p+1} = \binom{p+1}{0}n^{p+1} + \binom{p+1}{1} n^{p} + \binom{p+1}{2} n^{p-1} + \cdots + \binom{p+1}{p} n + \binom{p+1}{p+1}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mn>0</mn></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>+</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mn>1</mn></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>p</mi></msup><mo>+</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mrow><mi>p</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>p</mi></mfrac><mo fence="true">)</mo></mrow><mi>n</mi><mo>+</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo fence="true">)</mo></mrow><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} = \binom{p+1}{0}n^{p+1} + \binom{p+1}{1} n^{p} + \binom{p+1}{2} n^{p-1} + ... + \binom{p+1}{p} n + \binom{p+1}{p+1}.</annotation></semantics></math></span></div>
 
 <ol>
   <li>Identify the last term:</li>
 </ol>
 
-<div class="kdmath">$$
-\binom{p+1}{p+1} n^{0} = 1.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mn>0</mn></msup><mo>=</mo><mn>1.</mn></mrow><annotation encoding="application/x-tex">\binom{p+1}{p+1} n^{0} = 1.</annotation></semantics></math></span></div>
 
 <p>(Notice: Often one writes the expansion as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>+</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mn>1</mn></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>p</mi></msup><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>p</mi></mfrac><mo fence="true">)</mo></mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} = n^{p+1} + \binom{p+1}{1}n^p + ... + \binom{p+1}{p}n + 1</annotation></semantics></math></span>.)</p>
 
@@ -219,15 +208,11 @@ $$</div>
   <li>Subtract <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">n^{p+1}</annotation></semantics></math></span>:</li>
 </ol>
 
-<div class="kdmath">$$
-(n+1)^{p+1} - n^{p+1} = \binom{p+1}{1}n^p + \binom{p+1}{2}n^{p-1} + \cdots + \binom{p+1}{p}n + 1.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mn>1</mn></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>p</mi></msup><mo>+</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mrow><mi>p</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>p</mi></mfrac><mo fence="true">)</mo></mrow><mi>n</mi><mo>+</mo><mn>1.</mn></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} - n^{p+1} = \binom{p+1}{1}n^p + \binom{p+1}{2}n^{p-1} + ... + \binom{p+1}{p}n + 1.</annotation></semantics></math></span></div>
 
 <p>Here, we re-index by letting <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">j = 0</annotation></semantics></math></span> represent the constant term, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j=1</annotation></semantics></math></span> represent the term with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span>, and so on. That is,</p>
 
-<div class="kdmath">$$
-(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^{j},
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>p</mi></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>j</mi></msup><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^{j},</annotation></semantics></math></span></div>
 
 <p>where we understand that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mn>0</mn></mfrac><mo fence="true">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\binom{p+1}{0} = 1</annotation></semantics></math></span>.</p>
 
@@ -239,23 +224,17 @@ $$</div>
 
 <p>The identity</p>
 
-<div class="kdmath">$$
-(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^{j}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>p</mi></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^{j}</annotation></semantics></math></span></div>
 
 <p>is powerful because it expresses the incremental change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">(n+1)^{p+1}</annotation></semantics></math></span> in terms of lower powers of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span>.</p>
 
 <p>Now, suppose that</p>
 
-<div class="kdmath">$$
-S_p(n) = \sum_{k=1}^{n} k^p
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msup><mi>k</mi><mi>p</mi></msup></mrow><annotation encoding="application/x-tex">S_p(n) = \sum_{k=1}^{n} k^p</annotation></semantics></math></span></div>
 
 <p>is a polynomial in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> of degree <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p+1</annotation></semantics></math></span>:</p>
 
-<div class="kdmath">$$
-S_p(n) = a_{p,0} + a_{p,1}\,n + a_{p,2}\,n^2 + \cdots + a_{p,p+1}\,n^{p+1}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>a</mi><mrow><mi>p</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mo>+</mo><msub><mi>a</mi><mrow><mi>p</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub><mtext>  </mtext><mi>n</mi><mo>+</mo><msub><mi>a</mi><mrow><mi>p</mi><mo separator="true">,</mo><mn>2</mn></mrow></msub><mtext>  </mtext><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><msub><mi>a</mi><mrow><mi>p</mi><mo separator="true">,</mo><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msub><mtext>  </mtext><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">S_p(n) = a_{p,0} + a_{p,1}\;n + a_{p,2}\;n^2 + ... + a_{p,p+1}\;n^{p+1}.</annotation></semantics></math></span></div>
 
 <p>Since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S_p(0)=0</annotation></semantics></math></span>, we have <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>p</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_{p,0} = 0</annotation></semantics></math></span>.</p>
 
@@ -263,39 +242,27 @@ $$</div>
 
 <p>We can sum the identity for consecutive values of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span>. Consider:</p>
 
-<div class="kdmath">$$
-S_p(n+1) - S_p(n) = (n+1)^p.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>−</mo><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>p</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">S_p(n+1) - S_p(n) = (n+1)^p.</annotation></semantics></math></span></div>
 
 <p>If we sum both sides from <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n=0</annotation></semantics></math></span> to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span>, the left-hand side telescopes:</p>
 
-<div class="kdmath">$$
-\sum_{n=0}^{N-1} \Bigl[S_p(n+1) - S_p(n)\Bigr] = S_p(N) - S_p(0) = S_p(N).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>−</mo><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mo>=</mo><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo>=</mo><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{N-1} \Bigl[S_p(n+1) - S_p(n)\Bigr] = S_p(N) - S_p(0) = S_p(N).</annotation></semantics></math></span></div>
 
 <p>On the right-hand side, using the binomial identity, we have:</p>
 
-<div class="kdmath">$$
-\sum_{n=0}^{N-1} (n+1)^p.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>p</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{n=0}^{N-1} (n+1)^p.</annotation></semantics></math></span></div>
 
 <p>Alternatively, if we sum the identity</p>
 
-<div class="kdmath">$$
-(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^{j}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>p</mi></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^{j}</annotation></semantics></math></span></div>
 
 <p>from <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n=0</annotation></semantics></math></span> to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span>, the left-hand side telescopes to:</p>
 
-<div class="kdmath">$$
-N^{p+1} - 0^{p+1} = N^{p+1}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>N</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mn>0</mn><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>N</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">N^{p+1} - 0^{p+1} = N^{p+1}.</annotation></semantics></math></span></div>
 
 <p>The right-hand side becomes:</p>
 
-<div class="kdmath">$$
-\sum_{j=0}^{p} \binom{p+1}{j} \sum_{n=0}^{N-1} n^{j} = \sum_{j=0}^{p} \binom{p+1}{j} S_j(N-1).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>p</mi></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></munderover><msup><mi>n</mi><mi>j</mi></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>p</mi></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msub><mi>S</mi><mi>j</mi></msub><mo stretchy="false">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{j=0}^{p} \binom{p+1}{j} \sum_{n=0}^{N-1} n^{j} = \sum_{j=0}^{p} \binom{p+1}{j} S_j(N-1).</annotation></semantics></math></span></div>
 
 <p>This yields a recurrence that expresses <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>N</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">N^{p+1}</annotation></semantics></math></span> (a known polynomial) in terms of the sums <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">S_j</annotation></semantics></math></span> for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≤</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">j \le p</annotation></semantics></math></span>. If you already know <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>S</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>S</mi><mrow><mi>p</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">S_0, S_1, \dots, S_{p-1}</annotation></semantics></math></span>, you can solve for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S_p(N-1)</annotation></semantics></math></span>.</p>
 
@@ -303,15 +270,11 @@ $$</div>
 
 <p>A key insight is that the left-hand side, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} - n^{p+1}</annotation></semantics></math></span>, when expanded, contains only powers of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> up to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mi>p</mi></msup></mrow><annotation encoding="application/x-tex">n^p</annotation></semantics></math></span>. Therefore, if we compare the coefficients on both sides (after writing <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S_p(n)</annotation></semantics></math></span> as a polynomial), we obtain a system of equations relating the coefficients <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>p</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{p,k}</annotation></semantics></math></span> to binomial coefficients. In particular, one finds that:</p>
 
-<div class="kdmath">$$
-\sum_{k=j+1}^{p+1} a_{p,k}\,\binom{k}{j} = \binom{p}{j}, \quad \text{for } j=0,1,\dots,p.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mi>j</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></munderover><msub><mi>a</mi><mrow><mi>p</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub><mtext>  </mtext><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mi>k</mi><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><mo>=</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mi>p</mi><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><mo separator="true">,</mo><mspace width="1em" /><mtext>for </mtext><mi>j</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><mi>p</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{k=j+1}^{p+1} a_{p,k}\;\binom{k}{j} = \binom{p}{j}, \quad \text{for } j=0,1,\dots,p.</annotation></semantics></math></span></div>
 
 <p>This system allows you to solve for the coefficients <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>p</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{p,k}</annotation></semantics></math></span> one by one. Notably, the highest coefficient comes out to be:</p>
 
-<div class="kdmath">$$
-a_{p,p+1} = \frac{1}{p+1},
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>a</mi><mrow><mi>p</mi><mo separator="true">,</mo><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">a_{p,p+1} = \frac{1}{p+1},</annotation></semantics></math></span></div>
 
 <p>which is consistent with the observation that the leading term of the polynomial is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{n^{p+1}}{p+1}</annotation></semantics></math></span> (as one would expect from the integral of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>p</mi></msup></mrow><annotation encoding="application/x-tex">x^p</annotation></semantics></math></span>). The lower-order coefficients are determined by the binomial coefficients and display a symmetry that is both combinatorial and elegant.</p>
 
@@ -319,9 +282,7 @@ $$</div>
 
 <p>The binomial identity</p>
 
-<div class="kdmath">$$
-(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^{j}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>n</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>p</mi></munderover><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo fence="true">)</mo></mrow><msup><mi>n</mi><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">(n+1)^{p+1} - n^{p+1} = \sum_{j=0}^{p} \binom{p+1}{j} n^{j}</annotation></semantics></math></span></div>
 
 <p>provides a powerful and intuitive way to derive the general formula for sums of powers. By summing over <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> and changing the order of summation, we obtain a recurrence relation that expresses <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S_p(n)</annotation></semantics></math></span> in terms of lower-order sums. This approach not only confirms that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>p</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S_p(n)</annotation></semantics></math></span> is a polynomial of degree <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p+1</annotation></semantics></math></span> with leading coefficient <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{p+1}</annotation></semantics></math></span> but also reveals that the other coefficients are determined by binomial coefficients.</p>
 

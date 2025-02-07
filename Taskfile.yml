@@ -1,0 +1,77 @@
+version: '3'
+
+vars:
+  DEV_DIR: _site_dev
+  SERVE_DIR: _site_serve
+  PROD_DIR: _site_prod
+
+tasks:
+  serve:
+    desc: Run Jekyll in development mode with live reload
+    cmds:
+      - bundle exec jekyll serve --livereload --destination {{.SERVE_DIR}}
+
+  build:dev:
+    desc: Build site for development using dev config
+    cmds:
+      - bundle exec jekyll build --config _config.yml,_config_dev.yml --destination {{.DEV_DIR}}
+
+  build:prod:
+    desc: Build site for production
+    cmds:
+      - JEKYLL_ENV=production bundle exec jekyll build --destination {{.PROD_DIR}}
+
+  clean:all:
+    desc: Clean up all generated site files
+    cmds:
+      - rm -rf {{.DEV_DIR}}
+      - rm -rf {{.SERVE_DIR}}
+      - rm -rf {{.PROD_DIR}}
+
+  clean:dev:
+    desc: Clean development build
+    cmds:
+      - rm -rf {{.DEV_DIR}}
+
+  clean:serve:
+    desc: Clean serve build
+    cmds:
+      - rm -rf {{.SERVE_DIR}}
+
+  clean:prod:
+    desc: Clean production build
+    cmds:
+      - rm -rf {{.PROD_DIR}}
+
+  clean:cache:
+    desc: Clean all caches (Jekyll, npm, math)
+    cmds:
+      - rm -rf .jekyll-cache
+      - rm -rf .sass-cache
+      - rm -rf _cache
+      - rm -rf node_modules/.cache
+      - bundle exec jekyll clean
+
+  clean:full:
+    desc: Clean everything (build dirs and all caches)
+    deps: [clean:all, clean:cache]
+
+  install:
+    desc: Install or update dependencies
+    cmds:
+      - bundle install
+
+  update:
+    desc: Update bundle dependencies
+    cmds:
+      - bundle update
+
+  serve:dev:
+    desc: Serve dev build using http-server on port 4000
+    cmds:
+      - npx http-server {{.DEV_DIR}} -p 4000 --cors -c-1
+
+  default:
+    desc: Show usage
+    cmds:
+      - task --list

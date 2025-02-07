@@ -32,6 +32,12 @@
         }
       };
     </script>
+    <!-- Add KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <!-- Optional: Add KaTeX JS for dynamic rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    
     <style>
       .post-navigation {
         display: flex;
@@ -80,6 +86,15 @@
         padding-top: 20px;
         border-top: 1px solid #eee;
       }
+
+      .math-display {
+        overflow-x: auto;
+        margin: 1em 0;
+      }
+      .math-inline {
+        display: inline-block;
+        vertical-align: middle;
+      }
     </style>
   </head>
   <body><header class="site-header" role="banner">
@@ -125,64 +140,43 @@
 
 <p>In this article, we establish a fundamental relationship: if <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span> is an antiderivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span>, then</p>
 
-<div class="kdmath">$$
-\int_{0}^{N} f(x) \, dx = F(N) - F(0).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{N} f(x) \; dx = F(N) - F(0).</annotation></semantics></math></span></div>
 
 <p>We shall derive this result from first principles by interpreting integration as the summing of infinitely many infinitesimal contributions and then using the definition of the derivative in a telescoping sum.</p>
 
 <h2 id="1-main-proof">1. Main Proof</h2>
 
-<p>We begin by defining the integral as the limit of a sum. Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> be an infinitely small increment and suppose that the interval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, N]</annotation></semantics></math></span> is divided into subintervals of width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> so that the number of subintervals is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">N/\Delta x</annotation></semantics></math></span>. Then the integral is defined by</p>
+<p>We begin by defining the integral as the limit of a sum. Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> be an infinitely small increment and suppose that the interval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, N]</annotation></semantics></math></span> is divided into subintervals of width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> so that the number of subintervals is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">N/\Delta x</annotation></semantics></math></span>. Then the integral is defined by</p>
 
-<div class="kdmath">$$
-\int_{0}^{N} f(x) \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></munderover><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{N} f(x) \; dx = \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x.</annotation></semantics></math></span></div>
 
 <p>Assume that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span> is an antiderivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span>; that is, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F&#x27;(x)=f(x)</annotation></semantics></math></span>. Then we may rewrite the sum by replacing <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span> with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F&#x27;(x)</annotation></semantics></math></span>:</p>
 
-<div class="kdmath">$$
-\int_{0}^{N} f(x) \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} F'(i \cdot \Delta x) \cdot \Delta x.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></munderover><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>i</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{N} f(x) \; dx = \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} F&#x27;(i \cdot \Delta x) \cdot \Delta x.</annotation></semantics></math></span></div>
 
 <p>Now, using the definition of the derivative for each term, we have</p>
 
-<div class="kdmath">$$
-F'(i \cdot \Delta x) = \frac{F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)}{\Delta x}.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>i</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>i</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>i</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F&#x27;(i \cdot \Delta x) = \frac{F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)}{\Delta x}.</annotation></semantics></math></span></div>
 
 <p>Substitute this back into the sum:</p>
 
-<div class="kdmath">$$
-\lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} \frac{F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)}{\Delta x} \cdot \Delta x.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></munderover><mfrac><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>i</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>i</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></mfrac><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} \frac{F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)}{\Delta x} \cdot \Delta x.</annotation></semantics></math></span></div>
 
-<p>Notice that the factor <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> in the numerator and denominator cancels:</p>
+<p>Notice that the factor <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> in the numerator and denominator cancels:</p>
 
-<div class="kdmath">$$
-\lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} \Bigl[F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)\Bigr].
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><mi>i</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>i</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} \Bigl[F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)\Bigr].</annotation></semantics></math></span></div>
 
 <p>Observe that this sum is telescoping. Writing out a few terms:</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-&\Bigl[F(\Delta x) - F(0)\Bigr] \;+\; \Bigl[F(2\Delta x) - F(\Delta x)\Bigr] \;+\; \Bigl[F(3\Delta x) - F(2\Delta x)\Bigr] \;+\; \cdots \\
-&\quad +\; \Bigl[F(N) - F(N-\Delta x)\Bigr].
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mtext>  </mtext><mo>+</mo><mtext>  </mtext><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mtext>  </mtext><mo>+</mo><mtext>  </mtext><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><mn>3</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mtext>  </mtext><mo>+</mo><mtext>  </mtext><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mtext>  </mtext><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo>−</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} &amp;\Bigl[F(\Delta x) - F(0)\Bigr] \;+\; \Bigl[F(2\Delta x) - F(\Delta x)\Bigr] \;+\; \Bigl[F(3\Delta x) - F(2\Delta x)\Bigr] \;+\; ... \\  +\; \Bigl[F(N) - F(N-\Delta x)\Bigr]. \end{array}</annotation></semantics></math></span></div>
 
 <p>Most of the terms cancel, leaving:</p>
 
-<div class="kdmath">$$
-\lim_{\Delta x \to 0} \Bigl[F(N) - F(0)\Bigr] = F(N) - F(0).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\lim_{\Delta x \to 0} \Bigl[F(N) - F(0)\Bigr] = F(N) - F(0).</annotation></semantics></math></span></div>
 
 <p>Thus, we have proved that</p>
 
-<div class="kdmath">$$
-\boxed{\int_{0}^{N} f(x) \, dx = F(N) - F(0).}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\int_{0}^{N} f(x) \; dx = F(N) - F(0).}</annotation></semantics></math></span></div>
 
 <h2 id="2-alternative-proof-by-telescoping-differences">2. Alternative Proof by Telescoping Differences</h2>
 
@@ -190,39 +184,23 @@ $$</div>
 
 <p>Consider the differences:</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-F(x + \Delta x) - F(x) &= f_{A_1} \, \Delta x + f_{A_3} \, (\Delta x)^2 + f_{A_4} \, (\Delta x)^3 + \ldots, \\
-F(x + 2\Delta x) - F(x + \Delta x) &= f_{A_1} (2\Delta x) + f_{A_3} (2\Delta x)^2 + f_{A_4} (2\Delta x)^3 + \ldots, \\
-F(x + 3\Delta x) - F(x + 2\Delta x) &= f_{A_1} (3\Delta x) + f_{A_3} (3\Delta x)^2 + f_{A_4} (3\Delta x)^3 + \ldots, \\
-&\;\vdots \\
-F(x + N\Delta x) - F(x + (N-1)\Delta x) &= f_{A_1} (N\Delta x) + f_{A_3} (N\Delta x)^2 + f_{A_4} (N\Delta x)^3 + \ldots.
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mtext>  </mtext><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>3</mn></msub></msub><mtext>  </mtext><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>4</mn></msub></msub><mtext>  </mtext><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup><mo>+</mo><mo>…</mo><mo separator="true">,</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>3</mn></msub></msub><mo stretchy="false">(</mo><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>4</mn></msub></msub><mo stretchy="false">(</mo><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup><mo>+</mo><mo>…</mo><mo separator="true">,</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>3</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><mn>3</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>3</mn></msub></msub><mo stretchy="false">(</mo><mn>3</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>4</mn></msub></msub><mo stretchy="false">(</mo><mn>3</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup><mo>+</mo><mo>…</mo><mo separator="true">,</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>  </mtext><mi><mi mathvariant="normal">⋮</mi><mpadded height="0em" voffset="0em"><mspace mathbackground="black" width="0em" height="1.5em"></mspace></mpadded></mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>N</mi><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mo stretchy="false">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><mi>N</mi><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>3</mn></msub></msub><mo stretchy="false">(</mo><mi>N</mi><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>4</mn></msub></msub><mo stretchy="false">(</mo><mi>N</mi><mi mathvariant="normal">Δ</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup><mo>+</mo><mo>…</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} F(x + \Delta x) - F(x) = f_{A_1} \; \Delta x + f_{A_3} \; (\Delta x)^2 + f_{A_4} \; (\Delta x)^3 + \ldots, \\ F(x + 2\Delta x) - F(x + \Delta x) = f_{A_1} (2\Delta x) + f_{A_3} (2\Delta x)^2 + f_{A_4} (2\Delta x)^3 + \ldots, \\ F(x + 3\Delta x) - F(x + 2\Delta x) = f_{A_1} (3\Delta x) + f_{A_3} (3\Delta x)^2 + f_{A_4} (3\Delta x)^3 + \ldots, \\ &amp;\;\vdots \\ F(x + N\Delta x) - F(x + (N-1)\Delta x) = f_{A_1} (N\Delta x) + f_{A_3} (N\Delta x)^2 + f_{A_4} (N\Delta x)^3 + \ldots. \end{array}</annotation></semantics></math></span></div>
 
 <p>If we sum these differences vertically, we have:</p>
 
-<div class="kdmath">$$
-\sum_{i=0}^{N/\Delta x -1} \Bigl[F(x+(i+1)\Delta x) - F(x+i\Delta x)\Bigr].
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mo stretchy="false">(</mo><mi>i</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>i</mi><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{N/\Delta x -1} \Bigl[F(x+(i+1)\Delta x) - F(x+i\Delta x)\Bigr].</annotation></semantics></math></span></div>
 
 <p>This sum telescopes:</p>
 
-<div class="kdmath">$$
-F(x+\Delta x) - F(x) + F(x+2\Delta x) - F(x+\Delta x) + \cdots + F(x+N\Delta x) - F(x+(N-1)\Delta x) = F(x+N\Delta x) - F(x).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>N</mi><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mo stretchy="false">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>N</mi><mi mathvariant="normal">Δ</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F(x+\Delta x) - F(x) + F(x+2\Delta x) - F(x+\Delta x) + ... + F(x+N\Delta x) - F(x+(N-1)\Delta x) = F(x+N\Delta x) - F(x).</annotation></semantics></math></span></div>
 
-<p>Taking the limit as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta x \to 0</annotation></semantics></math></span> (and noting <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>N</mi><mi mathvariant="normal">D</mi><mi>x</mi><mo>→</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">x+N\Delta x \to N</annotation></semantics></math></span> if we set <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math></span> for simplicity), we have:</p>
+<p>Taking the limit as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta x \to 0</annotation></semantics></math></span> (and noting <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>N</mi><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">x+N\Delta x \to N</annotation></semantics></math></span> if we set <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math></span> for simplicity), we have:</p>
 
-<div class="kdmath">$$
-\lim_{\Delta x \to 0} \bigl[F(N) - F(0)\bigr] = F(N) - F(0).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow></munder><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">[</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">]</mo><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\lim_{\Delta x \to 0} \bigl[F(N) - F(0)\bigr] = F(N) - F(0).</annotation></semantics></math></span></div>
 
 <p>Thus, we recover the fundamental relationship:</p>
 
-<div class="kdmath">$$
-\boxed{\int_{0}^{N} f(x) \, dx = F(N) - F(0).}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\int_{0}^{N} f(x) \; dx = F(N) - F(0).}</annotation></semantics></math></span></div>
 
 <h2 id="3-concluding-remarks">3. Concluding Remarks</h2>
 
@@ -242,68 +220,35 @@ $$</div>
 
 <p>Assume we have a continuously differentiable function <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span> with derivative <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F&#x27;(x) = f(x)</annotation></semantics></math></span>. We partition the interval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, N]</annotation></semantics></math></span> into <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span> subintervals of equal width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> so that</p>
 
-<div class="kdmath">$$
-x_i = 0 + i\,h, \quad \text{for } i = 0, 1, 2, \dots, M,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn><mo>+</mo><mi>i</mi><mtext>  </mtext><mi>h</mi><mo separator="true">,</mo><mspace width="1em" /><mtext>for </mtext><mi>i</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><mi>M</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">x_i = 0 + i\;h, \quad \text{for } i = 0, 1, 2, \dots, M,</annotation></semantics></math></span></div>
 
 <p>with</p>
 
-<div class="kdmath">$$
-M\,h = N.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>M</mi><mtext>  </mtext><mi>h</mi><mo>=</mo><mi>N</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">M\;h = N.</annotation></semantics></math></span></div>
 
 <p>For each subinterval, the change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span> is given by:</p>
 
-<div class="kdmath">$$
-F(x_{i+1}) - F(x_i).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F(x_{i+1}) - F(x_i).</annotation></semantics></math></span></div>
 
 <p>Step 1. Writing the Sum of the Differences</p>
 
 <p>We form the sum over all subintervals:</p>
 
-<div class="kdmath">$$
-\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr].
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr].</annotation></semantics></math></span></div>
 
 <p>Let’s write this out term by term:</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-\text{For } i=0:&\quad F(x_1) - F(x_0), \\
-\text{For } i=1:&\quad F(x_2) - F(x_1), \\
-\text{For } i=2:&\quad F(x_3) - F(x_2), \\
-&\quad \vdots \\
-\text{For } i=M-1:&\quad F(x_M) - F(x_{M-1}).
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>For </mtext><mi>i</mi><mo>=</mo><mn>0</mn><mo>:</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo separator="true">,</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>For </mtext><mi>i</mi><mo>=</mo><mn>1</mn><mo>:</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo separator="true">,</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>For </mtext><mi>i</mi><mo>=</mo><mn>2</mn><mo>:</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>3</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo separator="true">,</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi><mi mathvariant="normal">⋮</mi><mpadded height="0em" voffset="0em"><mspace mathbackground="black" width="0em" height="1.5em"></mspace></mpadded></mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>For </mtext><mi>i</mi><mo>=</mo><mi>M</mi><mo>−</mo><mn>1</mn><mo>:</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>M</mi></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} \text{For } i=0: F(x_1) - F(x_0), \\ \text{For } i=1: F(x_2) - F(x_1), \\ \text{For } i=2: F(x_3) - F(x_2), \\  \vdots \\ \text{For } i=M-1: F(x_M) - F(x_{M-1}). \end{array}</annotation></semantics></math></span></div>
 
 <p>Thus, the entire sum is:</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr]
-&= \Bigl[F(x_1) - F(x_0)\Bigr] \\
-&\quad + \Bigl[F(x_2) - F(x_1)\Bigr] \\
-&\quad + \Bigl[F(x_3) - F(x_2)\Bigr] \\
-&\quad + \cdots \\
-&\quad + \Bigl[F(x_M) - F(x_{M-1})\Bigr].
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mo>=</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>3</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>M</mi></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} \sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = \Bigl[F(x_1) - F(x_0)\Bigr] \\  + \Bigl[F(x_2) - F(x_1)\Bigr] \\  + \Bigl[F(x_3) - F(x_2)\Bigr] \\  + ... \\  + \Bigl[F(x_M) - F(x_{M-1})\Bigr]. \end{array}</annotation></semantics></math></span></div>
 
 <p>Step 2. Observing the Telescoping Pattern</p>
 
 <p>Now, write the sum out in full, showing the plus and minus signs:</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-\text{Sum} =\; &F(x_1) \quad - \; F(x_0) \\
-&+ \; F(x_2) \quad - \; F(x_1) \\
-&+ \; F(x_3) \quad - \; F(x_2) \\
-&\quad \vdots \\
-&+ \; F(x_M) \quad - \; F(x_{M-1}).
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>Sum</mtext><mo>=</mo><mtext>  </mtext></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mspace width="1em" /><mo>−</mo><mtext>  </mtext><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mtext>  </mtext><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mspace width="1em" /><mo>−</mo><mtext>  </mtext><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mtext>  </mtext><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>3</mn></msub><mo stretchy="false">)</mo><mspace width="1em" /><mo>−</mo><mtext>  </mtext><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi><mi mathvariant="normal">⋮</mi><mpadded height="0em" voffset="0em"><mspace mathbackground="black" width="0em" height="1.5em"></mspace></mpadded></mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mtext>  </mtext><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>M</mi></msub><mo stretchy="false">)</mo><mspace width="1em" /><mo>−</mo><mtext>  </mtext><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} \text{Sum} =\; &amp;F(x_1) \quad - \; F(x_0) \\ &amp;+ \; F(x_2) \quad - \; F(x_1) \\ &amp;+ \; F(x_3) \quad - \; F(x_2) \\  \vdots \\ &amp;+ \; F(x_M) \quad - \; F(x_{M-1}). \end{array}</annotation></semantics></math></span></div>
 
 <p>Notice what happens:</p>
 
@@ -315,55 +260,39 @@ $$</div>
 
 <p>Thus, all terms cancel except for the very first negative term and the very last positive term:</p>
 
-<div class="kdmath">$$
-\text{Sum} = F(x_M) - F(x_0).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Sum</mtext><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>M</mi></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\text{Sum} = F(x_M) - F(x_0).</annotation></semantics></math></span></div>
 
 <p>Since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_0 = 0</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>M</mi></msub><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">x_M = N</annotation></semantics></math></span>, we have:</p>
 
-<div class="kdmath">$$
-\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = F(N) - F(0).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = F(N) - F(0).</annotation></semantics></math></span></div>
 
 <p>Step 3. Taking the Limit</p>
 
 <p>In our definition of integration, we let the width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> approach 0 (and thus <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">M \to \infty</annotation></semantics></math></span>):</p>
 
-<div class="kdmath">$$
-\int_{0}^{N} f(x) \, dx = \lim_{h\to 0} \sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr].
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{N} f(x) \; dx = \lim_{h\to 0} \sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr].</annotation></semantics></math></span></div>
 
 <p>Since the telescoping sum is exactly <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(N) - F(0)</annotation></semantics></math></span> regardless of the number of subintervals, the limit is simply:</p>
 
-<div class="kdmath">$$
-\int_{0}^{N} f(x) \, dx = F(N) - F(0).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{N} f(x) \; dx = F(N) - F(0).</annotation></semantics></math></span></div>
 
 <h2 id="3-alternate-view-expressing-each-difference-as-a-series">3. Alternate View: Expressing Each Difference as a Series</h2>
 
 <p>For a more detailed look at the pattern, suppose that we express the change over each subinterval as a power series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>:</p>
 
-<div class="kdmath">$$
-F(x_i + h) - F(x_i) = f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><mi>h</mi><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>2</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mn>2</mn></msup><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>3</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mn>3</mn></msup><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F(x_i + h) - F(x_i) = f_{A_1}(x_i) \; h + f_{A_2}(x_i) \; h^2 + f_{A_3}(x_i) \; h^3 + ....</annotation></semantics></math></span></div>
 
 <p>Then the sum over all subintervals is:</p>
 
-<div class="kdmath">$$
-\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = \sum_{i=0}^{M-1} \Bigl[ f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots \Bigr].
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><mi>h</mi><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>2</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mn>2</mn></msup><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>3</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mn>3</mn></msup><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = \sum_{i=0}^{M-1} \Bigl[ f_{A_1}(x_i) \; h + f_{A_2}(x_i) \; h^2 + f_{A_3}(x_i) \; h^3 + ... \Bigr].</annotation></semantics></math></span></div>
 
 <p>When <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is very small, the dominant contribution comes from the first-order term:</p>
 
-<div class="kdmath">$$
-\sum_{i=0}^{M-1} f_{A_1}(x_i) \, h.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><mi>h</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{M-1} f_{A_1}(x_i) \; h.</annotation></semantics></math></span></div>
 
 <p>In the limit <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h \to 0</annotation></semantics></math></span>, this sum converges to the integral:</p>
 
-<div class="kdmath">$$
-\lim_{h\to 0} \sum_{i=0}^{M-1} f(x_i) \, h = \int_{0}^{N} f(x) \, dx,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><mi>h</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\lim_{h\to 0} \sum_{i=0}^{M-1} f(x_i) \; h = \int_{0}^{N} f(x) \; dx,</annotation></semantics></math></span></div>
 
 <p>since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f_{A_1}(x_i) = F&#x27;(x_i) = f(x_i)</annotation></semantics></math></span>.</p>
 
@@ -377,9 +306,7 @@ $$</div>
 
 <p>Suppose <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span> is a function that is differentiable (and, in fact, can be expanded in a power series) on the interval of interest. For a small increment <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> , we can write the change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span> over a single subinterval starting at <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span> as a power series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>:</p>
 
-<div class="kdmath">$$
-F(x_i + h) - F(x_i) = f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><mi>h</mi><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>2</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mn>2</mn></msup><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>3</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mn>3</mn></msup><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">F(x_i + h) - F(x_i) = f_{A_1}(x_i) \; h + f_{A_2}(x_i) \; h^2 + f_{A_3}(x_i) \; h^3 + ...,</annotation></semantics></math></span></div>
 
 <p>where:</p>
 
@@ -391,39 +318,29 @@ $$</div>
 
 <p>For simplicity, we denote the series as:</p>
 
-<div class="kdmath">$$
-F(x_i + h) - F(x_i) = \sum_{m=1}^{\infty} f_{A_m}(x_i) \, h^m.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><msub><mi>f</mi><msub><mi>A</mi><mi>m</mi></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mi>m</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F(x_i + h) - F(x_i) = \sum_{m=1}^{\infty} f_{A_m}(x_i) \; h^m.</annotation></semantics></math></span></div>
 
 <h3 id="2-forming-the-total-sum-over-the-partition">2. Forming the Total Sum over the Partition</h3>
 
 <p>Assume we partition the interval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, N]</annotation></semantics></math></span> into <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span> subintervals of equal width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> , so that:</p>
 
-<div class="kdmath">$$
-x_0 = 0,\quad x_1 = h,\quad x_2 = 2h,\quad \dots,\quad x_{M} = N,
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mspace width="1em" /><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mi>h</mi><mo separator="true">,</mo><mspace width="1em" /><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn><mi>h</mi><mo separator="true">,</mo><mspace width="1em" /><mo>…</mo><mo separator="true">,</mo><mspace width="1em" /><msub><mi>x</mi><mi>M</mi></msub><mo>=</mo><mi>N</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">x_0 = 0,\quad x_1 = h,\quad x_2 = 2h,\quad \dots,\quad x_{M} = N,</annotation></semantics></math></span></div>
 
 <p>with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⋅</mo><mi>h</mi><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">M \cdot h = N</annotation></semantics></math></span>.</p>
 
-<p>For each subinterval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[x_i,\; x_{i+1}]</annotation></semantics></math></span> the change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span> is given by:</p>
+<p>For each subinterval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><mtext>  </mtext><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[x_i,\; x_{i+1}]</annotation></semantics></math></span> the change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span> is given by:</p>
 
-<div class="kdmath">$$
-F(x_{i+1}) - F(x_i) = \sum_{m=1}^{\infty} f_{A_m}(x_i) \, h^m.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><msub><mi>f</mi><msub><mi>A</mi><mi>m</mi></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mi>m</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F(x_{i+1}) - F(x_i) = \sum_{m=1}^{\infty} f_{A_m}(x_i) \; h^m.</annotation></semantics></math></span></div>
 
 <p>Now, form the sum of these differences over all subintervals:</p>
 
-<div class="kdmath">$$
-\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = \sum_{i=0}^{M-1} \left[ \sum_{m=1}^{\infty} f_{A_m}(x_i) \, h^m \right].
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mrow><mo fence="true">[</mo><munderover><mo>∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><msub><mi>f</mi><msub><mi>A</mi><mi>m</mi></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mi>m</mi></msup><mo fence="true">]</mo></mrow><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = \sum_{i=0}^{M-1} \left[ \sum_{m=1}^{\infty} f_{A_m}(x_i) \; h^m \right].</annotation></semantics></math></span></div>
 
 <h3 id="3-interchanging-the-order-of-summation">3. Interchanging the Order of Summation</h3>
 
 <p>Since the sum is finite in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span> (from <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span> to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M-1</annotation></semantics></math></span>) and we assume that the series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> converges uniformly for sufficiently small <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>, we can interchange the order of summation:</p>
 
-<div class="kdmath">$$
-\sum_{i=0}^{M-1} \left[ \sum_{m=1}^{\infty} f_{A_m}(x_i) \, h^m \right] = \sum_{m=1}^{\infty} \left[ \sum_{i=0}^{M-1} f_{A_m}(x_i) \right] h^m.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mrow><mo fence="true">[</mo><munderover><mo>∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><msub><mi>f</mi><msub><mi>A</mi><mi>m</mi></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mi>m</mi></msup><mo fence="true">]</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mo fence="true">[</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>f</mi><msub><mi>A</mi><mi>m</mi></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo fence="true">]</mo></mrow><msup><mi>h</mi><mi>m</mi></msup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{M-1} \left[ \sum_{m=1}^{\infty} f_{A_m}(x_i) \; h^m \right] = \sum_{m=1}^{\infty} \left[ \sum_{i=0}^{M-1} f_{A_m}(x_i) \right] h^m.</annotation></semantics></math></span></div>
 
 <p>In this expression:</p>
 
@@ -436,24 +353,15 @@ $$</div>
 
 <p>Let’s consider the effect of summing the first-order terms (i.e., <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=1</annotation></semantics></math></span>):</p>
 
-<div class="kdmath">$$
-\text{First-order contribution: } \sum_{i=0}^{M-1} f_{A_1}(x_i) \, h.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>First-order contribution: </mtext><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><mi>h</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\text{First-order contribution: } \sum_{i=0}^{M-1} f_{A_1}(x_i) \; h.</annotation></semantics></math></span></div>
 
 <p>Since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f_{A_1}(x_i) = F&#x27;(x_i)</annotation></semantics></math></span>, and in the limit <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h \to 0</annotation></semantics></math></span> the sum approximates the integral of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F&#x27;(x)</annotation></semantics></math></span> over <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, N]</annotation></semantics></math></span>, we have:</p>
 
-<div class="kdmath">$$
-\lim_{h\to 0} \sum_{i=0}^{M-1} F'(x_i) \, h = \int_{0}^{N} F'(x) \, dx.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><mi>h</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\lim_{h\to 0} \sum_{i=0}^{M-1} F&#x27;(x_i) \; h = \int_{0}^{N} F&#x27;(x) \; dx.</annotation></semantics></math></span></div>
 
 <p>However, the beauty of the telescoping sum lies in how the differences add up directly without needing to integrate term by term. Write out the sum explicitly:</p>
 
-<div class="kdmath">$$
-\begin{aligned}
-\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] &= \bigl[F(x_1) - F(x_0)\bigr] + \bigl[F(x_2) - F(x_1)\bigr] \\
-&\quad + \bigl[F(x_3) - F(x_2)\bigr] + \cdots + \bigl[F(x_M) - F(x_{M-1})\bigr].
-\end{aligned}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.8em" maxsize="1.8em">]</mo><mo>=</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">]</mo><mo>+</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">]</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>+</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>3</mn></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">]</mo><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>M</mi></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">]</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{ll} \sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = \bigl[F(x_1) - F(x_0)\bigr] + \bigl[F(x_2) - F(x_1)\bigr] \\  + \bigl[F(x_3) - F(x_2)\bigr] + ... + \bigl[F(x_M) - F(x_{M-1})\bigr]. \end{array}</annotation></semantics></math></span></div>
 
 <p>Notice the cancellation:</p>
 
@@ -464,23 +372,17 @@ $$</div>
 
 <p>Thus, the entire sum simplifies to:</p>
 
-<div class="kdmath">$$
-F(x_M) - F(x_0) = F(N) - F(0).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>M</mi></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F(x_M) - F(x_0) = F(N) - F(0).</annotation></semantics></math></span></div>
 
 <h3 id="5-taking-the-limit-and-concluding">5. Taking the Limit and Concluding</h3>
 
-<p>When we let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h \to 0</annotation></semantics></math></span> (i.e., <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">M \to \infty</annotation></semantics></math></span> with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mspace width="1em"></mspace><mi>h</mi><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">M\;h = N</annotation></semantics></math></span>), the higher-order terms in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> vanish, and we obtain exactly:</p>
+<p>When we let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h \to 0</annotation></semantics></math></span> (i.e., <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">M \to \infty</annotation></semantics></math></span> with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mtext>  </mtext><mi>h</mi><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">M\;h = N</annotation></semantics></math></span>), the higher-order terms in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> vanish, and we obtain exactly:</p>
 
-<div class="kdmath">$$
-\int_{0}^{N} f(x) \, dx = \lim_{h\to 0} \sum_{i=0}^{M-1} \left[F(x_{i+1}) - F(x_i)\right] = F(N) - F(0).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><munder><mrow><mi>lim</mi><mo>⁡</mo></mrow><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow></munder><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mrow><mo fence="true">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo fence="true">]</mo></mrow><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{N} f(x) \; dx = \lim_{h\to 0} \sum_{i=0}^{M-1} \left[F(x_{i+1}) - F(x_i)\right] = F(N) - F(0).</annotation></semantics></math></span></div>
 
 <p>Thus, we have derived the Fundamental Theorem of Calculus:</p>
 
-<div class="kdmath">$$
-\boxed{\int_{0}^{N} f(x) \, dx = F(N) - F(0).}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\int_{0}^{N} f(x) \; dx = F(N) - F(0).}</annotation></semantics></math></span></div>
 
 <h2 id="6-summary-of-the-approach">6. Summary of the Approach</h2>
 
@@ -488,17 +390,13 @@ $$</div>
   <li>Express Each Increment as a Series:For each subinterval, write</li>
 </ol>
 
-<div class="kdmath">$$
-F(x_i+h) - F(x_i) = f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots.
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><mi>h</mi><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>2</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mn>2</mn></msup><mo>+</mo><msub><mi>f</mi><msub><mi>A</mi><mn>3</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mtext>  </mtext><msup><mi>h</mi><mn>3</mn></msup><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F(x_i+h) - F(x_i) = f_{A_1}(x_i) \; h + f_{A_2}(x_i) \; h^2 + f_{A_3}(x_i) \; h^3 + ....</annotation></semantics></math></span></div>
 
 <ol>
   <li>Sum Over All Subintervals:Add up the differences over all subintervals:</li>
 </ol>
 
-<div class="kdmath">$$
-\sum_{i=0}^{M-1} \left[F(x_{i+1}) - F(x_i)\right].
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></munderover><mrow><mo fence="true">[</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo fence="true">]</mo></mrow><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{M-1} \left[F(x_{i+1}) - F(x_i)\right].</annotation></semantics></math></span></div>
 
 <ol>
   <li>
@@ -512,17 +410,13 @@ $$</div>
   </li>
 </ol>
 
-<div class="kdmath">$$
-\int_{0}^{N} f(x) \, dx = F(N) - F(0).
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\int_{0}^{N} f(x) \; dx = F(N) - F(0).</annotation></semantics></math></span></div>
 
 <h2 id="7--conclusion">7.  Conclusion</h2>
 
 <p>By partitioning the interval and expressing the change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span> over a small increment <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> as a power series, we observe a clear telescoping pattern when we sum these differences. The intermediate terms cancel, leaving only the difference between the final and initial values, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(N) - F(0)</annotation></semantics></math></span>. Therefore, we arrive at the Fundamental Theorem of Calculus in its simplest form:</p>
 
-<div class="kdmath">$$
-\boxed{\int_{0}^{N} f(x) \, dx = F(N) - F(0).}
-$$</div>
+<div class="math-block"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>N</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow></mstyle></mstyle></mstyle></menclose></mrow><annotation encoding="application/x-tex">\boxed{\int_{0}^{N} f(x) \; dx = F(N) - F(0).}</annotation></semantics></math></span></div>
 
 <p>This approach, which relies solely on algebraic manipulations and limits, provides an intuitive and transparent derivation. By focusing on the visible pattern of cancellation in the telescoping sum, the connection between the derivative and the antiderivative becomes clear.</p>
 
