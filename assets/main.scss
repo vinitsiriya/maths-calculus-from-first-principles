@@ -1,4 +1,5 @@
 @import "minima";
+@import "math"; // Ensure math.css is imported
 
 .math-block, .math-inline {
   svg {
@@ -50,4 +51,10 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+// Global font settings (if needed)
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
 }

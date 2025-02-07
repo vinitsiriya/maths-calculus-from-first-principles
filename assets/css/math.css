@@ -1,0 +1,114 @@
+/* Optional: Load math-specific font if hosted locally or via CDN */
+@font-face {
+  font-family: 'STIX Two Math';
+  src: url('../fonts/STIXTwoMath-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Set a global math font */
+.math-block-svg,
+.math-inline-svg {
+  font-family: 'STIX Two Math', Cambria, "Times New Roman", serif;
+  line-height: 1.2;
+  color: inherit;
+}
+
+/* Math block container structure */
+.math-block {
+  display: block;
+  margin: 2em auto;
+  text-align: center;
+  max-width: 100%;
+  position: relative;
+}
+
+.math-block-svg {
+  display: inline-flex;  /* Changed to inline-flex */
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.math-block-inner {
+  display: inline-block;
+  min-width: min-content;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  padding: 0.5em;
+  margin: 0 auto;
+}
+
+/* SVG sizing and positioning */
+.math-block-svg svg {
+  display: block;
+  height: auto;
+  max-height: none;
+  width: auto;
+  transform-origin: center;
+  transform: scale(0.85);
+  flex-shrink: 0; /* Prevent SVG from shrinking */
+}
+
+/* Inline math adjustments */
+.math-inline-svg {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  position: relative;
+  margin: 0 0.15em;
+  height: 1.2em;
+}
+
+.math-inline-svg svg {
+  height: 100%;
+  width: auto;
+  transform-origin: center;
+  transform: scale(0.75);
+}
+
+/* Common adjustments for SVG */
+.math-block-svg svg,
+.math-inline-svg svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Error styling */
+.math-error {
+  color: #e22;
+  border-bottom: 1px dotted #e22;
+  padding: 0 0.2em;
+}
+
+/* Dark mode tweaks */
+@media (prefers-color-scheme: dark) {
+  .math-block-svg svg,
+  .math-inline-svg svg {
+    fill: #fff;
+  }
+  
+  .math-block-inner {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+  }
+}
+
+/* Print adjustments */
+@media print {
+  .math-block-svg,
+  .math-inline-svg {
+    overflow: visible;
+  }
+  
+  .math-block-svg svg,
+  .math-inline-svg svg {
+    max-width: 100% !important;
+    transform: none !important;
+  }
+}

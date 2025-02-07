@@ -3,7 +3,8 @@
     "katex": "^0.16.21",
     "mathjax-node": "^2.1.1",
     "phantomjs-prebuilt": "^2.1.16",
-    "tex2png": "^1.0.2"
+    "texsvg": "latest",
+    "json-rpc-2.0": "^1.7.0"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
@@ -12,10 +13,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-math": "node scripts/math-service.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "private": true
 }
