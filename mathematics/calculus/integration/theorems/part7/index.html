@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>VII. Building Calculus from First Principles - Fundamental Theorem of Calculus | Calculus from First Principles</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="VII. Building Calculus from First Principles - Fundamental Theorem of Calculus" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Building Calculus from First Principles" />
+<meta property="og:description" content="Building Calculus from First Principles" />
+<link rel="canonical" href="https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/integration/theorems/part7/" />
+<meta property="og:url" content="https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/integration/theorems/part7/" />
+<meta property="og:site_name" content="Calculus from First Principles" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-02-05T16:10:48+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="VII. Building Calculus from First Principles - Fundamental Theorem of Calculus" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-05T16:10:48+05:30","datePublished":"2025-02-05T16:10:48+05:30","description":"Building Calculus from First Principles","headline":"VII. Building Calculus from First Principles - Fundamental Theorem of Calculus","mainEntityOfPage":{"@type":"WebPage","@id":"https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/integration/theorems/part7/"},"url":"https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/integration/theorems/part7/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/maths-calculus-from-first-principles/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://vinitsiriya.github.io/maths-calculus-from-first-principles/feed.xml" title="Calculus from First Principles" /></head>
+<head>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <style>
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+      }
+      
+      .prev, .next {
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+        color: #333;
+        transition: background-color 0.3s ease;
+      }
+
+      .prev:hover, .next:hover {
+        background-color: #e9ecef;
+      }
+
+      .post-categories {
+        margin: 15px 0;
+      }
+
+      .category-tag {
+        display: inline-block;
+        padding: 4px 8px;
+        margin-right: 5px;
+        background-color: #e9ecef;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+
+      .top-nav {
+        margin: 15px 0 25px 0;
+        padding-top: 0;
+        border-top: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+      }
+
+      .bottom-nav {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/maths-calculus-from-first-principles/">Calculus from First Principles</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/maths-calculus-from-first-principles/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<article class="post h-entry">
+  <header class="post-header">
+    <h1 class="post-title p-name">VII. Building Calculus from First Principles - Fundamental Theorem of Calculus</h1>
+    
+    <div class="post-categories">
+      Categories: 
+      
+      <span class="category-tag">mathematics</span>
+      
+      <span class="category-tag">calculus</span>
+      
+      <span class="category-tag">integration</span>
+      
+      <span class="category-tag">theorems</span>
+      
+    </div>
+    
+
+    <div class="post-navigation top-nav">
+      
+        <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/series/binomial-theorem/part6-b/">&larr; Previous: VI-B. Building Calculus from First Principles - Derivation of Sums of Powers</a>
+      
+
+      
+        <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/difference-equations/part8/">Next: VIII. Building Calculus from First Principles - Difference Equations for the Anti-Derivative &rarr;</a>
+      
+    </div>
+  </header>
+
+  <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
+
+<h2 id="part-vii--fundamental-theorem-of-calculus">Part VII: # Fundamental Theorem of Calculus</h2>
+
+<p>In this article, we establish a fundamental relationship: if $F(x)$ is an antiderivative of $f(x)$, then</p>
+
+<div class="kdmath">$$
+\int_{0}^{N} f(x) \, dx = F(N) - F(0).
+$$</div>
+
+<p>We shall derive this result from first principles by interpreting integration as the summing of infinitely many infinitesimal contributions and then using the definition of the derivative in a telescoping sum.</p>
+
+<h2 id="1-main-proof">1. Main Proof</h2>
+
+<p>We begin by defining the integral as the limit of a sum. Let $\Delta x$ be an infinitely small increment and suppose that the interval $[0, N]$ is divided into subintervals of width $\Delta x$ so that the number of subintervals is $N/\Delta x$. Then the integral is defined by</p>
+
+<div class="kdmath">$$
+\int_{0}^{N} f(x) \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x.
+$$</div>
+
+<p>Assume that $F(x)$ is an antiderivative of $f(x)$; that is, $F’(x)=f(x)$. Then we may rewrite the sum by replacing $f(x)$ with $F’(x)$:</p>
+
+<div class="kdmath">$$
+\int_{0}^{N} f(x) \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} F'(i \cdot \Delta x) \cdot \Delta x.
+$$</div>
+
+<p>Now, using the definition of the derivative for each term, we have</p>
+
+<div class="kdmath">$$
+F'(i \cdot \Delta x) = \frac{F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)}{\Delta x}.
+$$</div>
+
+<p>Substitute this back into the sum:</p>
+
+<div class="kdmath">$$
+\lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} \frac{F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)}{\Delta x} \cdot \Delta x.
+$$</div>
+
+<p>Notice that the factor $\Delta x$ in the numerator and denominator cancels:</p>
+
+<div class="kdmath">$$
+\lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} \Bigl[F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)\Bigr].
+$$</div>
+
+<p>Observe that this sum is telescoping. Writing out a few terms:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+&\Bigl[F(\Delta x) - F(0)\Bigr] \;+\; \Bigl[F(2\Delta x) - F(\Delta x)\Bigr] \;+\; \Bigl[F(3\Delta x) - F(2\Delta x)\Bigr] \;+\; \cdots \\
+&\quad +\; \Bigl[F(N) - F(N-\Delta x)\Bigr].
+\end{aligned}
+$$</div>
+
+<p>Most of the terms cancel, leaving:</p>
+
+<div class="kdmath">$$
+\lim_{\Delta x \to 0} \Bigl[F(N) - F(0)\Bigr] = F(N) - F(0).
+$$</div>
+
+<p>Thus, we have proved that</p>
+
+<div class="kdmath">$$
+\boxed{\int_{0}^{N} f(x) \, dx = F(N) - F(0).}
+$$</div>
+
+<h2 id="2-alternative-proof-by-telescoping-differences">2. Alternative Proof by Telescoping Differences</h2>
+
+<p>An alternative proof uses the idea of examining the differences between successive increments of the function $F$.</p>
+
+<p>Consider the differences:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+F(x + \Delta x) - F(x) &= f_{A_1} \, \Delta x + f_{A_3} \, (\Delta x)^2 + f_{A_4} \, (\Delta x)^3 + \ldots, \\
+F(x + 2\Delta x) - F(x + \Delta x) &= f_{A_1} (2\Delta x) + f_{A_3} (2\Delta x)^2 + f_{A_4} (2\Delta x)^3 + \ldots, \\
+F(x + 3\Delta x) - F(x + 2\Delta x) &= f_{A_1} (3\Delta x) + f_{A_3} (3\Delta x)^2 + f_{A_4} (3\Delta x)^3 + \ldots, \\
+&\;\vdots \\
+F(x + N\Delta x) - F(x + (N-1)\Delta x) &= f_{A_1} (N\Delta x) + f_{A_3} (N\Delta x)^2 + f_{A_4} (N\Delta x)^3 + \ldots.
+\end{aligned}
+$$</div>
+
+<p>If we sum these differences vertically, we have:</p>
+
+<div class="kdmath">$$
+\sum_{i=0}^{N/\Delta x -1} \Bigl[F(x+(i+1)\Delta x) - F(x+i\Delta x)\Bigr].
+$$</div>
+
+<p>This sum telescopes:</p>
+
+<div class="kdmath">$$
+F(x+\Delta x) - F(x) + F(x+2\Delta x) - F(x+\Delta x) + \cdots + F(x+N\Delta x) - F(x+(N-1)\Delta x) = F(x+N\Delta x) - F(x).
+$$</div>
+
+<p>Taking the limit as $\Delta x \to 0$ (and noting $x+N\Delta x \to N$ if we set $x=0$ for simplicity), we have:</p>
+
+<div class="kdmath">$$
+\lim_{\Delta x \to 0} \bigl[F(N) - F(0)\bigr] = F(N) - F(0).
+$$</div>
+
+<p>Thus, we recover the fundamental relationship:</p>
+
+<div class="kdmath">$$
+\boxed{\int_{0}^{N} f(x) \, dx = F(N) - F(0).}
+$$</div>
+
+<h2 id="3-concluding-remarks">3. Concluding Remarks</h2>
+
+<p>Both proofs illustrate the same underlying idea: integration is the summation of infinitely many infinitesimally small contributions. By expressing the integral as a limit of sums and then re-writing the summand using the definition of the derivative, we obtain a telescoping sum. The telescoping nature of the sum naturally leads to the result $F(N)-F(0)$.</p>
+
+<p>This foundational result—the Fundamental Theorem of Calculus—shows the deep connection between differentiation and integration, establishing that the accumulation of infinitesimal changes (integration) recovers the net change in a function (difference of the antiderivative).</p>
+
+<p>End of Article</p>
+
+<p>This article presents a natural, intuitive, and algebraic proof of the Fundamental Theorem of Calculus, incorporating all of your rough work while ensuring clarity and completeness. It avoids advanced terminology and focuses solely on the algebraic structure of the limit of sums, making the foundational ideas accessible.</p>
+
+<p>o3-mini-high</p>
+
+<p>Below is an extended, “dumbed-down” explanation that shows every intermediate step between forming the sum of differences over the partition and recognizing its telescoping nature. This version is intended to help you visualize the pattern clearly.</p>
+
+<h3 id="detailed-steps-in-the-telescoping-sum">Detailed Steps in the Telescoping Sum</h3>
+
+<p>Assume we have a continuously differentiable function $F(x)$ with derivative $F’(x) = f(x)$. We partition the interval $[0, N]$ into $M$ subintervals of equal width $h$ so that</p>
+
+<div class="kdmath">$$
+x_i = 0 + i\,h, \quad \text{for } i = 0, 1, 2, \dots, M,
+$$</div>
+
+<p>with</p>
+
+<div class="kdmath">$$
+M\,h = N.
+$$</div>
+
+<p>For each subinterval, the change in $F$ is given by:</p>
+
+<div class="kdmath">$$
+F(x_{i+1}) - F(x_i).
+$$</div>
+
+<p>Step 1. Writing the Sum of the Differences</p>
+
+<p>We form the sum over all subintervals:</p>
+
+<div class="kdmath">$$
+\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr].
+$$</div>
+
+<p>Let’s write this out term by term:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+\text{For } i=0:&\quad F(x_1) - F(x_0), \\
+\text{For } i=1:&\quad F(x_2) - F(x_1), \\
+\text{For } i=2:&\quad F(x_3) - F(x_2), \\
+&\quad \vdots \\
+\text{For } i=M-1:&\quad F(x_M) - F(x_{M-1}).
+\end{aligned}
+$$</div>
+
+<p>Thus, the entire sum is:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr]
+&= \Bigl[F(x_1) - F(x_0)\Bigr] \\
+&\quad + \Bigl[F(x_2) - F(x_1)\Bigr] \\
+&\quad + \Bigl[F(x_3) - F(x_2)\Bigr] \\
+&\quad + \cdots \\
+&\quad + \Bigl[F(x_M) - F(x_{M-1})\Bigr].
+\end{aligned}
+$$</div>
+
+<p>Step 2. Observing the Telescoping Pattern</p>
+
+<p>Now, write the sum out in full, showing the plus and minus signs:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+\text{Sum} =\; &F(x_1) \quad - \; F(x_0) \\
+&+ \; F(x_2) \quad - \; F(x_1) \\
+&+ \; F(x_3) \quad - \; F(x_2) \\
+&\quad \vdots \\
+&+ \; F(x_M) \quad - \; F(x_{M-1}).
+\end{aligned}
+$$</div>
+
+<p>Notice what happens:</p>
+
+<ul>
+  <li>$F(x_1)$ appears first as $+F(x_1)$ and then as $-F(x_1)$. They cancel.</li>
+  <li>Similarly, $F(x_2)$ appears as $+F(x_2)$ and then $-F(x_2)$, canceling each other.</li>
+  <li>This cancellation continues for all intermediate terms.</li>
+</ul>
+
+<p>Thus, all terms cancel except for the very first negative term and the very last positive term:</p>
+
+<div class="kdmath">$$
+\text{Sum} = F(x_M) - F(x_0).
+$$</div>
+
+<p>Since $x_0 = 0$ and $x_M = N$, we have:</p>
+
+<div class="kdmath">$$
+\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = F(N) - F(0).
+$$</div>
+
+<p>Step 3. Taking the Limit</p>
+
+<p>In our definition of integration, we let the width $h$ approach 0 (and thus $M \to \infty$):</p>
+
+<div class="kdmath">$$
+\int_{0}^{N} f(x) \, dx = \lim_{h\to 0} \sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr].
+$$</div>
+
+<p>Since the telescoping sum is exactly $F(N) - F(0)$ regardless of the number of subintervals, the limit is simply:</p>
+
+<div class="kdmath">$$
+\int_{0}^{N} f(x) \, dx = F(N) - F(0).
+$$</div>
+
+<h2 id="3-alternate-view-expressing-each-difference-as-a-series">3. Alternate View: Expressing Each Difference as a Series</h2>
+
+<p>For a more detailed look at the pattern, suppose that we express the change over each subinterval as a power series in $h$:</p>
+
+<div class="kdmath">$$
+F(x_i + h) - F(x_i) = f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots.
+$$</div>
+
+<p>Then the sum over all subintervals is:</p>
+
+<div class="kdmath">$$
+\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = \sum_{i=0}^{M-1} \Bigl[ f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots \Bigr].
+$$</div>
+
+<p>When $h$ is very small, the dominant contribution comes from the first-order term:</p>
+
+<div class="kdmath">$$
+\sum_{i=0}^{M-1} f_{A_1}(x_i) \, h.
+$$</div>
+
+<p>In the limit $h \to 0$, this sum converges to the integral:</p>
+
+<div class="kdmath">$$
+\lim_{h\to 0} \sum_{i=0}^{M-1} f(x_i) \, h = \int_{0}^{N} f(x) \, dx,
+$$</div>
+
+<p>since $f_{A_1}(x_i) = F’(x_i) = f(x_i).</p>
+
+<p>The higher-order terms vanish in the limit, and the telescoping structure (shown above) ensures that the entire sum equals $F(N) - F(0)$.</p>
+
+<p>ChatGPTReasoned for a couple of secondsBelow is an expanded version of the “Alternate View” section that explains, step by step, how to express each difference as a power series and then sum these differences to reveal the telescoping pattern. This detailed explanation is intended to make the process completely clear and intuitive.</p>
+
+<h2 id="alternate-view-expressing-each-difference-as-a-series">Alternate View: Expressing Each Difference as a Series</h2>
+
+<h3 id="1-expressing-the-incremental-change-as-a-series">1. Expressing the Incremental Change as a Series</h3>
+
+<p>Suppose $F(x)$ is a function that is differentiable (and, in fact, can be expanded in a power series) on the interval of interest. For a small increment $h$, we can write the change in $F$ over a single subinterval starting at $x_i$ as a power series in $h$:</p>
+
+<div class="kdmath">$$
+F(x_i + h) - F(x_i) = f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots,
+$$</div>
+
+<p>where:</p>
+
+<ul>
+  <li>$f_{A_1}(x_i)$ is the coefficient of the linear term, which equals $F’(x_i)$;</li>
+  <li>$f_{A_2}(x_i)$ is the coefficient of the quadratic term, related to $\frac{F’‘(x_i)}{2!}$;</li>
+  <li>$f_{A_3}(x_i)$ is the coefficient of the cubic term, and so on.</li>
+</ul>
+
+<p>For simplicity, we denote the series as:</p>
+
+<div class="kdmath">$$
+F(x_i + h) - F(x_i) = \sum_{m=1}^{\infty} f_{A_m}(x_i) \, h^m.
+$$</div>
+
+<h3 id="2-forming-the-total-sum-over-the-partition">2. Forming the Total Sum over the Partition</h3>
+
+<p>Assume we partition the interval $[0, N]$ into $M$ subintervals of equal width $h$, so that:</p>
+
+<div class="kdmath">$$
+x_0 = 0,\quad x_1 = h,\quad x_2 = 2h,\quad \dots,\quad x_{M} = N,
+$$</div>
+
+<p>with $M \cdot h = N$.</p>
+
+<p>For each subinterval $[x_i,\, x_{i+1}]$ the change in $F$ is given by:</p>
+
+<div class="kdmath">$$
+F(x_{i+1}) - F(x_i) = \sum_{m=1}^{\infty} f_{A_m}(x_i) \, h^m.
+$$</div>
+
+<p>Now, form the sum of these differences over all subintervals:</p>
+
+<div class="kdmath">$$
+\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = \sum_{i=0}^{M-1} \left[ \sum_{m=1}^{\infty} f_{A_m}(x_i) \, h^m \right].
+$$</div>
+
+<h3 id="3-interchanging-the-order-of-summation">3. Interchanging the Order of Summation</h3>
+
+<p>Since the sum is finite in $i$ (from $0$ to $M-1$) and we assume that the series in $h$ converges uniformly for sufficiently small $h$, we can interchange the order of summation:</p>
+
+<div class="kdmath">$$
+\sum_{i=0}^{M-1} \left[ \sum_{m=1}^{\infty} f_{A_m}(x_i) \, h^m \right] = \sum_{m=1}^{\infty} \left[ \sum_{i=0}^{M-1} f_{A_m}(x_i) \right] h^m.
+$$</div>
+
+<p>In this expression:</p>
+
+<ul>
+  <li>The inner sum $\sum_{i=0}^{M-1} f_{A_m}(x_i)$ collects the coefficients of $h^m$ from each subinterval.</li>
+  <li>The outer sum then reassembles the entire contribution in powers of $h$.</li>
+</ul>
+
+<h3 id="4-observing-the-telescoping-behavior">4. Observing the Telescoping Behavior</h3>
+
+<p>Let’s consider the effect of summing the first-order terms (i.e., $m=1$):</p>
+
+<div class="kdmath">$$
+\text{First-order contribution: } \sum_{i=0}^{M-1} f_{A_1}(x_i) \, h.
+$$</div>
+
+<p>Since $f_{A_1}(x_i) = F’(x_i)$, and in the limit $h \to 0$ the sum approximates the integral of $F’(x)$ over $[0, N]$, we have:</p>
+
+<div class="kdmath">$$
+\lim_{h\to 0} \sum_{i=0}^{M-1} F'(x_i) \, h = \int_{0}^{N} F'(x) \, dx.
+$$</div>
+
+<p>However, the beauty of the telescoping sum lies in how the differences add up directly without needing to integrate term by term. Write out the sum explicitly:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+\sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] &= \bigl[F(x_1) - F(x_0)\bigr] + \bigl[F(x_2) - F(x_1)\bigr] \\
+&\quad + \bigl[F(x_3) - F(x_2)\bigr] + \cdots + \bigl[F(x_M) - F(x_{M-1})\bigr].
+\end{aligned}
+$$</div>
+
+<p>Notice the cancellation:</p>
+
+<ul>
+  <li>$F(x_1)$ appears positively in the first term and negatively in the second.</li>
+  <li>$F(x_2)$ appears in the second term and cancels with the third, and so on.</li>
+</ul>
+
+<p>Thus, the entire sum simplifies to:</p>
+
+<div class="kdmath">$$
+F(x_M) - F(x_0) = F(N) - F(0).
+$$</div>
+
+<h3 id="5-taking-the-limit-and-concluding">5. Taking the Limit and Concluding</h3>
+
+<p>When we let $h \to 0$ (i.e., $M \to \infty$ with $M\,h = N$), the higher-order terms in $h$ vanish, and we obtain exactly:</p>
+
+<div class="kdmath">$$
+\int_{0}^{N} f(x) \, dx = \lim_{h\to 0} \sum_{i=0}^{M-1} \left[F(x_{i+1}) - F(x_i)\right] = F(N) - F(0).
+$$</div>
+
+<p>Thus, we have derived the Fundamental Theorem of Calculus:</p>
+
+<div class="kdmath">$$
+\boxed{\int_{0}^{N} f(x) \, dx = F(N) - F(0).}
+$$</div>
+
+<h2 id="6-summary-of-the-approach">6. Summary of the Approach</h2>
+
+<ol>
+  <li>Express Each Increment as a Series:For each subinterval, write</li>
+</ol>
+
+<div class="kdmath">$$
+F(x_i+h) - F(x_i) = f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots.
+$$</div>
+
+<ol>
+  <li>Sum Over All Subintervals:Add up the differences over all subintervals:</li>
+</ol>
+
+<div class="kdmath">$$
+\sum_{i=0}^{M-1} \left[F(x_{i+1}) - F(x_i)\right].
+$$</div>
+
+<ol>
+  <li>
+    <p>Interchange the Summation Order:Change the order of summation to collect coefficients of like powers of $h$.</p>
+  </li>
+  <li>
+    <p>Observe the Telescoping Cancellation:Notice that the sum collapses to $F(N) - F(0)$ because every intermediate term cancels.</p>
+  </li>
+  <li>
+    <p>Take the Limit as $h \to 0$:Conclude that the sum converges to the integral:</p>
+  </li>
+</ol>
+
+<div class="kdmath">$$
+\int_{0}^{N} f(x) \, dx = F(N) - F(0).
+$$</div>
+
+<h2 id="7--conclusion">7.  Conclusion</h2>
+
+<p>By partitioning the interval and expressing the change in $F(x)$ over a small increment $h$ as a power series, we observe a clear telescoping pattern when we sum these differences. The intermediate terms cancel, leaving only the difference between the final and initial values, $F(N) - F(0)$. Therefore, we arrive at the Fundamental Theorem of Calculus in its simplest form:</p>
+
+<div class="kdmath">$$
+\boxed{\int_{0}^{N} f(x) \, dx = F(N) - F(0).}
+$$</div>
+
+<p>This approach, which relies solely on algebraic manipulations and limits, provides an intuitive and transparent derivation. By focusing on the visible pattern of cancellation in the telescoping sum, the connection between the derivative and the antiderivative becomes clear.</p>
+
+<p>End of Article</p>
+
+<p>This detailed explanation includes intermediate steps with clear, explicit summations that reveal the telescoping nature of the sum. It is designed to be intuitive and accessible, allowing you (or any reader) to see the pattern step by step. Let me know if you need any additional clarifications or further elaborations!</p>
+
+
+  <div class="post-navigation bottom-nav">
+    
+      <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/series/binomial-theorem/part6-b/">&larr; Previous: VI-B. Building Calculus from First Principles - Derivation of Sums of Powers</a>
+    
+
+    
+      <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/difference-equations/part8/">Next: VIII. Building Calculus from First Principles - Difference Equations for the Anti-Derivative &rarr;</a>
+    
+  </div>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/maths-calculus-from-first-principles/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Calculus from First Principles</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Calculus from First Principles</li><li><a class="u-email" href="mailto:vinitsiriya@gmail.com">vinitsiriya@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/vinitsiriya"><svg class="svg-icon"><use xlink:href="/maths-calculus-from-first-principles/assets/minima-social-icons.svg#github"></use></svg> <span class="username">vinitsiriya</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A comprehensive exploration of calculus starting from fundamental principles. Journey through limits, derivatives, integrals, and series with clear explanations and visible algebaric patterns.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+</html>

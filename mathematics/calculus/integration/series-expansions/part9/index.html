@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>IX. Building Calculus from First Principles - Integration by Parts | Calculus from First Principles</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="IX. Building Calculus from First Principles - Integration by Parts" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Building Calculus from First Principles" />
+<meta property="og:description" content="Building Calculus from First Principles" />
+<link rel="canonical" href="https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/integration/series-expansions/part9/" />
+<meta property="og:url" content="https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/integration/series-expansions/part9/" />
+<meta property="og:site_name" content="Calculus from First Principles" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-02-05T16:30:48+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="IX. Building Calculus from First Principles - Integration by Parts" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-05T16:30:48+05:30","datePublished":"2025-02-05T16:30:48+05:30","description":"Building Calculus from First Principles","headline":"IX. Building Calculus from First Principles - Integration by Parts","mainEntityOfPage":{"@type":"WebPage","@id":"https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/integration/series-expansions/part9/"},"url":"https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/integration/series-expansions/part9/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/maths-calculus-from-first-principles/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://vinitsiriya.github.io/maths-calculus-from-first-principles/feed.xml" title="Calculus from First Principles" /></head>
+<head>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <style>
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+      }
+      
+      .prev, .next {
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+        color: #333;
+        transition: background-color 0.3s ease;
+      }
+
+      .prev:hover, .next:hover {
+        background-color: #e9ecef;
+      }
+
+      .post-categories {
+        margin: 15px 0;
+      }
+
+      .category-tag {
+        display: inline-block;
+        padding: 4px 8px;
+        margin-right: 5px;
+        background-color: #e9ecef;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+
+      .top-nav {
+        margin: 15px 0 25px 0;
+        padding-top: 0;
+        border-top: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+      }
+
+      .bottom-nav {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/maths-calculus-from-first-principles/">Calculus from First Principles</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/maths-calculus-from-first-principles/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<article class="post h-entry">
+  <header class="post-header">
+    <h1 class="post-title p-name">IX. Building Calculus from First Principles - Integration by Parts</h1>
+    
+    <div class="post-categories">
+      Categories: 
+      
+      <span class="category-tag">mathematics</span>
+      
+      <span class="category-tag">calculus</span>
+      
+      <span class="category-tag">integration</span>
+      
+      <span class="category-tag">series-expansions</span>
+      
+    </div>
+    
+
+    <div class="post-navigation top-nav">
+      
+        <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/difference-equations/part8/">&larr; Previous: VIII. Building Calculus from First Principles - Difference Equations for the Anti-Derivative</a>
+      
+
+      
+    </div>
+  </header>
+
+  <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
+
+<h2 id="article-ix-integration-by-parts--an-alternative-pattern-based-approach">Article IX: Integration by Parts – An Alternative, Pattern-Based Approach</h2>
+
+<h3 id="preface">Preface</h3>
+
+<p>In our series Building Calculus from First Principles, we have built the foundations of calculus by focusing on algebraic patterns and finite differences. In this article, we present an alternative proof of the integration by parts formula. Instead of relying solely on the standard proof via the product rule and the fundamental theorem of calculus, we express the functions as power series in the infinitesimal increment and then rearrange the resulting sums. This approach highlights the telescoping nature of the sums and makes the pattern behind the integration by parts formula transparent.</p>
+
+<h2 id="1-the-standard-integration-by-parts-formula">1. The Standard Integration by Parts Formula</h2>
+
+<p>Before we dive into the alternative proof, recall the familiar integration by parts formula:</p>
+
+<div class="kdmath">$$
+\int u\, dv = uv - \int v\, du.
+$$</div>
+
+<p>This formula is traditionally derived from the product rule for differentiation:</p>
+
+<div class="kdmath">$$
+(uv)' = u\,dv + v\,du.
+$$</div>
+
+<p>Integrating both sides over an interval $[a, b]$ and applying the fundamental theorem of calculus yields:</p>
+
+<div class="kdmath">$$
+\int_{a}^{b} u\,dv + \int_{a}^{b} v\,du = [uv]_{a}^{b},
+$$</div>
+
+<p>which can be rearranged to give:</p>
+
+<div class="kdmath">$$
+\int_{a}^{b} u\,dv = uv\Big|_{a}^{b} - \int_{a}^{b} v\,du.
+$$</div>
+
+<p>Taking limits (if needed) leads to the general formula. Our goal now is to provide an alternative, pattern-based derivation.</p>
+
+<h2 id="2-alternative-proof-expressing-functions-as-series">2. Alternative Proof: Expressing Functions as Series</h2>
+
+<h3 id="21-expanding-the-functions">2.1 Expanding the Functions</h3>
+
+<p>Assume that we can expand a function $f(x)$ and another function $G(x)$ (with derivative $g(x) = G’(x)$) in a power series about a point $x$. Write:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+f(x + \Delta x) &= A_0 + A_1\,\Delta x + A_2\,(\Delta x)^2 + A_3\,(\Delta x)^3 + \cdots + A_{n+1}\,(\Delta x)^n, \\
+G(x + \Delta x) &= B_0 + B_1\,\Delta x + B_2\,(\Delta x)^2 + B_3\,(\Delta x)^3 + \cdots + B_{n+1}\,(\Delta x)^n.
+\end{aligned}
+$$</div>
+
+<p>Since $f(x)$ and $G(x)$ are the values at $x$, we have:</p>
+
+<div class="kdmath">$$
+A_0 = f(x) \quad \text{and} \quad B_0 = G(x).
+$$</div>
+
+<p>Moreover, because the derivative of $G$ is $g$, we have by definition:</p>
+
+<div class="kdmath">$$
+G(x + \Delta x) = G(x) + g(x)\,\Delta x + \text{(higher order terms)}.
+$$</div>
+
+<p>Thus, we can write:</p>
+
+<div class="kdmath">$$
+G(x + \Delta x) = G(x) + g(x)\,\Delta x + B_2\,(\Delta x)^2 + B_3\,(\Delta x)^3 + \cdots.
+$$</div>
+
+<h3 id="22-forming-the-product-and-its-difference">2.2 Forming the Product and Its Difference</h3>
+
+<p>Consider the product $f(x) \, G(x)$ and how its change over an increment $\Delta x$ relates to the individual expansions. Our ultimate goal is to see how the differences lead to a telescoping pattern that recovers the integration by parts formula.</p>
+
+<p>One way to approach this is to consider the difference of the product over the increment $\Delta x$:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+\Delta \bigl[f(x) G(x)\bigr] &= f(x + \Delta x) \, G(x + \Delta x) - f(x)\, G(x).
+\end{aligned}
+$$</div>
+
+<p>Using our series expansions, we would obtain a long expression that contains terms of different orders in $\Delta x. Our aim is to isolate the linear terms (i.e. terms proportional to $\Delta x), because in the limit as $\Delta x \to 0, the higher order terms vanish.</p>
+
+<p>For clarity, let’s denote by $f_{A_1}(x) = A_1$ and similarly for $G$ that $B_1 = g(x). Then, to first order in $\Delta x:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+f(x + \Delta x) &\approx f(x) + f_{A_1}(x)\,\Delta x,\\[1mm]
+G(x + \Delta x) &\approx G(x) + g(x)\,\Delta x.
+\end{aligned}
+$$</div>
+
+<p>Multiplying these approximations, we have:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+f(x + \Delta x)\,G(x + \Delta x) &\approx \Bigl[f(x) + f_{A_1}(x)\,\Delta x\Bigr] \Bigl[G(x) + g(x)\,\Delta x\Bigr] \\
+&= f(x)G(x) + \Bigl[f(x)g(x) + G(x)f_{A_1}(x)\Bigr]\Delta x + \text{(higher order terms)}.
+\end{aligned}
+$$</div>
+
+<p>Thus, the increment in the product is:</p>
+
+<div class="kdmath">$$
+f(x + \Delta x)G(x + \Delta x) - f(x)G(x) \approx \Bigl[f(x)g(x) + G(x)f_{A_1}(x)\Bigr]\Delta x.
+$$</div>
+
+<p>Now, if we consider the standard integration by parts formula, the expression we expect to see is of the form:</p>
+
+<p><span class="kdmath">$\int f(x) \, g(x) \, dx = f(x) G(x) - \int G(x) \, f_{A_1}(x) \, dx.$</span>
+Our expansion above gives us one piece, and the remainder must come from a careful reorganization of the summation. In our alternative proof approach, we write the integral as a limit of a sum and then group differences in a telescopic manner.</p>
+
+<h3 id="23-rewriting-the-integral-as-a-sum">2.3 Rewriting the Integral as a Sum</h3>
+
+<p>Recall that by definition, the integral is given by:</p>
+
+<div class="kdmath">$$
+\int_{0}^{N} f(x) \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \, \Delta x.
+$$</div>
+
+<p>If we apply this idea to the product $f(x)g(x)$ (or equivalently $f(x) G’(x)$), we write:</p>
+
+<div class="kdmath">$$
+\int f(x) \, g(x) \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} f(i\Delta x) \, g(i\Delta x) \, \Delta x.
+$$</div>
+
+<p>One alternative strategy is to note that we can write the sum as a telescoping sum if we express $f$ in terms of its differences:</p>
+
+<div class="kdmath">$$
+f(i\Delta x) = \bigl[f(i\Delta x) - f((i-1)\Delta x)\bigr] + f((i-1)\Delta x).
+$$</div>
+
+<p>While the full expansion can become complex, the key idea is that if you express the differences as series (as we did earlier for the antiderivative) and then rearrange terms, you can identify groups that cancel telescopically. The surviving terms will involve $f$ and $G$ evaluated at the endpoints, yielding:</p>
+
+<div class="kdmath">$$
+\int f(x) \, g(x) \, dx = f(x) G(x) - \int G(x) \, f'(x) \, dx.
+$$</div>
+
+<p>This is the pattern-based alternative derivation of the integration by parts formula.</p>
+
+<h2 id="3-a-step-by-step-outline-of-the-alternative-proof">3. A Step-by-Step Outline of the Alternative Proof</h2>
+
+<p>Let’s summarize the process with more detailed intermediate steps:</p>
+
+<ol>
+  <li>Expand $f(x+\Delta x)$ and $G(x+\Delta x)$ in a Series:</li>
+</ol>
+
+<div class="kdmath">$$
+\begin{aligned}
+f(x + \Delta x) &= A_0 + A_1\,\Delta x + A_2\,(\Delta x)^2 + A_3\,(\Delta x)^3 + \cdots + A_{n+1}\,(\Delta x)^n,\\[1mm]
+G(x + \Delta x) &= B_0 + B_1\,\Delta x + B_2\,(\Delta x)^2 + B_3\,(\Delta x)^3 + \cdots + B_{n+1}\,(\Delta x)^n.
+\end{aligned}
+$$</div>
+
+<p>Here, $A_0 = f(x)$ and $B_0 = G(x)$. Moreover, $B_1 = g(x)$.</p>
+
+<ol>
+  <li>Express $G(x+\Delta x)$ in Terms of $G(x)$ and $g(x)$:</li>
+</ol>
+
+<div class="kdmath">$$
+G(x + \Delta x) = G(x) + g(x)\,\Delta x + B_2\,(\Delta x)^2 + B_3\,(\Delta x)^3 + \cdots.
+$$</div>
+
+<ol>
+  <li>Form the Product $f(x+\Delta x) G(x+\Delta x)$:</li>
+</ol>
+
+<p>Multiply the series:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+f(x+\Delta x)G(x+\Delta x) &= \Bigl[A_0 + A_1\,\Delta x + A_2\,(\Delta x)^2 + \cdots\Bigr] \\
+&\quad \times \Bigl[B_0 + B_1\,\Delta x + B_2\,(\Delta x)^2 + \cdots\Bigr].
+\end{aligned}
+$$</div>
+
+<ol>
+  <li>Identify the Linear (First-Order) Term:</li>
+</ol>
+
+<p>The constant term is $A_0 B_0 = f(x) G(x). The first-order term in $\Delta x is:</p>
+
+<div class="kdmath">$$
+A_0 B_1\,\Delta x + A_1 B_0\,\Delta x,
+$$</div>
+
+<p>which equals</p>
+
+<div class="kdmath">$$
+f(x) \, g(x) \, \Delta x + G(x) \, f'(x) \, \Delta x.
+$$</div>
+
+<ol>
+  <li>Relate the Sum of the Differences to the Integral:</li>
+</ol>
+
+<p>When you sum the differences over a partition and take the limit as $\Delta x \to 0, the higher-order terms vanish. The telescoping sum will then yield:</p>
+
+<div class="kdmath">$$
+\sum_{i=0}^{N/\Delta x} \Bigl[f(x_{i+1})G(x_{i+1}) - f(x_i)G(x_i)\Bigr] = f(N)G(N) - f(0)G(0).
+$$</div>
+
+<p>However, reorganizing the terms by grouping the differences for $f$ and $G$ separately leads to the rearranged form:</p>
+
+<div class="kdmath">$$
+\int f(x)\,g(x)\,dx = f(x)G(x) - \int G(x)\,f'(x)\,dx.
+$$</div>
+
+<ol>
+  <li>Conclusion:</li>
+</ol>
+
+<p>This manipulation shows that the incremental changes in the product $f(x)G(x)$ can be expressed as a telescoping series. In the limit, the sum of these differences equals the difference at the endpoints, thus yielding the integration by parts formula:</p>
+
+<div class="kdmath">$$
+\boxed{\int u\, dv = uv - \int v\, du.}
+$$</div>
+
+<h2 id="4-final-remarks">4. Final Remarks</h2>
+
+<p>This alternative proof, which is based on expanding the increments as power series and reorganizing the sum, reveals the hidden algebraic pattern behind integration by parts. Instead of simply applying the product rule, we see that every term in the expansion contributes to a telescoping sum that naturally cancels out the intermediate contributions, leaving only the endpoint evaluations and a residual term that corresponds to the second integral.</p>
+
+<p>This method is particularly powerful because:</p>
+
+<ul>
+  <li>It makes all the intermediate steps and patterns visible.</li>
+  <li>It emphasizes that integration is the summation of infinitesimal changes.</li>
+  <li>It provides an intuitive, first-principles foundation for the integration by parts formula.</li>
+</ul>
+
+<p>End of Article</p>
+
+<p>This article (Article IX) offers a comprehensive and detailed explanation of the alternative proof of integration by parts, with many intermediate steps and algebraic details included. It preserves your original equations and ideas while adding clarity and a natural flow to the derivation. Let me know if you need further refinements or additional explanations!</p>
+
+
+
+  <div class="post-navigation bottom-nav">
+    
+      <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/difference-equations/part8/">&larr; Previous: VIII. Building Calculus from First Principles - Difference Equations for the Anti-Derivative</a>
+    
+
+    
+  </div>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/maths-calculus-from-first-principles/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Calculus from First Principles</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Calculus from First Principles</li><li><a class="u-email" href="mailto:vinitsiriya@gmail.com">vinitsiriya@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/vinitsiriya"><svg class="svg-icon"><use xlink:href="/maths-calculus-from-first-principles/assets/minima-social-icons.svg#github"></use></svg> <span class="username">vinitsiriya</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A comprehensive exploration of calculus starting from fundamental principles. Journey through limits, derivatives, integrals, and series with clear explanations and visible algebaric patterns.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+</html>

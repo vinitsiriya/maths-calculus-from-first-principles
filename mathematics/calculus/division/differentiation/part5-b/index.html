@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>V-B. Building Calculus from First Principles - Properties with Division Involved | Calculus from First Principles</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="V-B. Building Calculus from First Principles - Properties with Division Involved" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Below is the final, fully elaborated version of Part V-2: Properties with Division Involved for your “Building Calculus from First Principles” series. This article preserves your original LaTeX work (with corrections and reorganization for clarity) and adds detailed explanations, insights, and structure so that the algebraic patterns are evident and the reader gains a deeper understanding." />
+<meta property="og:description" content="Below is the final, fully elaborated version of Part V-2: Properties with Division Involved for your “Building Calculus from First Principles” series. This article preserves your original LaTeX work (with corrections and reorganization for clarity) and adds detailed explanations, insights, and structure so that the algebraic patterns are evident and the reader gains a deeper understanding." />
+<link rel="canonical" href="https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/division/differentiation/part5-b/" />
+<meta property="og:url" content="https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/division/differentiation/part5-b/" />
+<meta property="og:site_name" content="Calculus from First Principles" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-02-05T15:40:48+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="V-B. Building Calculus from First Principles - Properties with Division Involved" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-05T15:40:48+05:30","datePublished":"2025-02-05T15:40:48+05:30","description":"Below is the final, fully elaborated version of Part V-2: Properties with Division Involved for your “Building Calculus from First Principles” series. This article preserves your original LaTeX work (with corrections and reorganization for clarity) and adds detailed explanations, insights, and structure so that the algebraic patterns are evident and the reader gains a deeper understanding.","headline":"V-B. Building Calculus from First Principles - Properties with Division Involved","mainEntityOfPage":{"@type":"WebPage","@id":"https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/division/differentiation/part5-b/"},"url":"https://vinitsiriya.github.io/maths-calculus-from-first-principles/mathematics/calculus/division/differentiation/part5-b/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/maths-calculus-from-first-principles/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://vinitsiriya.github.io/maths-calculus-from-first-principles/feed.xml" title="Calculus from First Principles" /></head>
+<head>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <style>
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+      }
+      
+      .prev, .next {
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+        color: #333;
+        transition: background-color 0.3s ease;
+      }
+
+      .prev:hover, .next:hover {
+        background-color: #e9ecef;
+      }
+
+      .post-categories {
+        margin: 15px 0;
+      }
+
+      .category-tag {
+        display: inline-block;
+        padding: 4px 8px;
+        margin-right: 5px;
+        background-color: #e9ecef;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+
+      .top-nav {
+        margin: 15px 0 25px 0;
+        padding-top: 0;
+        border-top: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+      }
+
+      .bottom-nav {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/maths-calculus-from-first-principles/">Calculus from First Principles</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/maths-calculus-from-first-principles/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<article class="post h-entry">
+  <header class="post-header">
+    <h1 class="post-title p-name">V-B. Building Calculus from First Principles - Properties with Division Involved</h1>
+    
+    <div class="post-categories">
+      Categories: 
+      
+      <span class="category-tag">mathematics</span>
+      
+      <span class="category-tag">calculus</span>
+      
+      <span class="category-tag">division</span>
+      
+      <span class="category-tag">differentiation</span>
+      
+    </div>
+    
+
+    <div class="post-navigation top-nav">
+      
+        <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/division/series/part5-a/">&larr; Previous: V-A. Building Calculus from First Principles - Division Properties and Infinite Series</a>
+      
+
+      
+        <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/foundations/part6-a/">Next: VI-A. Building Calculus from First Principles - Integration from First Principles &rarr;</a>
+      
+    </div>
+  </header>
+
+  <p>Below is the final, fully elaborated version of Part V-2: Properties with Division Involved for your “Building Calculus from First Principles” series. This article preserves your original LaTeX work (with corrections and reorganization for clarity) and adds detailed explanations, insights, and structure so that the algebraic patterns are evident and the reader gains a deeper understanding.</p>
+
+<h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
+
+<h2 id="part-v-2-properties-with-division-involved">Part V-2: Properties with Division Involved</h2>
+
+<h3 id="preface">Preface</h3>
+
+<p>In Part V-1, we derived the generalized expansion for functions of the form</p>
+
+<div class="kdmath">$$
+\frac{1}{ax+by} = \frac{1}{by} - \frac{ax}{b^2y^2} + \frac{a^2x^2}{b^3y^3} - \frac{a^3x^3}{b^4y^4} + \cdots,
+$$</div>
+
+<p>which was obtained using elementary algebra, long division, and the geometric series expansion. In this installment, we use similar elementary, algebraic methods to derive several differentiation formulas that involve division. By examining the power series and “peeling off” the coefficients (i.e. matching the terms in the series), we will derive formulas for the derivatives of functions such as $\sec(x)$, $\csc(x)$, $\tan(x)$, and $\log(x)$. Our focus is on the visible algebraic patterns without invoking geometric notions.</p>
+
+<h2 id="1-derivative-of-secx">1. Derivative of $\sec(x)$</h2>
+
+<h3 id="statement">Statement</h3>
+
+<div class="kdmath">$$
+\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x).
+$$</div>
+
+<h3 id="proof">Proof</h3>
+
+<p>We start with:</p>
+
+<div class="kdmath">$$
+\begin{align*}
+\sec(x + h) &= \frac{1}{\cos(x + h)} \\
+\because \cos(x + h) &= \cos(x)\cos(h) - \sin(x)\sin(h) \\
+\therefore\quad \sec(x + h) &= \frac{1}{\cos(x)\cos(h) - \sin(x)\sin(h)} \\
+&\approx \frac{1}{\cos(x) - \sin(x)\, h} \quad \text{(for small } h\text{)}.
+\end{align*}
+$$</div>
+
+<p>We then expand $\frac{1}{\cos(x) - \sin(x) h}$ as a series in $h$. Observing the pattern, one can see that this series has a ratio of</p>
+
+<div class="kdmath">$$
+\frac{-\sin(x)h}{\cos(x)},
+$$</div>
+
+<p>so that the linear (first-order) term in $h$ is:</p>
+
+<div class="kdmath">$$
+\frac{-\sin(x)h}{\cos^2(x)}.
+$$</div>
+
+<p>Thus, by our pattern-based approach, the derivative is determined by this coefficient, and we obtain:</p>
+
+<div class="kdmath">$$
+\boxed{\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x).}
+$$</div>
+
+<h2 id="2-chain-rule-example-using-division">2. Chain Rule Example Using Division</h2>
+
+<h3 id="setup">Setup</h3>
+
+<p>Let</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+f(x) &= \frac{1}{x}, \\
+g(x) &= \cos(x).
+\end{aligned}
+$$</div>
+
+<p>We wish to find the expansion of the composite function $f(g(x+h))$.</p>
+
+<h3 id="proof-idea">Proof Idea</h3>
+
+<p>Consider the expansion for $\sec(x+h)$ (which is $1/\cos(x+h)$) again:</p>
+
+<div class="kdmath">$$
+\begin{align*}
+\sec(x + h) &= \frac{1}{\cos(x + h)} \\
+&\approx \frac{1}{\cos(x) - \sin(x) h} \quad \text{(for small } h\text{)}.
+\end{align*}
+$$</div>
+
+<p>When we expand $f(g(x+h))$, the idea is that the incremental change in the composite function can be interpreted as the product of the incremental change of the inner function $g(x)$ and the derivative of the outer function $f$ evaluated at $g(x)$. In other words, the first-order term in the expansion of $f(g(x+h))$ is:</p>
+
+<div class="kdmath">$$
+f'(g(x)) \cdot g'(x) \, h.
+$$</div>
+
+<p>This is exactly the chain rule:</p>
+
+<div class="kdmath">$$
+\boxed{\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x).}
+$$</div>
+
+<h2 id="3-derivative-of-cscx">3. Derivative of $\csc(x)$</h2>
+
+<h3 id="statement-1">Statement</h3>
+
+<div class="kdmath">$$
+\frac{d}{dx}[\csc(x)] = -\csc(x) \cot(x).
+$$</div>
+
+<h3 id="proof-1">Proof</h3>
+
+<p>We start with:</p>
+
+<div class="kdmath">$$
+\begin{align*}
+\csc(x + h) &= \frac{1}{\sin(x + h)} \\
+\because \sin(x + h) &= \sin(x)\cos(h) + \cos(x)\sin(h) \\
+\therefore\quad \csc(x + h) &= \frac{1}{\sin(x)\cos(h) + \cos(x)\sin(h)} \\
+&\approx \frac{1}{\sin(x) + \cos(x)h} \quad \text{(for small } h\text{)}.
+\end{align*}
+$$</div>
+
+<p>Here, the expansion of $\frac{1}{\sin(x) + \cos(x)h}$ reveals that the ratio of the linear term in $h$ is approximately:</p>
+
+<div class="kdmath">$$
+\frac{-\cos(x)h}{\sin^2(x)}.
+$$</div>
+
+<p>Thus, the coefficient of $h$ in the expansion (which determines the derivative) leads to:</p>
+
+<div class="kdmath">$$
+\boxed{\frac{d}{dx}[\csc(x)] = -\csc(x) \cot(x).}
+$$</div>
+
+<h2 id="4-derivative-of-tanx">4. Derivative of $\tan(x)$</h2>
+
+<h3 id="statement-2">Statement</h3>
+
+<div class="kdmath">$$
+\frac{d}{dx}[\tan(x)] = \sec^2(x).
+$$</div>
+
+<h3 id="proof-2">Proof</h3>
+
+<p>We have:</p>
+
+<div class="kdmath">$$
+\begin{align*}
+\tan(x+h) &= \frac{\sin(x+h)}{\cos(x+h)}.
+\end{align*}
+$$</div>
+
+<p>Using the approximations for small $h$:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+\sin(x+h) &\approx \sin(x) + \cos(x)h,\\[1mm]
+\cos(x+h) &\approx \cos(x) - \sin(x)h,
+\end{aligned}
+$$</div>
+
+<p>we write:</p>
+
+<div class="kdmath">$$
+\tan(x+h) \approx \frac{\sin(x) + \cos(x)h}{\cos(x) - \sin(x)h}.
+$$</div>
+
+<p>This can be expressed as:</p>
+
+<div class="kdmath">$$
+\tan(x+h) = [\sin(x) + \cos(x)h] \cdot \frac{1}{\cos(x) - \sin(x)h}.
+$$</div>
+
+<p>Now, expand the reciprocal:</p>
+
+<div class="kdmath">$$
+\frac{1}{\cos(x) - \sin(x)h} = C_0 + C_1 h + \ldots,
+$$</div>
+
+<p>where we define:</p>
+
+<div class="kdmath">$$
+\begin{aligned}
+C_0 &= \frac{1}{\cos(x)}, \\[1mm]
+C_1 &= \frac{\sin(x)}{\cos^2(x)}.
+\end{aligned}
+$$</div>
+
+<p>Multiplying out, the constant term of the product gives $\sin(x)C_0$ and the first-order term in $h$ will involve:</p>
+
+<div class="kdmath">$$
+C_0 \cos(x) + C_1 \sin(x).
+$$</div>
+
+<p>Substitute the values:</p>
+
+<div class="kdmath">$$
+C_0 \cos(x) + C_1 \sin(x) = \frac{\cos(x)}{\cos(x)} + \frac{\sin(x)}{\cos^2(x)} \sin(x) = 1 + \frac{\sin^2(x)}{\cos^2(x)}.
+$$</div>
+
+<p>Recognize that:</p>
+
+<div class="kdmath">$$
+1 + \tan^2(x) = \sec^2(x).
+$$</div>
+
+<p>Thus,</p>
+
+<div class="kdmath">$$
+\boxed{\frac{d}{dx}[\tan(x)] = \sec^2(x).}
+$$</div>
+
+<h2 id="5-derivative-of-logx">5. Derivative of $\log(x)$</h2>
+
+<h3 id="statement-3">Statement</h3>
+
+<div class="kdmath">$$
+\frac{d}{dx}[\log(x)] = \frac{1}{x}.
+$$</div>
+
+<h3 id="proof-3">Proof</h3>
+
+<p>We expand $\log(x+h)$ as follows:</p>
+
+<div class="kdmath">$$
+\begin{align*}
+\log(x + h) &= \log\Bigl(x\Bigl(1 + \frac{h}{x}\Bigr)\Bigr) \\
+&= \log(x) + \log\Bigl(1 + \frac{h}{x}\Bigr) \\
+&\approx \log(x) + \frac{h}{x},
+\end{align*}
+$$</div>
+
+<p>where we have used the elementary approximation:</p>
+
+<div class="kdmath">$$
+\log(1+\varepsilon) \approx \varepsilon \quad \text{for small } \varepsilon.
+$$</div>
+
+<p>Thus, the coefficient of $h$ is $\frac{1}{x}$, which implies:</p>
+
+<div class="kdmath">$$
+\boxed{\frac{d}{dx}[\log(x)] = \frac{1}{x}.}
+$$</div>
+
+<h2 id="6-conclusion">6. Conclusion</h2>
+
+<p>In this article, we have extended our first-principles, pattern-based approach to derive several differentiation formulas for functions involving division. By examining the series expansions—using elementary methods such as long division and geometric series—we obtained:</p>
+
+<ul>
+  <li>$\displaystyle \frac{d}{dx}\,x^{-1} = -x^{-2}$.</li>
+  <li>$\displaystyle \frac{d}{dx}[\sec(x)] = \sec(x)\tan(x)$.</li>
+  <li>$\displaystyle \frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x)$.</li>
+  <li>$\displaystyle \frac{d}{dx}[\tan(x)] = \sec^2(x)$.</li>
+  <li>$\displaystyle \frac{d}{dx}[\log(x)] = \frac{1}{x}$.</li>
+</ul>
+
+<p>Each result is reached by identifying the coefficient of the first-order term in the series expansion of the function when its argument is incremented by a small $h$. This approach reinforces that the standard differentiation formulas are natural consequences of the algebraic structure of power series.</p>
+
+<h2 id="7-final-remarks">7. Final Remarks</h2>
+
+<p>This article has illustrated the power and elegance of an algebraic, pattern-based approach to calculus. By relying solely on elementary techniques, we have demonstrated that many familiar rules of differentiation emerge naturally from series expansions. This method not only provides a rigorous entry point to calculus from first principles but also offers a unified and intuitive way to view the underlying structure of mathematical functions.</p>
+
+<h3 id="up-next">Up Next</h3>
+<p>Ready for integration? In Part VI-A, we’ll begin building integration from first principles, using our pattern-based approach.</p>
+
+
+
+  <div class="post-navigation bottom-nav">
+    
+      <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/division/series/part5-a/">&larr; Previous: V-A. Building Calculus from First Principles - Division Properties and Infinite Series</a>
+    
+
+    
+      <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/foundations/part6-a/">Next: VI-A. Building Calculus from First Principles - Integration from First Principles &rarr;</a>
+    
+  </div>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/maths-calculus-from-first-principles/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Calculus from First Principles</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Calculus from First Principles</li><li><a class="u-email" href="mailto:vinitsiriya@gmail.com">vinitsiriya@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/vinitsiriya"><svg class="svg-icon"><use xlink:href="/maths-calculus-from-first-principles/assets/minima-social-icons.svg#github"></use></svg> <span class="username">vinitsiriya</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A comprehensive exploration of calculus starting from fundamental principles. Journey through limits, derivatives, integrals, and series with clear explanations and visible algebaric patterns.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+</html>
