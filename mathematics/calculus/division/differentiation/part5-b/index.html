@@ -99,20 +99,7 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
-      processEscapes: true
-    }
-  });
-</script>
-
-<article class="post h-entry">
+        <article class="post h-entry">
   <header class="post-header">
     <h1 class="post-title p-name">V-B. Building Calculus from First Principles - Properties with Division Involved</h1>
     
@@ -129,19 +116,10 @@
       
     </div>
     
-
-    <div class="post-navigation top-nav">
-      
-        <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/division/series/part5-a/">&larr; Previous: V-A. Building Calculus from First Principles - Division Properties and Infinite Series</a>
-      
-
-      
-        <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/foundations/part6-a/">Next: VI-A. Building Calculus from First Principles - Integration from First Principles &rarr;</a>
-      
-    </div>
   </header>
 
-  <p>Below is the final, fully elaborated version of Part V-2: Properties with Division Involved for your “Building Calculus from First Principles” series. This article preserves your original LaTeX work (with corrections and reorganization for clarity) and adds detailed explanations, insights, and structure so that the algebraic patterns are evident and the reader gains a deeper understanding.</p>
+  <div class="post-content e-content">
+    <p>Below is the final, fully elaborated version of Part V-2: Properties with Division Involved for your “Building Calculus from First Principles” series. This article preserves your original LaTeX work (with corrections and reorganization for clarity) and adds detailed explanations, insights, and structure so that the algebraic patterns are evident and the reader gains a deeper understanding.</p>
 
 <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
 
@@ -155,9 +133,9 @@
 \frac{1}{ax+by} = \frac{1}{by} - \frac{ax}{b^2y^2} + \frac{a^2x^2}{b^3y^3} - \frac{a^3x^3}{b^4y^4} + \cdots,
 $$</div>
 
-<p>which was obtained using elementary algebra, long division, and the geometric series expansion. In this installment, we use similar elementary, algebraic methods to derive several differentiation formulas that involve division. By examining the power series and “peeling off” the coefficients (i.e. matching the terms in the series), we will derive formulas for the derivatives of functions such as $\sec(x)$, $\csc(x)$, $\tan(x)$, and $\log(x)$. Our focus is on the visible algebraic patterns without invoking geometric notions.</p>
+<p>which was obtained using elementary algebra, long division, and the geometric series expansion. In this installment, we use similar elementary, algebraic methods to derive several differentiation formulas that involve division. By examining the power series and “peeling off” the coefficients (i.e. matching the terms in the series), we will derive formulas for the derivatives of functions such as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec(x)</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\csc(x)</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tan(x)</annotation></semantics></math></span>, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(x)</annotation></semantics></math></span>. Our focus is on the visible algebraic patterns without invoking geometric notions.</p>
 
-<h2 id="1-derivative-of-secx">1. Derivative of $\sec(x)$</h2>
+<h2 id="1-derivative-of-secxsecx">1. Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec(x)</annotation></semantics></math></span></h2>
 
 <h3 id="statement">Statement</h3>
 
@@ -178,13 +156,13 @@ $$</div>
 \end{align*}
 $$</div>
 
-<p>We then expand $\frac{1}{\cos(x) - \sin(x) h}$ as a series in $h$. Observing the pattern, one can see that this series has a ratio of</p>
+<p>We then expand <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\cos(x) - \sin(x) h}</annotation></semantics></math></span> as a series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>. Observing the pattern, one can see that this series has a ratio of</p>
 
 <div class="kdmath">$$
 \frac{-\sin(x)h}{\cos(x)},
 $$</div>
 
-<p>so that the linear (first-order) term in $h$ is:</p>
+<p>so that the linear (first-order) term in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is:</p>
 
 <div class="kdmath">$$
 \frac{-\sin(x)h}{\cos^2(x)}.
@@ -209,11 +187,11 @@ g(x) &= \cos(x).
 \end{aligned}
 $$</div>
 
-<p>We wish to find the expansion of the composite function $f(g(x+h))$.</p>
+<p>We wish to find the expansion of the composite function <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(g(x+h))</annotation></semantics></math></span>.</p>
 
 <h3 id="proof-idea">Proof Idea</h3>
 
-<p>Consider the expansion for $\sec(x+h)$ (which is $1/\cos(x+h)$) again:</p>
+<p>Consider the expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec(x+h)</annotation></semantics></math></span> (which is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">1/\cos(x+h)</annotation></semantics></math></span>) again:</p>
 
 <div class="kdmath">$$
 \begin{align*}
@@ -222,7 +200,7 @@ $$</div>
 \end{align*}
 $$</div>
 
-<p>When we expand $f(g(x+h))$, the idea is that the incremental change in the composite function can be interpreted as the product of the incremental change of the inner function $g(x)$ and the derivative of the outer function $f$ evaluated at $g(x)$. In other words, the first-order term in the expansion of $f(g(x+h))$ is:</p>
+<p>When we expand <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(g(x+h))</annotation></semantics></math></span>, the idea is that the incremental change in the composite function can be interpreted as the product of the incremental change of the inner function <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math></span> and the derivative of the outer function <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span> evaluated at <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math></span>. In other words, the first-order term in the expansion of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(g(x+h))</annotation></semantics></math></span> is:</p>
 
 <div class="kdmath">$$
 f'(g(x)) \cdot g'(x) \, h.
@@ -234,7 +212,7 @@ $$</div>
 \boxed{\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x).}
 $$</div>
 
-<h2 id="3-derivative-of-cscx">3. Derivative of $\csc(x)$</h2>
+<h2 id="3-derivative-of-cscxcscx">3. Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\csc(x)</annotation></semantics></math></span></h2>
 
 <h3 id="statement-1">Statement</h3>
 
@@ -255,19 +233,19 @@ $$</div>
 \end{align*}
 $$</div>
 
-<p>Here, the expansion of $\frac{1}{\sin(x) + \cos(x)h}$ reveals that the ratio of the linear term in $h$ is approximately:</p>
+<p>Here, the expansion of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\sin(x) + \cos(x)h}</annotation></semantics></math></span> reveals that the ratio of the linear term in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is approximately:</p>
 
 <div class="kdmath">$$
 \frac{-\cos(x)h}{\sin^2(x)}.
 $$</div>
 
-<p>Thus, the coefficient of $h$ in the expansion (which determines the derivative) leads to:</p>
+<p>Thus, the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> in the expansion (which determines the derivative) leads to:</p>
 
 <div class="kdmath">$$
 \boxed{\frac{d}{dx}[\csc(x)] = -\csc(x) \cot(x).}
 $$</div>
 
-<h2 id="4-derivative-of-tanx">4. Derivative of $\tan(x)$</h2>
+<h2 id="4-derivative-of-tanxtanx">4. Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tan(x)</annotation></semantics></math></span></h2>
 
 <h3 id="statement-2">Statement</h3>
 
@@ -285,7 +263,7 @@ $$</div>
 \end{align*}
 $$</div>
 
-<p>Using the approximations for small $h$:</p>
+<p>Using the approximations for small <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>:</p>
 
 <div class="kdmath">$$
 \begin{aligned}
@@ -321,7 +299,7 @@ C_1 &= \frac{\sin(x)}{\cos^2(x)}.
 \end{aligned}
 $$</div>
 
-<p>Multiplying out, the constant term of the product gives $\sin(x)C_0$ and the first-order term in $h$ will involve:</p>
+<p>Multiplying out, the constant term of the product gives <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\sin(x)C_0</annotation></semantics></math></span> and the first-order term in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> will involve:</p>
 
 <div class="kdmath">$$
 C_0 \cos(x) + C_1 \sin(x).
@@ -345,7 +323,7 @@ $$</div>
 \boxed{\frac{d}{dx}[\tan(x)] = \sec^2(x).}
 $$</div>
 
-<h2 id="5-derivative-of-logx">5. Derivative of $\log(x)$</h2>
+<h2 id="5-derivative-of-logxlogx">5. Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(x)</annotation></semantics></math></span></h2>
 
 <h3 id="statement-3">Statement</h3>
 
@@ -355,7 +333,7 @@ $$</div>
 
 <h3 id="proof-3">Proof</h3>
 
-<p>We expand $\log(x+h)$ as follows:</p>
+<p>We expand <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(x+h)</annotation></semantics></math></span> as follows:</p>
 
 <div class="kdmath">$$
 \begin{align*}
@@ -371,7 +349,7 @@ $$</div>
 \log(1+\varepsilon) \approx \varepsilon \quad \text{for small } \varepsilon.
 $$</div>
 
-<p>Thus, the coefficient of $h$ is $\frac{1}{x}$, which implies:</p>
+<p>Thus, the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x}</annotation></semantics></math></span>, which implies:</p>
 
 <div class="kdmath">$$
 \boxed{\frac{d}{dx}[\log(x)] = \frac{1}{x}.}
@@ -382,14 +360,14 @@ $$</div>
 <p>In this article, we have extended our first-principles, pattern-based approach to derive several differentiation formulas for functions involving division. By examining the series expansions—using elementary methods such as long division and geometric series—we obtained:</p>
 
 <ul>
-  <li>$\displaystyle \frac{d}{dx}\,x^{-1} = -x^{-2}$.</li>
-  <li>$\displaystyle \frac{d}{dx}[\sec(x)] = \sec(x)\tan(x)$.</li>
-  <li>$\displaystyle \frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x)$.</li>
-  <li>$\displaystyle \frac{d}{dx}[\tan(x)] = \sec^2(x)$.</li>
-  <li>$\displaystyle \frac{d}{dx}[\log(x)] = \frac{1}{x}$.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mspace width="1em"></mspace><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mo>−</mo><msup><mi>x</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{d}{dx}\;x^{-1} = -x^{-2}</annotation></semantics></math></span>.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{d}{dx}[\sec(x)] = \sec(x)\tan(x)</annotation></semantics></math></span>.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mo>−</mo><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>cot</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x)</annotation></semantics></math></span>.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><msup><mrow><mi>sec</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{d}{dx}[\tan(x)] = \sec^2(x)</annotation></semantics></math></span>.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo stretchy="false">[</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{d}{dx}[\log(x)] = \frac{1}{x}</annotation></semantics></math></span>.</li>
 </ul>
 
-<p>Each result is reached by identifying the coefficient of the first-order term in the series expansion of the function when its argument is incremented by a small $h$. This approach reinforces that the standard differentiation formulas are natural consequences of the algebraic structure of power series.</p>
+<p>Each result is reached by identifying the coefficient of the first-order term in the series expansion of the function when its argument is incremented by a small <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>. This approach reinforces that the standard differentiation formulas are natural consequences of the algebraic structure of power series.</p>
 
 <h2 id="7-final-remarks">7. Final Remarks</h2>
 
@@ -399,17 +377,18 @@ $$</div>
 <p>Ready for integration? In Part VI-A, we’ll begin building integration from first principles, using our pattern-based approach.</p>
 
 
-
-  <div class="post-navigation bottom-nav">
-    
-      <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/division/series/part5-a/">&larr; Previous: V-A. Building Calculus from First Principles - Division Properties and Infinite Series</a>
-    
-
-    
-      <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/foundations/part6-a/">Next: VI-A. Building Calculus from First Principles - Integration from First Principles &rarr;</a>
-    
   </div>
 </article>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Prevent right-click on math images
+  document.querySelectorAll('img[class*="math-"]').forEach(function(el) {
+    el.addEventListener('contextmenu', e => e.preventDefault());
+    el.addEventListener('dragstart', e => e.preventDefault());
+  });
+});
+</script>
 
       </div>
     </main><footer class="site-footer h-card">

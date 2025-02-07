@@ -99,20 +99,7 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
-      processEscapes: true
-    }
-  });
-</script>
-
-<article class="post h-entry">
+        <article class="post h-entry">
   <header class="post-header">
     <h1 class="post-title p-name">VI-A. Building Calculus from First Principles - Integration from First Principles</h1>
     
@@ -129,41 +116,32 @@
       
     </div>
     
-
-    <div class="post-navigation top-nav">
-      
-        <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/division/differentiation/part5-b/">&larr; Previous: V-B. Building Calculus from First Principles - Properties with Division Involved</a>
-      
-
-      
-        <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/series/binomial-theorem/part6-b/">Next: VI-B. Building Calculus from First Principles - Derivation of Sums of Powers &rarr;</a>
-      
-    </div>
   </header>
 
-  <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
+  <div class="post-content e-content">
+    <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
 
 <h2 id="part-vi-integration-from-first-principles">Part VI: Integration from First Principles</h2>
 
 <h3 id="preface">Preface</h3>
 
-<p>In our earlier parts of the series, we showed how functions could be expanded into series and how algebraic patterns in these expansions reveal the rules of differentiation. In this article we turn our attention to integration—understood as the process of summing an infinite collection of infinitesimally small contributions. Here, integration is defined from first principles using a limit process that captures the cumulative effect of these contributions. We will illustrate this by computing the integrals of simple functions such as the constant function, $x$, and $x^2$, using elementary summation techniques.</p>
+<p>In our earlier parts of the series, we showed how functions could be expanded into series and how algebraic patterns in these expansions reveal the rules of differentiation. In this article we turn our attention to integration—understood as the process of summing an infinite collection of infinitesimally small contributions. Here, integration is defined from first principles using a limit process that captures the cumulative effect of these contributions. We will illustrate this by computing the integrals of simple functions such as the constant function, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^2</annotation></semantics></math></span>, using elementary summation techniques.</p>
 
 <h3 id="1-a-foundational-definition-of-integration">1. A Foundational Definition of Integration</h3>
 
-<p>Let $f(x)$ be a function defined on an interval, and consider dividing the interval into a large number of subintervals of equal width $\Delta x$. If we let</p>
+<p>Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span> be a function defined on an interval, and consider dividing the interval into a large number of subintervals of equal width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>. If we let</p>
 
 <div class="kdmath">$$
 N = \frac{n}{\Delta x},
 $$</div>
 
-<p>then we define the integral of $f(x)$ over a suitable interval as the limit of a sum of the form</p>
+<p>then we define the integral of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span> over a suitable interval as the limit of a sum of the form</p>
 
 <div class="kdmath">$$
 \int_{0}^{N} f(x)\, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{\frac{n}{\Delta x}} f(i\, \Delta x) \cdot \Delta x.
 $$</div>
 
-<p>In our approach, we interpret this definition as the exact summing of infinitely many small contributions from $f(x)$. (For our purposes, we avoid the usual technical terms and focus on the algebraic structure of the sum.)</p>
+<p>In our approach, we interpret this definition as the exact summing of infinitely many small contributions from <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span>. (For our purposes, we avoid the usual technical terms and focus on the algebraic structure of the sum.)</p>
 
 <h3 id="2-integration-examples">2. Integration Examples</h3>
 
@@ -173,7 +151,7 @@ $$</div>
 f(x) = 1.
 $$</div>
 
-<p>Then the cumulative sum over the interval (from 0 to $x$) is</p>
+<p>Then the cumulative sum over the interval (from 0 to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>) is</p>
 
 <div class="kdmath">$$
 \begin{aligned}
@@ -189,7 +167,7 @@ $$</div>
 \boxed{\int 1 \, dx = x + C.}
 $$</div>
 
-<p>2.2 Integration of $x$Now, consider:</p>
+<p>2.2 Integration of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>Now, consider:</p>
 
 <div class="kdmath">$$
 f(x) = x.
@@ -201,19 +179,19 @@ $$</div>
 \int_{0}^{x} x \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{\frac{n}{\Delta x}} \Bigl(i\, \Delta x\Bigr) \Delta x.
 $$</div>
 
-<p>Recall the well-known summation formula for the first $N$ natural numbers:</p>
+<p>Recall the well-known summation formula for the first <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span> natural numbers:</p>
 
 <div class="kdmath">$$
 \sum_{i=0}^{N} i = \frac{N(N+1)}{2}.
 $$</div>
 
-<p>Interpreting $N = \frac{n}{\Delta x}$, we have</p>
+<p>Interpreting <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">N = \frac{n}{\Delta x}</annotation></semantics></math></span>, we have</p>
 
 <div class="kdmath">$$
 \sum_{i=0}^{\frac{n}{\Delta x}} i = \frac{\frac{n}{\Delta x}\left(\frac{n}{\Delta x} + 1\right)}{2}.
 $$</div>
 
-<p>Multiplying by $(\Delta x)^2$ (since each term is multiplied by $\Delta x$ from the summation), we obtain</p>
+<p>Multiplying by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">D</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(\Delta x)^2</annotation></semantics></math></span> (since each term is multiplied by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> from the summation), we obtain</p>
 
 <div class="kdmath">$$
 \begin{aligned}
@@ -223,13 +201,13 @@ $$</div>
 \end{aligned}
 $$</div>
 
-<p>Since $n\,\Delta x = x$ and in the limit $\Delta x \to 0$ the second term vanishes, we deduce that</p>
+<p>Since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mspace width="1em"></mspace><mi mathvariant="normal">D</mi><mi>x</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">n\;\Delta x = x</annotation></semantics></math></span> and in the limit <processing> the second term vanishes, we deduce that</processing></p>
 
 <div class="kdmath">$$
 \boxed{\int x \, dx = \frac{1}{2} x^2 + C.}
 $$</div>
 
-<p>2.3 Integration of $x^2$Next, consider:</p>
+<p>2.3 Integration of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^2</annotation></semantics></math></span>Next, consider:</p>
 
 <div class="kdmath">$$
 f(x) = x^2.
@@ -241,13 +219,13 @@ $$</div>
 \int_{0}^{x} x^2 \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{\frac{n}{\Delta x}} \Bigl(i\, \Delta x\Bigr)^2 \Delta x.
 $$</div>
 
-<p>Recall the formula for the sum of the squares of the first $N$ natural numbers:</p>
+<p>Recall the formula for the sum of the squares of the first <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span> natural numbers:</p>
 
 <div class="kdmath">$$
 \sum_{i=0}^{N} i^2 = \frac{N(N+1)(2N+1)}{6}.
 $$</div>
 
-<p>Substitute $N = \frac{n}{\Delta x}$ and multiply by $(\Delta x)^3$:</p>
+<p>Substitute <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mfrac><mi>n</mi><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">N = \frac{n}{\Delta x}</annotation></semantics></math></span> and multiply by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">D</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">(\Delta x)^3</annotation></semantics></math></span>:</p>
 
 <div class="kdmath">$$
 \begin{aligned}
@@ -256,23 +234,23 @@ $$</div>
 \end{aligned}
 $$</div>
 
-<p>since the lower order terms vanish as $\Delta x$ becomes infinitely small, and noting that $n\,\Delta x = x$. Thus, we conclude that</p>
+<p>since the lower order terms vanish as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> becomes infinitely small, and noting that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mspace width="1em"></mspace><mi mathvariant="normal">D</mi><mi>x</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">n\;\Delta x = x</annotation></semantics></math></span>. Thus, we conclude that</p>
 
 <div class="kdmath">$$
 \boxed{\int x^2 \, dx = \frac{1}{3} x^3 + C.}
 $$</div>
 
-<p>Note: In these derivations, standard summation formulas for $\sum i$ and $\sum i^2$ are used to reveal the pattern. This method of “summing contributions” from infinitesimally small intervals is the cornerstone of our integration approach from first principles.</p>
+<p>Note: In these derivations, standard summation formulas for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">\sum i</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msup><mi>i</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum i^2</annotation></semantics></math></span> are used to reveal the pattern. This method of “summing contributions” from infinitesimally small intervals is the cornerstone of our integration approach from first principles.</p>
 
 <h3 id="3-summary-of-the-method">3. Summary of the Method</h3>
 
 <p>In each example, we:</p>
 
 <ul>
-  <li>Divide the interval into many subintervals of width $\Delta x$.</li>
-  <li>Sum the contributions $f(i\,\Delta x) \cdot \Delta x$ for $i = 0, 1, 2, \ldots$.</li>
+  <li>Divide the interval into many subintervals of width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>.</li>
+  <li>Sum the contributions <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>i</mi><mspace width="1em"></mspace><mi mathvariant="normal">D</mi><mi>x</mi><mo stretchy="false">)</mo><mo>⋅</mo><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">f(i\;\Delta x) \cdot \Delta x</annotation></semantics></math></span> for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo></mrow><annotation encoding="application/x-tex">i = 0, 1, 2, \ldots</annotation></semantics></math></span>.</li>
   <li>Use known formulas for the sums of integers and their powers.</li>
-  <li>Take the limit as $\Delta x \to 0$ to obtain an exact expression for the integral.</li>
+  <li>Take the limit as <processing> to obtain an exact expression for the integral.</processing></li>
 </ul>
 
 <p>This approach illustrates that integration is the process of summing infinitely many infinitesimal contributions, and that the antiderivative of a function emerges naturally from these summation patterns.</p>
@@ -281,7 +259,7 @@ $$</div>
 
 <ul>
   <li>
-    <p>Clear Algebraic Patterns:By writing the integration process as a limit of sums and then using standard summation formulas, the underlying algebraic structure becomes evident. Students can see how the expressions for $\int 1\,dx$, $\int x\,dx$, and $\int x^2\,dx$ arise from basic arithmetic patterns.</p>
+    <p>Clear Algebraic Patterns:By writing the integration process as a limit of sums and then using standard summation formulas, the underlying algebraic structure becomes evident. Students can see how the expressions for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><mn>1</mn><mspace width="1em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int 1\;dx</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><mi>x</mi><mspace width="1em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int x\;dx</annotation></semantics></math></span>, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><msup><mi>x</mi><mn>2</mn></msup><mspace width="1em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int x^2\;dx</annotation></semantics></math></span> arise from basic arithmetic patterns.</p>
   </li>
   <li>
     <p>Elementary Foundation:This method uses only elementary algebra and limits, providing a very accessible entry point to the concept of integration. It avoids technical terminology and focuses on visible patterns, which can be especially beneficial for beginners.</p>
@@ -296,14 +274,14 @@ $$</div>
 
 <h3 id="5-conclusion">5. Conclusion</h3>
 
-<p>We have defined integration from first principles as the summing of infinitely many infinitesimal contributions, and we demonstrated this by explicitly deriving the antiderivatives for the constant function, $x$, and $x^2$. In each case, we employed the idea of partitioning the interval and summing contributions over each subinterval, using standard summation formulas to reveal the final algebraic expressions.</p>
+<p>We have defined integration from first principles as the summing of infinitely many infinitesimal contributions, and we demonstrated this by explicitly deriving the antiderivatives for the constant function, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^2</annotation></semantics></math></span>. In each case, we employed the idea of partitioning the interval and summing contributions over each subinterval, using standard summation formulas to reveal the final algebraic expressions.</p>
 
 <p>Thus, we conclude:</p>
 
 <ul>
-  <li>$\displaystyle \int 1\,dx = x + C$,</li>
-  <li>$\displaystyle \int x\,dx = \frac{1}{2} x^2 + C$,</li>
-  <li>$\displaystyle \int x^2\,dx = \frac{1}{3} x^3 + C$.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∫</mo><mn>1</mn><mspace width="1em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>C</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \int 1\;dx = x + C</annotation></semantics></math></span>,</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∫</mo><mi>x</mi><mspace width="1em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>C</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \int x\;dx = \frac{1}{2} x^2 + C</annotation></semantics></math></span>,</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∫</mo><msup><mi>x</mi><mn>2</mn></msup><mspace width="1em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mi>C</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \int x^2\;dx = \frac{1}{3} x^3 + C</annotation></semantics></math></span>.</li>
 </ul>
 
 <p>This integration approach, based on recognizing and summing algebraic patterns, provides a fresh, intuitive entry point to calculus—building from first principles and reinforcing the deep connection between differentiation and integration.</p>
@@ -313,17 +291,18 @@ $$</div>
 <p>This comprehensive article should serve as a detailed and engaging exposition on integration from first principles. All your original LaTeX content has been preserved and elaborated upon with clear explanations, theoretical insights, and practical examples. Feel free to adjust or integrate this article as part of your series.</p>
 
 
-
-  <div class="post-navigation bottom-nav">
-    
-      <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/division/differentiation/part5-b/">&larr; Previous: V-B. Building Calculus from First Principles - Properties with Division Involved</a>
-    
-
-    
-      <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/series/binomial-theorem/part6-b/">Next: VI-B. Building Calculus from First Principles - Derivation of Sums of Powers &rarr;</a>
-    
   </div>
 </article>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Prevent right-click on math images
+  document.querySelectorAll('img[class*="math-"]').forEach(function(el) {
+    el.addEventListener('contextmenu', e => e.preventDefault());
+    el.addEventListener('dragstart', e => e.preventDefault());
+  });
+});
+</script>
 
       </div>
     </main><footer class="site-footer h-card">

@@ -99,20 +99,7 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
-      processEscapes: true
-    }
-  });
-</script>
-
-<article class="post h-entry">
+        <article class="post h-entry">
   <header class="post-header">
     <h1 class="post-title p-name">VII. Building Calculus from First Principles - Fundamental Theorem of Calculus</h1>
     
@@ -129,23 +116,14 @@
       
     </div>
     
-
-    <div class="post-navigation top-nav">
-      
-        <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/series/binomial-theorem/part6-b/">&larr; Previous: VI-B. Building Calculus from First Principles - Derivation of Sums of Powers</a>
-      
-
-      
-        <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/difference-equations/part8/">Next: VIII. Building Calculus from First Principles - Difference Equations for the Anti-Derivative &rarr;</a>
-      
-    </div>
   </header>
 
-  <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
+  <div class="post-content e-content">
+    <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
 
 <h2 id="part-vii--fundamental-theorem-of-calculus">Part VII: # Fundamental Theorem of Calculus</h2>
 
-<p>In this article, we establish a fundamental relationship: if $F(x)$ is an antiderivative of $f(x)$, then</p>
+<p>In this article, we establish a fundamental relationship: if <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span> is an antiderivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span>, then</p>
 
 <div class="kdmath">$$
 \int_{0}^{N} f(x) \, dx = F(N) - F(0).
@@ -155,13 +133,13 @@ $$</div>
 
 <h2 id="1-main-proof">1. Main Proof</h2>
 
-<p>We begin by defining the integral as the limit of a sum. Let $\Delta x$ be an infinitely small increment and suppose that the interval $[0, N]$ is divided into subintervals of width $\Delta x$ so that the number of subintervals is $N/\Delta x$. Then the integral is defined by</p>
+<p>We begin by defining the integral as the limit of a sum. Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> be an infinitely small increment and suppose that the interval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, N]</annotation></semantics></math></span> is divided into subintervals of width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> so that the number of subintervals is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">N/\Delta x</annotation></semantics></math></span>. Then the integral is defined by</p>
 
 <div class="kdmath">$$
 \int_{0}^{N} f(x) \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} f(i \cdot \Delta x) \cdot \Delta x.
 $$</div>
 
-<p>Assume that $F(x)$ is an antiderivative of $f(x)$; that is, $F’(x)=f(x)$. Then we may rewrite the sum by replacing $f(x)$ with $F’(x)$:</p>
+<p>Assume that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span> is an antiderivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span>; that is, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F&#x27;(x)=f(x)</annotation></semantics></math></span>. Then we may rewrite the sum by replacing <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span> with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F&#x27;(x)</annotation></semantics></math></span>:</p>
 
 <div class="kdmath">$$
 \int_{0}^{N} f(x) \, dx = \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} F'(i \cdot \Delta x) \cdot \Delta x.
@@ -179,7 +157,7 @@ $$</div>
 \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} \frac{F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)}{\Delta x} \cdot \Delta x.
 $$</div>
 
-<p>Notice that the factor $\Delta x$ in the numerator and denominator cancels:</p>
+<p>Notice that the factor <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span> in the numerator and denominator cancels:</p>
 
 <div class="kdmath">$$
 \lim_{\Delta x \to 0} \sum_{i=0}^{N/\Delta x} \Bigl[F(i \cdot \Delta x + \Delta x) - F(i \cdot \Delta x)\Bigr].
@@ -208,7 +186,7 @@ $$</div>
 
 <h2 id="2-alternative-proof-by-telescoping-differences">2. Alternative Proof by Telescoping Differences</h2>
 
-<p>An alternative proof uses the idea of examining the differences between successive increments of the function $F$.</p>
+<p>An alternative proof uses the idea of examining the differences between successive increments of the function <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span>.</p>
 
 <p>Consider the differences:</p>
 
@@ -234,7 +212,7 @@ $$</div>
 F(x+\Delta x) - F(x) + F(x+2\Delta x) - F(x+\Delta x) + \cdots + F(x+N\Delta x) - F(x+(N-1)\Delta x) = F(x+N\Delta x) - F(x).
 $$</div>
 
-<p>Taking the limit as $\Delta x \to 0$ (and noting $x+N\Delta x \to N$ if we set $x=0$ for simplicity), we have:</p>
+<p>Taking the limit as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta x \to 0</annotation></semantics></math></span> (and noting <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>N</mi><mi mathvariant="normal">D</mi><mi>x</mi><mo>→</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">x+N\Delta x \to N</annotation></semantics></math></span> if we set <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math></span> for simplicity), we have:</p>
 
 <div class="kdmath">$$
 \lim_{\Delta x \to 0} \bigl[F(N) - F(0)\bigr] = F(N) - F(0).
@@ -248,7 +226,7 @@ $$</div>
 
 <h2 id="3-concluding-remarks">3. Concluding Remarks</h2>
 
-<p>Both proofs illustrate the same underlying idea: integration is the summation of infinitely many infinitesimally small contributions. By expressing the integral as a limit of sums and then re-writing the summand using the definition of the derivative, we obtain a telescoping sum. The telescoping nature of the sum naturally leads to the result $F(N)-F(0)$.</p>
+<p>Both proofs illustrate the same underlying idea: integration is the summation of infinitely many infinitesimally small contributions. By expressing the integral as a limit of sums and then re-writing the summand using the definition of the derivative, we obtain a telescoping sum. The telescoping nature of the sum naturally leads to the result <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(N)-F(0)</annotation></semantics></math></span>.</p>
 
 <p>This foundational result—the Fundamental Theorem of Calculus—shows the deep connection between differentiation and integration, establishing that the accumulation of infinitesimal changes (integration) recovers the net change in a function (difference of the antiderivative).</p>
 
@@ -262,7 +240,7 @@ $$</div>
 
 <h3 id="detailed-steps-in-the-telescoping-sum">Detailed Steps in the Telescoping Sum</h3>
 
-<p>Assume we have a continuously differentiable function $F(x)$ with derivative $F’(x) = f(x)$. We partition the interval $[0, N]$ into $M$ subintervals of equal width $h$ so that</p>
+<p>Assume we have a continuously differentiable function <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span> with derivative <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F&#x27;(x) = f(x)</annotation></semantics></math></span>. We partition the interval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, N]</annotation></semantics></math></span> into <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span> subintervals of equal width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> so that</p>
 
 <div class="kdmath">$$
 x_i = 0 + i\,h, \quad \text{for } i = 0, 1, 2, \dots, M,
@@ -274,7 +252,7 @@ $$</div>
 M\,h = N.
 $$</div>
 
-<p>For each subinterval, the change in $F$ is given by:</p>
+<p>For each subinterval, the change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span> is given by:</p>
 
 <div class="kdmath">$$
 F(x_{i+1}) - F(x_i).
@@ -330,8 +308,8 @@ $$</div>
 <p>Notice what happens:</p>
 
 <ul>
-  <li>$F(x_1)$ appears first as $+F(x_1)$ and then as $-F(x_1)$. They cancel.</li>
-  <li>Similarly, $F(x_2)$ appears as $+F(x_2)$ and then $-F(x_2)$, canceling each other.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x_1)</annotation></semantics></math></span> appears first as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">+F(x_1)</annotation></semantics></math></span> and then as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">-F(x_1)</annotation></semantics></math></span>. They cancel.</li>
+  <li>Similarly, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x_2)</annotation></semantics></math></span> appears as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">+F(x_2)</annotation></semantics></math></span> and then <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">-F(x_2)</annotation></semantics></math></span>, canceling each other.</li>
   <li>This cancellation continues for all intermediate terms.</li>
 </ul>
 
@@ -341,7 +319,7 @@ $$</div>
 \text{Sum} = F(x_M) - F(x_0).
 $$</div>
 
-<p>Since $x_0 = 0$ and $x_M = N$, we have:</p>
+<p>Since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_0 = 0</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>M</mi></msub><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">x_M = N</annotation></semantics></math></span>, we have:</p>
 
 <div class="kdmath">$$
 \sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = F(N) - F(0).
@@ -349,13 +327,13 @@ $$</div>
 
 <p>Step 3. Taking the Limit</p>
 
-<p>In our definition of integration, we let the width $h$ approach 0 (and thus $M \to \infty$):</p>
+<p>In our definition of integration, we let the width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> approach 0 (and thus <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">M \to \infty</annotation></semantics></math></span>):</p>
 
 <div class="kdmath">$$
 \int_{0}^{N} f(x) \, dx = \lim_{h\to 0} \sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr].
 $$</div>
 
-<p>Since the telescoping sum is exactly $F(N) - F(0)$ regardless of the number of subintervals, the limit is simply:</p>
+<p>Since the telescoping sum is exactly <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(N) - F(0)</annotation></semantics></math></span> regardless of the number of subintervals, the limit is simply:</p>
 
 <div class="kdmath">$$
 \int_{0}^{N} f(x) \, dx = F(N) - F(0).
@@ -363,7 +341,7 @@ $$</div>
 
 <h2 id="3-alternate-view-expressing-each-difference-as-a-series">3. Alternate View: Expressing Each Difference as a Series</h2>
 
-<p>For a more detailed look at the pattern, suppose that we express the change over each subinterval as a power series in $h$:</p>
+<p>For a more detailed look at the pattern, suppose that we express the change over each subinterval as a power series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>:</p>
 
 <div class="kdmath">$$
 F(x_i + h) - F(x_i) = f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots.
@@ -375,21 +353,21 @@ $$</div>
 \sum_{i=0}^{M-1} \Bigl[F(x_{i+1}) - F(x_i)\Bigr] = \sum_{i=0}^{M-1} \Bigl[ f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots \Bigr].
 $$</div>
 
-<p>When $h$ is very small, the dominant contribution comes from the first-order term:</p>
+<p>When <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is very small, the dominant contribution comes from the first-order term:</p>
 
 <div class="kdmath">$$
 \sum_{i=0}^{M-1} f_{A_1}(x_i) \, h.
 $$</div>
 
-<p>In the limit $h \to 0$, this sum converges to the integral:</p>
+<p>In the limit <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h \to 0</annotation></semantics></math></span>, this sum converges to the integral:</p>
 
 <div class="kdmath">$$
 \lim_{h\to 0} \sum_{i=0}^{M-1} f(x_i) \, h = \int_{0}^{N} f(x) \, dx,
 $$</div>
 
-<p>since $f_{A_1}(x_i) = F’(x_i) = f(x_i).</p>
+<p>since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f_{A_1}(x_i) = F&#x27;(x_i) = f(x_i)</annotation></semantics></math></span>.</p>
 
-<p>The higher-order terms vanish in the limit, and the telescoping structure (shown above) ensures that the entire sum equals $F(N) - F(0)$.</p>
+<p>The higher-order terms vanish in the limit, and the telescoping structure (shown above) ensures that the entire sum equals <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(N) - F(0)</annotation></semantics></math></span>.</p>
 
 <p>ChatGPTReasoned for a couple of secondsBelow is an expanded version of the “Alternate View” section that explains, step by step, how to express each difference as a power series and then sum these differences to reveal the telescoping pattern. This detailed explanation is intended to make the process completely clear and intuitive.</p>
 
@@ -397,7 +375,7 @@ $$</div>
 
 <h3 id="1-expressing-the-incremental-change-as-a-series">1. Expressing the Incremental Change as a Series</h3>
 
-<p>Suppose $F(x)$ is a function that is differentiable (and, in fact, can be expanded in a power series) on the interval of interest. For a small increment $h$, we can write the change in $F$ over a single subinterval starting at $x_i$ as a power series in $h$:</p>
+<p>Suppose <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span> is a function that is differentiable (and, in fact, can be expanded in a power series) on the interval of interest. For a small increment <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> , we can write the change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span> over a single subinterval starting at <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span> as a power series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>:</p>
 
 <div class="kdmath">$$
 F(x_i + h) - F(x_i) = f_{A_1}(x_i) \, h + f_{A_2}(x_i) \, h^2 + f_{A_3}(x_i) \, h^3 + \cdots,
@@ -406,9 +384,9 @@ $$</div>
 <p>where:</p>
 
 <ul>
-  <li>$f_{A_1}(x_i)$ is the coefficient of the linear term, which equals $F’(x_i)$;</li>
-  <li>$f_{A_2}(x_i)$ is the coefficient of the quadratic term, related to $\frac{F’‘(x_i)}{2!}$;</li>
-  <li>$f_{A_3}(x_i)$ is the coefficient of the cubic term, and so on.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f_{A_1}(x_i)</annotation></semantics></math></span> is the coefficient of the linear term, which equals <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F&#x27;(x_i)</annotation></semantics></math></span>;</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><msub><mi>A</mi><mn>2</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f_{A_2}(x_i)</annotation></semantics></math></span> is the coefficient of the quadratic term, related to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msup><mi>F</mi><mrow><mo mathvariant="normal">′</mo><mo mathvariant="normal">′</mo></mrow></msup><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mn>2</mn><mo stretchy="false">!</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{F&#x27;&#x27;(x_i)}{2!}</annotation></semantics></math></span>;</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><msub><mi>A</mi><mn>3</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f_{A_3}(x_i)</annotation></semantics></math></span> is the coefficient of the cubic term, and so on.</li>
 </ul>
 
 <p>For simplicity, we denote the series as:</p>
@@ -419,15 +397,15 @@ $$</div>
 
 <h3 id="2-forming-the-total-sum-over-the-partition">2. Forming the Total Sum over the Partition</h3>
 
-<p>Assume we partition the interval $[0, N]$ into $M$ subintervals of equal width $h$, so that:</p>
+<p>Assume we partition the interval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, N]</annotation></semantics></math></span> into <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span> subintervals of equal width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> , so that:</p>
 
 <div class="kdmath">$$
 x_0 = 0,\quad x_1 = h,\quad x_2 = 2h,\quad \dots,\quad x_{M} = N,
 $$</div>
 
-<p>with $M \cdot h = N$.</p>
+<p>with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>⋅</mo><mi>h</mi><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">M \cdot h = N</annotation></semantics></math></span>.</p>
 
-<p>For each subinterval $[x_i,\, x_{i+1}]$ the change in $F$ is given by:</p>
+<p>For each subinterval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[x_i,\; x_{i+1}]</annotation></semantics></math></span> the change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span> is given by:</p>
 
 <div class="kdmath">$$
 F(x_{i+1}) - F(x_i) = \sum_{m=1}^{\infty} f_{A_m}(x_i) \, h^m.
@@ -441,7 +419,7 @@ $$</div>
 
 <h3 id="3-interchanging-the-order-of-summation">3. Interchanging the Order of Summation</h3>
 
-<p>Since the sum is finite in $i$ (from $0$ to $M-1$) and we assume that the series in $h$ converges uniformly for sufficiently small $h$, we can interchange the order of summation:</p>
+<p>Since the sum is finite in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span> (from <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span> to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M-1</annotation></semantics></math></span>) and we assume that the series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> converges uniformly for sufficiently small <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>, we can interchange the order of summation:</p>
 
 <div class="kdmath">$$
 \sum_{i=0}^{M-1} \left[ \sum_{m=1}^{\infty} f_{A_m}(x_i) \, h^m \right] = \sum_{m=1}^{\infty} \left[ \sum_{i=0}^{M-1} f_{A_m}(x_i) \right] h^m.
@@ -450,19 +428,19 @@ $$</div>
 <p>In this expression:</p>
 
 <ul>
-  <li>The inner sum $\sum_{i=0}^{M-1} f_{A_m}(x_i)$ collects the coefficients of $h^m$ from each subinterval.</li>
-  <li>The outer sum then reassembles the entire contribution in powers of $h$.</li>
+  <li>The inner sum <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow></msubsup><msub><mi>f</mi><msub><mi>A</mi><mi>m</mi></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sum_{i=0}^{M-1} f_{A_m}(x_i)</annotation></semantics></math></span> collects the coefficients of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>h</mi><mi>m</mi></msup></mrow><annotation encoding="application/x-tex">h^m</annotation></semantics></math></span> from each subinterval.</li>
+  <li>The outer sum then reassembles the entire contribution in powers of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>.</li>
 </ul>
 
 <h3 id="4-observing-the-telescoping-behavior">4. Observing the Telescoping Behavior</h3>
 
-<p>Let’s consider the effect of summing the first-order terms (i.e., $m=1$):</p>
+<p>Let’s consider the effect of summing the first-order terms (i.e., <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=1</annotation></semantics></math></span>):</p>
 
 <div class="kdmath">$$
 \text{First-order contribution: } \sum_{i=0}^{M-1} f_{A_1}(x_i) \, h.
 $$</div>
 
-<p>Since $f_{A_1}(x_i) = F’(x_i)$, and in the limit $h \to 0$ the sum approximates the integral of $F’(x)$ over $[0, N]$, we have:</p>
+<p>Since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><msub><mi>A</mi><mn>1</mn></msub></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f_{A_1}(x_i) = F&#x27;(x_i)</annotation></semantics></math></span>, and in the limit <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h \to 0</annotation></semantics></math></span> the sum approximates the integral of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F&#x27;(x)</annotation></semantics></math></span> over <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, N]</annotation></semantics></math></span>, we have:</p>
 
 <div class="kdmath">$$
 \lim_{h\to 0} \sum_{i=0}^{M-1} F'(x_i) \, h = \int_{0}^{N} F'(x) \, dx.
@@ -480,8 +458,8 @@ $$</div>
 <p>Notice the cancellation:</p>
 
 <ul>
-  <li>$F(x_1)$ appears positively in the first term and negatively in the second.</li>
-  <li>$F(x_2)$ appears in the second term and cancels with the third, and so on.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x_1)</annotation></semantics></math></span> appears positively in the first term and negatively in the second.</li>
+  <li><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x_2)</annotation></semantics></math></span> appears in the second term and cancels with the third, and so on.</li>
 </ul>
 
 <p>Thus, the entire sum simplifies to:</p>
@@ -492,7 +470,7 @@ $$</div>
 
 <h3 id="5-taking-the-limit-and-concluding">5. Taking the Limit and Concluding</h3>
 
-<p>When we let $h \to 0$ (i.e., $M \to \infty$ with $M\,h = N$), the higher-order terms in $h$ vanish, and we obtain exactly:</p>
+<p>When we let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h \to 0</annotation></semantics></math></span> (i.e., <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">M \to \infty</annotation></semantics></math></span> with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mspace width="1em"></mspace><mi>h</mi><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">M\;h = N</annotation></semantics></math></span>), the higher-order terms in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> vanish, and we obtain exactly:</p>
 
 <div class="kdmath">$$
 \int_{0}^{N} f(x) \, dx = \lim_{h\to 0} \sum_{i=0}^{M-1} \left[F(x_{i+1}) - F(x_i)\right] = F(N) - F(0).
@@ -524,13 +502,13 @@ $$</div>
 
 <ol>
   <li>
-    <p>Interchange the Summation Order:Change the order of summation to collect coefficients of like powers of $h$.</p>
+    <p>Interchange the Summation Order:Change the order of summation to collect coefficients of like powers of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>.</p>
   </li>
   <li>
-    <p>Observe the Telescoping Cancellation:Notice that the sum collapses to $F(N) - F(0)$ because every intermediate term cancels.</p>
+    <p>Observe the Telescoping Cancellation:Notice that the sum collapses to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(N) - F(0)</annotation></semantics></math></span> because every intermediate term cancels.</p>
   </li>
   <li>
-    <p>Take the Limit as $h \to 0$:Conclude that the sum converges to the integral:</p>
+    <p>Take the Limit as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h \to 0</annotation></semantics></math></span>:Conclude that the sum converges to the integral:</p>
   </li>
 </ol>
 
@@ -540,7 +518,7 @@ $$</div>
 
 <h2 id="7--conclusion">7.  Conclusion</h2>
 
-<p>By partitioning the interval and expressing the change in $F(x)$ over a small increment $h$ as a power series, we observe a clear telescoping pattern when we sum these differences. The intermediate terms cancel, leaving only the difference between the final and initial values, $F(N) - F(0)$. Therefore, we arrive at the Fundamental Theorem of Calculus in its simplest form:</p>
+<p>By partitioning the interval and expressing the change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span> over a small increment <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> as a power series, we observe a clear telescoping pattern when we sum these differences. The intermediate terms cancel, leaving only the difference between the final and initial values, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(N) - F(0)</annotation></semantics></math></span>. Therefore, we arrive at the Fundamental Theorem of Calculus in its simplest form:</p>
 
 <div class="kdmath">$$
 \boxed{\int_{0}^{N} f(x) \, dx = F(N) - F(0).}
@@ -552,17 +530,18 @@ $$</div>
 
 <p>This detailed explanation includes intermediate steps with clear, explicit summations that reveal the telescoping nature of the sum. It is designed to be intuitive and accessible, allowing you (or any reader) to see the pattern step by step. Let me know if you need any additional clarifications or further elaborations!</p>
 
-
-  <div class="post-navigation bottom-nav">
-    
-      <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/series/binomial-theorem/part6-b/">&larr; Previous: VI-B. Building Calculus from First Principles - Derivation of Sums of Powers</a>
-    
-
-    
-      <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/difference-equations/part8/">Next: VIII. Building Calculus from First Principles - Difference Equations for the Anti-Derivative &rarr;</a>
-    
   </div>
 </article>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Prevent right-click on math images
+  document.querySelectorAll('img[class*="math-"]').forEach(function(el) {
+    el.addEventListener('contextmenu', e => e.preventDefault());
+    el.addEventListener('dragstart', e => e.preventDefault());
+  });
+});
+</script>
 
       </div>
     </main><footer class="site-footer h-card">

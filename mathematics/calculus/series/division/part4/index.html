@@ -99,20 +99,7 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
-      processEscapes: true
-    }
-  });
-</script>
-
-<article class="post h-entry">
+        <article class="post h-entry">
   <header class="post-header">
     <h1 class="post-title p-name">IV. Building Calculus from First Principles - Division Properties and Infinite Series</h1>
     
@@ -129,32 +116,23 @@
       
     </div>
     
-
-    <div class="post-navigation top-nav">
-      
-        <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/limits/patterns/part3/">&larr; Previous: III. Building Calculus from First Principles - L'Hôpital's Rule via Pattern Recognition</a>
-      
-
-      
-        <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/division/series/part5-a/">Next: V-A. Building Calculus from First Principles - Division Properties and Infinite Series &rarr;</a>
-      
-    </div>
   </header>
 
-  <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
+  <div class="post-content e-content">
+    <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
 
 <h2 id="part-iv-division-properties-and-infinite-series">Part IV: Division Properties and Infinite Series</h2>
 
 <h3 id="preface">Preface</h3>
 
-<p>In our previous articles, we developed an elementary, algebraic approach to express functions as sums of contributions from different orders of an infinitely small increment. We saw that by “peeling off” the constant term, then the coefficient of $\Delta x$, then that of $(\Delta x)^2$, etc., we arrive naturally at the familiar Taylor series expansion.</p>
+<p>In our previous articles, we developed an elementary, algebraic approach to express functions as sums of contributions from different orders of an infinitely small increment. We saw that by “peeling off” the constant term, then the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>, then that of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">D</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(\Delta x)^2</annotation></semantics></math></span>, etc., we arrive naturally at the familiar Taylor series expansion.</p>
 
 <p>In this installment, we extend that approach to functions involving division. We will:</p>
 
 <ul>
-  <li>Develop a series expansion for reciprocal functions such as $\frac{1}{x+h}$ using the method of long division.</li>
-  <li>Derive important differentiation formulas (for example, for $x^{-1}$) from these series.</li>
-  <li>Present infinite series formulas for functions like $\frac{1}{1+x}$ in both the standard geometric and Laurent forms.</li>
+  <li>Develop a series expansion for reciprocal functions such as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span> using the method of long division.</li>
+  <li>Derive important differentiation formulas (for example, for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x^{-1}</annotation></semantics></math></span>) from these series.</li>
+  <li>Present infinite series formulas for functions like <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{1+x}</annotation></semantics></math></span> in both the standard geometric and Laurent forms.</li>
   <li>Show how algebraic manipulation in series leads naturally to product and chain rules when division is involved.</li>
 </ul>
 
@@ -174,11 +152,11 @@ $$</div>
 f(x+h) = \frac{1}{x+h}
 $$</div>
 
-<p>into a power series in $h$ (or $\Delta x$) so that we can identify the coefficient of $h$.</p>
+<p>into a power series in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> (or <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>) so that we can identify the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>.</p>
 
 <h3 id="11-using-long-division">1.1 Using Long Division</h3>
 
-<p>To bring the expression into a form where the coefficient of $h$ is visible, we employ the Long Division method. If you have forgotten the process of long division, here is a brief revision:</p>
+<p>To bring the expression into a form where the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is visible, we employ the Long Division method. If you have forgotten the process of long division, here is a brief revision:</p>
 
 <p>Long Division RevisionTo perform the long division for, say,</p>
 
@@ -189,8 +167,8 @@ $$</div>
 <p>follow these steps:</p>
 
 <ol>
-  <li>Divide the first term of the numerator ($x^4$) by the first term of the denominator ($x$); this gives $x^3$.</li>
-  <li>Multiply the entire denominator ($x + 2$) by $x^3$ and subtract the result from the numerator.</li>
+  <li>Divide the first term of the numerator (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">x^4</annotation></semantics></math></span>) by the first term of the denominator (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>); this gives <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">x^3</annotation></semantics></math></span>.</li>
+  <li>Multiply the entire denominator (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x + 2</annotation></semantics></math></span>) by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">x^3</annotation></semantics></math></span> and subtract the result from the numerator.</li>
   <li>Bring down the next term and repeat until all terms are used.</li>
 </ol>
 
@@ -216,7 +194,7 @@ x + 2 & x^4 & 0 & 0 & -1 \\
 \end{array}
 $$</div>
 
-<p>A step-by-step breakdown for dividing $x^4 - 1$ by $x + 2$ is given by:</p>
+<p>A step-by-step breakdown for dividing <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^4 - 1</annotation></semantics></math></span> by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x + 2</annotation></semantics></math></span> is given by:</p>
 
 <div class="kdmath">$$
 \begin{aligned}
@@ -230,7 +208,7 @@ $$</div>
 
 <p>This serves as a review for performing long division on polynomials.</p>
 
-<h2 id="2-series-expansion-for-frac1xh-via-long-division">2. Series Expansion for $\frac{1}{x+h}$ via Long Division</h2>
+<h2 id="2-series-expansion-for-1xhfrac1xh-via-long-division">2. Series Expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span> via Long Division</h2>
 
 <p>We now apply the long division technique to derive the series expansion for the function</p>
 
@@ -256,7 +234,7 @@ $$</div>
   <li>Rewriting the Expression:</li>
 </ol>
 
-<p>Write $\frac{1}{x+h}$ as an expression in powers of $h$. One way to proceed is to factor out $x$:</p>
+<p>Write <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span> as an expression in powers of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>. One way to proceed is to factor out <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>:</p>
 
 <div class="kdmath">$$
 \frac{1}{x+h} = \frac{1}{x\left(1 + \frac{h}{x}\right)} = \frac{1}{x} \cdot \frac{1}{1 + \frac{h}{x}}.
@@ -266,15 +244,7 @@ $$</div>
   <li>Expanding as a Geometric Series:</li>
 </ol>
 
-<table>
-  <tbody>
-    <tr>
-      <td>For $\left</td>
-      <td>\frac{h}{x}\right</td>
-      <td>&lt; 1$, the expression</td>
-    </tr>
-  </tbody>
-</table>
+<p>For <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\left|\frac{h}{x}\right| &lt; 1</annotation></semantics></math></span>, the expression</p>
 
 <div class="kdmath">$$
 \frac{1}{1 + \frac{h}{x}}
@@ -290,7 +260,7 @@ $$</div>
   <li>Writing the Final Series:</li>
 </ol>
 
-<p>Multiplying by $\frac{1}{x}$ gives:</p>
+<p>Multiplying by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x}</annotation></semantics></math></span> gives:</p>
 
 <div class="kdmath">$$
 \frac{1}{x+h} = \frac{1}{x} \sum_{n=0}^{\infty} \left(-\frac{h}{x}\right)^n = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \cdots.
@@ -302,17 +272,17 @@ $$</div>
 \frac{(-1)^n h^n}{x^{n+1}}.
 $$</div>
 
-<p>Thus, we have derived the series expansion for $\frac{1}{x+h}$.</p>
+<p>Thus, we have derived the series expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span>.</p>
 
-<h3 id="21-deriving-the-derivative-of-x-1">2.1 Deriving the Derivative of $x^{-1}$</h3>
+<h3 id="21-deriving-the-derivative-of-x1x-1">2.1 Deriving the Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x^{-1}</annotation></semantics></math></span></h3>
 
-<p>The series expansion for $\frac{1}{x+h}$ is:</p>
+<p>The series expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span> is:</p>
 
 <div class="kdmath">$$
 \frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \cdots.
 $$</div>
 
-<p>The coefficient of the first-order term $h$ in this expansion is $-\frac{1}{x^2}$. Hence, by our first-principles method, we conclude that:</p>
+<p>The coefficient of the first-order term <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> in this expansion is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mn>1</mn><msup><mi>x</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">-\frac{1}{x^2}</annotation></semantics></math></span>. Hence, by our first-principles method, we conclude that:</p>
 
 <div class="kdmath">$$
 \frac{d}{dx}\left(x^{-1}\right) = -\frac{1}{x^2}.
@@ -323,17 +293,7 @@ $$</div>
 <p>Below are some classic infinite series expressions that follow naturally from the geometric series:</p>
 
 <ol>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>Binomial Series (for $</td>
-          <td>x</td>
-          <td>&lt; 1$):</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>Binomial Series (for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|x| &lt; 1</annotation></semantics></math></span>):</li>
 </ol>
 
 <div class="kdmath">$$
@@ -341,17 +301,7 @@ $$</div>
 $$</div>
 
 <ol>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>Laurent Series (for $</td>
-          <td>x</td>
-          <td>&gt; 1$):</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>Laurent Series (for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|x| &gt; 1</annotation></semantics></math></span>):</li>
 </ol>
 
 <div class="kdmath">$$
@@ -362,21 +312,13 @@ $$</div>
   <li>Generalized Form:</li>
 </ol>
 
-<p>For example, for constants $a$ and $b$, one may write:</p>
+<p>For example, for constants <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span>, one may write:</p>
 
 <div class="kdmath">$$
 \frac{1}{ax+by} = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n,
 $$</div>
 
-<table>
-  <tbody>
-    <tr>
-      <td>valid when $\left</td>
-      <td>\frac{ax}{by}\right</td>
-      <td>&lt; 1$.</td>
-    </tr>
-  </tbody>
-</table>
+<p>valid when <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>a</mi><mi>x</mi></mrow><mrow><mi>b</mi><mi>y</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\left|\frac{ax}{by}\right| &lt; 1</annotation></semantics></math></span>.</p>
 
 <p>These series are examples of infinite geometric series, where the sum can be expressed as:</p>
 
@@ -384,11 +326,11 @@ $$</div>
 \text{Sum} = \frac{a}{1 - r},
 $$</div>
 
-<p>with $a$ the first term and $r$ the common ratio.</p>
+<p>with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span> the first term and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span> the common ratio.</p>
 
 <h2 id="4-properties-involving-division">4. Properties Involving Division</h2>
 
-<h3 id="41-derivative-of-secx">4.1 Derivative of $\sec(x)$</h3>
+<h3 id="41-derivative-of-secxsecx">4.1 Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec(x)</annotation></semantics></math></span></h3>
 
 <p>Statement:</p>
 
@@ -407,7 +349,7 @@ $$</div>
 $$</div>
 
 <ol>
-  <li>Express $\cos(x+h)$ in its series form:</li>
+  <li>Express <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\cos(x+h)</annotation></semantics></math></span> in its series form:</li>
 </ol>
 
 <div class="kdmath">$$
@@ -415,7 +357,7 @@ $$</div>
 $$</div>
 
 <ol>
-  <li>For small $h$, approximate:</li>
+  <li>For small <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span>, approximate:</li>
 </ol>
 
 <div class="kdmath">$$
@@ -437,14 +379,14 @@ $$</div>
 $$</div>
 
 <ol>
-  <li>Expanding this series (using a similar technique as for $\frac{1}{x+h}$), one obtains an expansion where the coefficient of $h$ is $-\frac{\sin(x)}{\cos^2(x)}$. Combining this with the constant term $1/\cos(x)$ leads to the derivative formula:</li>
+  <li>Expanding this series (using a similar technique as for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span>), one obtains an expansion where the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">-\frac{\sin(x)}{\cos^2(x)}</annotation></semantics></math></span>. Combining this with the constant term <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">1/\cos(x)</annotation></semantics></math></span> leads to the derivative formula:</li>
 </ol>
 
 <div class="kdmath">$$
 \frac{d}{dx}[\sec(x)] = \sec(x)\tan(x).
 $$</div>
 
-<h3 id="42-chain-rule-example-using-secx-and-other-functions">4.2 Chain Rule Example Using $\sec(x)$ and Other Functions</h3>
+<h3 id="42-chain-rule-example-using-secxsecx-and-other-functions">4.2 Chain Rule Example Using <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec(x)</annotation></semantics></math></span> and Other Functions</h3>
 
 <p>Consider the composite function</p>
 
@@ -452,13 +394,13 @@ $$</div>
 f(g(x+h)) = f(B_0 + B_1h + B_2h^2 + \ldots),
 $$</div>
 
-<p>where $B_0 = g(x)$ and $B_1 = g’(x)$. By expanding $f$ in a series around $g(x)$, one obtains:</p>
+<p>where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>0</mn></msub><mo>=</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">B_0 = g(x)</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>=</mo><msup><mi>g</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">B_1 = g&#x27;(x)</annotation></semantics></math></span>. By expanding <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span> in a series around <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math></span>, one obtains:</p>
 
 <div class="kdmath">$$
 f(g(x+h)) = C_0 + C_1 (B_1h + B_2h^2 + \ldots) + C_2 (B_1h + B_2h^2 + \ldots)^2 + \cdots.
 $$</div>
 
-<p>Collecting the coefficient of $h$ yields:</p>
+<p>Collecting the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> yields:</p>
 
 <div class="kdmath">$$
 \text{Coefficient of } h = C_1B_1,
@@ -470,7 +412,7 @@ $$</div>
 \frac{d}{dx}[f(g(x))] = f'(g(x))\,g'(x).
 $$</div>
 
-<h3 id="43-derivative-of-cscx">4.3 Derivative of $\csc(x)$</h3>
+<h3 id="43-derivative-of-cscxcscx">4.3 Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>csc</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\csc(x)</annotation></semantics></math></span></h3>
 
 <p>Statement:</p>
 
@@ -489,7 +431,7 @@ $$</div>
 $$</div>
 
 <ol>
-  <li>Use the series expansion for $\sin(x+h)$:</li>
+  <li>Use the series expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sin(x+h)</annotation></semantics></math></span>:</li>
 </ol>
 
 <div class="kdmath">$$
@@ -506,14 +448,14 @@ $$</div>
 $$</div>
 
 <ol>
-  <li>Expanding in a series shows that the coefficient of $h$ is $-\frac{\cos(x)}{\sin^2(x)}$. This algebraic pattern corresponds to:</li>
+  <li>Expanding in a series shows that the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">-\frac{\cos(x)}{\sin^2(x)}</annotation></semantics></math></span>. This algebraic pattern corresponds to:</li>
 </ol>
 
 <div class="kdmath">$$
 \frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x).
 $$</div>
 
-<h3 id="44-derivative-of-tanx">4.4 Derivative of $\tan(x)$</h3>
+<h3 id="44-derivative-of-tanxtanx">4.4 Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tan(x)</annotation></semantics></math></span></h3>
 
 <p>Statement:</p>
 
@@ -532,7 +474,7 @@ $$</div>
 $$</div>
 
 <ol>
-  <li>Expand both $\sin(x+h)$ and $\cos(x+h)$ in series:</li>
+  <li>Expand both <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sin(x+h)</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\cos(x+h)</annotation></semantics></math></span> in series:</li>
 </ol>
 
 <div class="kdmath">$$
@@ -548,10 +490,10 @@ $$</div>
 $$</div>
 
 <ol>
-  <li>By finding the coefficient of $h$ in this quotient (using an expansion of the reciprocal of the denominator), one finds that it equals $\sec^2(x)$.</li>
+  <li>By finding the coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> in this quotient (using an expansion of the reciprocal of the denominator), one finds that it equals <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mi>sec</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec^2(x)</annotation></semantics></math></span>.</li>
 </ol>
 
-<h3 id="45-derivative-of-logx">4.5 Derivative of $\log(x)$</h3>
+<h3 id="45-derivative-of-logxlogx">4.5 Derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(x)</annotation></semantics></math></span></h3>
 
 <p>Statement:</p>
 
@@ -570,7 +512,7 @@ $$</div>
 $$</div>
 
 <ol>
-  <li>Use the series expansion for $\log(1+\frac{h}{x})$ (which is $\frac{h}{x}$ to first order):</li>
+  <li>Use the series expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>h</mi><mi>x</mi></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(1+\frac{h}{x})</annotation></semantics></math></span> (which is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>h</mi><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{h}{x}</annotation></semantics></math></span> to first order):</li>
 </ol>
 
 <div class="kdmath">$$
@@ -586,7 +528,7 @@ $$</div>
 $$</div>
 
 <ol>
-  <li>The coefficient of $h$ in this expansion is $\frac{1}{x}$, giving</li>
+  <li>The coefficient of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span> in this expansion is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x}</annotation></semantics></math></span>, giving</li>
 </ol>
 
 <div class="kdmath">$$
@@ -617,7 +559,7 @@ $$</div>
 
 <h2 id="6-conclusion">6. Conclusion</h2>
 
-<p>In this article, we have extended our first-principles approach to include division properties and infinite series. By using the method of long division and series expansion, we derived the expansion for $\frac{1}{x+h}$ and demonstrated how the coefficients in this series yield the derivative of $x^{-1}$ (namely, $-x^{-2}$). We further explored how infinite series formulas, such as those for $\frac{1}{1+x}$, naturally arise from these ideas. Finally, we showed that the algebraic patterns in these series lead directly to standard differentiation formulas for functions like $\sec(x)$, $\tan(x)$, and $\log(x)$.</p>
+<p>In this article, we have extended our first-principles approach to include division properties and infinite series. By using the method of long division and series expansion, we derived the expansion for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x+h}</annotation></semantics></math></span> and demonstrated how the coefficients in this series yield the derivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x^{-1}</annotation></semantics></math></span> (namely, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msup><mi>x</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">-x^{-2}</annotation></semantics></math></span>). We further explored how infinite series formulas, such as those for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{1+x}</annotation></semantics></math></span>, naturally arise from these ideas. Finally, we showed that the algebraic patterns in these series lead directly to standard differentiation formulas for functions like <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sec</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sec(x)</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tan(x)</annotation></semantics></math></span>, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(x)</annotation></semantics></math></span>.</p>
 
 <p>This pattern-based, algebraic approach provides a clear and elementary entry point to calculus, emphasizing that the fundamental rules of differentiation are built into the very structure of the series expansions. By exposing these patterns, we offer both a new perspective for learners and a rigorous foundation from which more advanced topics can later be developed.</p>
 
@@ -628,17 +570,18 @@ $$</div>
 
 <p>This article incorporates all of your rough work while preserving your LaTeX expressions and ideas. It adds clear headings, commentary, and pedagogical insights to help readers see the algebraic patterns and appreciate the benefits of this approach to building calculus from first principles.</p>
 
-
-  <div class="post-navigation bottom-nav">
-    
-      <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/limits/patterns/part3/">&larr; Previous: III. Building Calculus from First Principles - L'Hôpital's Rule via Pattern Recognition</a>
-    
-
-    
-      <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/division/series/part5-a/">Next: V-A. Building Calculus from First Principles - Division Properties and Infinite Series &rarr;</a>
-    
   </div>
 </article>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Prevent right-click on math images
+  document.querySelectorAll('img[class*="math-"]').forEach(function(el) {
+    el.addEventListener('contextmenu', e => e.preventDefault());
+    el.addEventListener('dragstart', e => e.preventDefault());
+  });
+});
+</script>
 
       </div>
     </main><footer class="site-footer h-card">

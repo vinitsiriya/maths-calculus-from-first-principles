@@ -99,20 +99,7 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
-      processEscapes: true
-    }
-  });
-</script>
-
-<article class="post h-entry">
+        <article class="post h-entry">
   <header class="post-header">
     <h1 class="post-title p-name">VIII. Building Calculus from First Principles - Difference Equations for the Anti-Derivative</h1>
     
@@ -129,19 +116,10 @@
       
     </div>
     
-
-    <div class="post-navigation top-nav">
-      
-        <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/theorems/part7/">&larr; Previous: VII. Building Calculus from First Principles - Fundamental Theorem of Calculus</a>
-      
-
-      
-        <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/series-expansions/part9/">Next: IX. Building Calculus from First Principles - Integration by Parts &rarr;</a>
-      
-    </div>
   </header>
 
-  <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
+  <div class="post-content e-content">
+    <h1 id="building-calculus-from-first-principles">Building Calculus from First Principles</h1>
 
 <h2 id="article-viii-difference-equations-for-the-anti-derivative">Article VIII: Difference Equations for the Anti-Derivative</h2>
 
@@ -151,7 +129,7 @@
 
 <h2 id="1-difference-equations-for-powers">1. Difference Equations for Powers</h2>
 
-<p>The core idea is to relate the differential expression $x^p\,dx$ to the difference between consecutive powers of $x$. For very small $dx$ (or in the limit as $dx$ becomes infinitesimal), we have the following difference equations:</p>
+<p>The core idea is to relate the differential expression <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>p</mi></msup><mspace width="1em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x^p\;dx</annotation></semantics></math></span> to the difference between consecutive powers of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>. For very small <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">dx</annotation></semantics></math></span> (or in the limit as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">dx</annotation></semantics></math></span> becomes infinitesimal), we have the following difference equations:</p>
 
 <div class="kdmath">$$
 \begin{aligned}
@@ -165,14 +143,14 @@ $$</div>
 <h3 id="explanation">Explanation</h3>
 
 <ul>
-  <li>For the first equation:Expand $(x + dx)^2$:</li>
+  <li>For the first equation:Expand <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>d</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(x + dx)^2</annotation></semantics></math></span>:</li>
 </ul>
 
 <div class="kdmath">$$
 (x + dx)^2 = x^2 + 2x\,dx + (dx)^2.
 $$</div>
 
-<p>Neglecting the $(dx)^2$ term (since $dx$ is infinitesimally small), we obtain:</p>
+<p>Neglecting the <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>d</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(dx)^2</annotation></semantics></math></span> term (since <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">dx</annotation></semantics></math></span> is infinitesimally small), we obtain:</p>
 
 <div class="kdmath">$$
 (x + dx)^2 - x^2 \approx 2x\,dx.
@@ -185,7 +163,7 @@ x\,dx \approx \frac{(x + dx)^2 - x^2}{2}.
 $$</div>
 
 <ul>
-  <li>For the second equation:Similarly, expand $(x+dx)^3$:</li>
+  <li>For the second equation:Similarly, expand <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>d</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">(x+dx)^3</annotation></semantics></math></span>:</li>
 </ul>
 
 <div class="kdmath">$$
@@ -208,9 +186,9 @@ $$</div>
   <li>The subsequent equations follow the same idea.</li>
 </ul>
 
-<h2 id="2-adjusting-the-difference-equations-for-a-finite-increment-delta-x">2. Adjusting the Difference Equations for a Finite Increment $\Delta X$</h2>
+<h2 id="2-adjusting-the-difference-equations-for-a-finite-increment-dxdelta-x">2. Adjusting the Difference Equations for a Finite Increment <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>X</mi></mrow><annotation encoding="application/x-tex">\Delta X</annotation></semantics></math></span></h2>
 
-<p>If instead of an infinitesimal $dx$ we have a finite increment $\Delta X$, the exact equations include higher-order terms. For example, using the binomial expansion we obtain:</p>
+<p>If instead of an infinitesimal <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">dx</annotation></semantics></math></span> we have a finite increment <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>X</mi></mrow><annotation encoding="application/x-tex">\Delta X</annotation></semantics></math></span>, the exact equations include higher-order terms. For example, using the binomial expansion we obtain:</p>
 
 <div class="kdmath">$$
 \begin{aligned}
@@ -237,16 +215,16 @@ $$</div>
 $$</div>
 
 <ul>
-  <li>The higher equations are obtained by applying the binomial theorem to $(x + \Delta X)^k$ and then subtracting $x^k$.</li>
+  <li>The higher equations are obtained by applying the binomial theorem to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi mathvariant="normal">D</mi><mi>X</mi><msup><mo stretchy="false">)</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">(x + \Delta X)^k</annotation></semantics></math></span> and then subtracting <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">x^k</annotation></semantics></math></span>.</li>
 </ul>
 
 <p>These equations illustrate how, when the increment is not infinitesimally small, additional terms appear to account for the full change.</p>
 
-<h2 id="3-application-deriving-the-antiderivative-of-cosx">3. Application: Deriving the Antiderivative of $\cos(x)$</h2>
+<h2 id="3-application-deriving-the-antiderivative-of-cosxcosx">3. Application: Deriving the Antiderivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\cos(x)</annotation></semantics></math></span></h2>
 
 <p>Let us now see how these difference equations connect with integration.</p>
 
-<h3 id="31-integration-of-cosx">3.1 Integration of $\cos(x)$</h3>
+<h3 id="31-integration-of-cosxcosx">3.1 Integration of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\cos(x)</annotation></semantics></math></span></h3>
 
 <p>We aim to show:</p>
 
@@ -254,13 +232,13 @@ $$</div>
 \int \cos(x) \, dx = \sin(x) + C.
 $$</div>
 
-<p>Step 1. Express the Increment in $\sin(x)$From the sine addition formula,</p>
+<p>Step 1. Express the Increment in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sin(x)</annotation></semantics></math></span>From the sine addition formula,</p>
 
 <div class="kdmath">$$
 \sin(x + \Delta x) = \sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x).
 $$</div>
 
-<p>For very small $\Delta x$, we use the approximations:</p>
+<p>For very small <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>, we use the approximations:</p>
 
 <div class="kdmath">$$
 \cos(\Delta x) \approx 1 \quad \text{and} \quad \sin(\Delta x) \approx \Delta x.
@@ -272,19 +250,19 @@ $$</div>
 \sin(x + \Delta x) \approx \sin(x) + \cos(x) \Delta x.
 $$</div>
 
-<p>Subtract $\sin(x)$ from both sides:</p>
+<p>Subtract <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sin(x)</annotation></semantics></math></span> from both sides:</p>
 
 <div class="kdmath">$$
 \sin(x + \Delta x) - \sin(x) \approx \cos(x)\Delta x.
 $$</div>
 
-<p>Step 2. Forming the Telescoping SumDivide the interval $[0, \pi]$ into subintervals of width $\Delta x$. Then</p>
+<p>Step 2. Forming the Telescoping SumDivide the interval <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, \pi]</annotation></semantics></math></span> into subintervals of width <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>. Then</p>
 
 <div class="kdmath">$$
 \int_{0}^{\pi} \cos(x)\, dx \approx \sum_{i=0}^{\frac{n}{\Delta x}} \cos(i\Delta x) \, \Delta x.
 $$</div>
 
-<p>But as we just observed, for each subinterval the change in $\sin(x)$ is approximately:</p>
+<p>But as we just observed, for each subinterval the change in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sin(x)</annotation></semantics></math></span> is approximately:</p>
 
 <div class="kdmath">$$
 \sin((i+1)\Delta x) - \sin(i\Delta x) \approx \cos(i\Delta x)\Delta x.
@@ -302,15 +280,15 @@ $$</div>
 \sin(\Delta x) - \sin(0) + \sin(2\Delta x) - \sin(\Delta x) + \cdots + \sin(N) - \sin(N-\Delta x) = \sin(N) - \sin(0).
 $$</div>
 
-<p>Taking the limit as $\Delta x \to 0, we deduce:</p>
+<p>Taking the limit as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta x \to 0</annotation></semantics></math></span> , we deduce:</p>
 
 <div class="kdmath">$$
 \int_{0}^{\pi} \cos(x)\, dx = \sin(\pi) - \sin(0) = 0 - 0 = 0.
 $$</div>
 
-<p>(For the general antiderivative, one obtains $\int \cos(x)\, dx = \sin(x) + C$.)</p>
+<p>(For the general antiderivative, one obtains <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mspace width="1em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">\int \cos(x)\; dx = \sin(x) + C</annotation></semantics></math></span>.)</p>
 
-<h2 id="4-application-deriving-the-antiderivative-of-sinx">4. Application: Deriving the Antiderivative of $\sin(x)$</h2>
+<h2 id="4-application-deriving-the-antiderivative-of-sinxsinx">4. Application: Deriving the Antiderivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sin(x)</annotation></semantics></math></span></h2>
 
 <p>Similarly, consider:</p>
 
@@ -318,13 +296,13 @@ $$</div>
 \int \sin(x)\, dx.
 $$</div>
 
-<p>Step 1. Express the Increment in $\cos(x)$Recall the cosine addition formula:</p>
+<p>Step 1. Express the Increment in <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\cos(x)</annotation></semantics></math></span>Recall the cosine addition formula:</p>
 
 <div class="kdmath">$$
 \cos(x + \Delta x) = \cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x).
 $$</div>
 
-<p>For small $\Delta x$, this approximates to:</p>
+<p>For small <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span>, this approximates to:</p>
 
 <div class="kdmath">$$
 \cos(x + \Delta x) \approx \cos(x) - \sin(x)\Delta x.
@@ -354,13 +332,13 @@ $$</div>
 \cos(0) - \cos(n\Delta x).
 $$</div>
 
-<p>Taking the limit as $\Delta x \to 0 (and adjusting for the proper interval), we deduce:</p>
+<p>Taking the limit as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">D</mi><mi>x</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta x \to 0</annotation></semantics></math></span> (and adjusting for the proper interval), we deduce:</p>
 
 <div class="kdmath">$$
 \int \sin(x)\, dx = -\cos(x) + C.
 $$</div>
 
-<h2 id="5-application-deriving-the-antiderivative-of-frac1x">5. Application: Deriving the Antiderivative of $\frac{1}{x}$</h2>
+<h2 id="5-application-deriving-the-antiderivative-of-1xfrac1x">5. Application: Deriving the Antiderivative of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x}</annotation></semantics></math></span></h2>
 
 <p>Using the logarithm, note the following expansion from previous work:</p>
 
@@ -386,7 +364,7 @@ $$</div>
 
 <h2 id="6-integration-by-parts-a-brief-mention">6. Integration by Parts (A Brief Mention)</h2>
 
-<p>An additional powerful tool is integration by parts, which can also be derived using difference equations. For example, if we write the expansion for functions $f(x)$ and $G(x)$ (with $G’(x) = g(x)$) as:</p>
+<p>An additional powerful tool is integration by parts, which can also be derived using difference equations. For example, if we write the expansion for functions <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G(x)</annotation></semantics></math></span> (with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>G</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>g</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G&#x27;(x) = g(x)</annotation></semantics></math></span>) as:</p>
 
 <div class="kdmath">$$
 \begin{aligned}
@@ -395,7 +373,7 @@ G(x+\Delta x) &= B_0 + B_1\,\Delta x + B_2\,(\Delta x)^2 + \cdots,
 \end{aligned}
 $$</div>
 
-<p>then the product $f(x)G(x)$ has a difference that telescopes. The careful grouping of terms ultimately leads to the familiar integration by parts formula:</p>
+<p>then the product <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>G</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)G(x)</annotation></semantics></math></span> has a difference that telescopes. The careful grouping of terms ultimately leads to the familiar integration by parts formula:</p>
 
 <div class="kdmath">$$
 \boxed{\int u\,dv = uv - \int v\,du.}
@@ -414,9 +392,9 @@ x^4\,dx &= \frac{(x+dx)^5 - x^5}{5},
 \end{aligned}
 $$</div>
 
-<p>we see a clear pattern: the differential (or the infinitesimal change) times a power of $x$ equals the difference of two successive higher powers of $x, divided by a constant.</p>
+<p>we see a clear pattern: the differential (or the infinitesimal change) times a power of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span> equals the difference of two successive higher powers of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>, divided by a constant.</p>
 
-<p>By summing these differences over a partition, we obtain telescoping sums that yield the net change in the antiderivative. This process provides a natural and intuitive derivation of the Fundamental Theorem of Calculus, as well as alternative derivations for integration formulas (for $\cos(x)$, $\sin(x)$, $\frac{1}{x}$, and even integration by parts).</p>
+<p>By summing these differences over a partition, we obtain telescoping sums that yield the net change in the antiderivative. This process provides a natural and intuitive derivation of the Fundamental Theorem of Calculus, as well as alternative derivations for integration formulas (for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\cos(x)</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sin(x)</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{x}</annotation></semantics></math></span>, and even integration by parts).</p>
 
 <p>This approach emphasizes the importance of algebraic patterns and finite differences, reinforcing the idea that integration is simply the accumulation of infinitesimal changes. By understanding and working through these difference equations step by step, one gains a deeper insight into the structure of antiderivatives and the fundamental connections between discrete sums and continuous change.</p>
 
@@ -424,17 +402,18 @@ $$</div>
 
 <p>This article is structured with clear headings, detailed intermediate steps, and additional equations to help the reader see the algebraic patterns in difference equations for the anti-derivative. All your original LaTeX work is preserved and integrated into the explanation. Feel free to modify or expand further as needed!</p>
 
-
-  <div class="post-navigation bottom-nav">
-    
-      <a class="prev" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/theorems/part7/">&larr; Previous: VII. Building Calculus from First Principles - Fundamental Theorem of Calculus</a>
-    
-
-    
-      <a class="next" href="/maths-calculus-from-first-principles/mathematics/calculus/integration/series-expansions/part9/">Next: IX. Building Calculus from First Principles - Integration by Parts &rarr;</a>
-    
   </div>
 </article>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Prevent right-click on math images
+  document.querySelectorAll('img[class*="math-"]').forEach(function(el) {
+    el.addEventListener('contextmenu', e => e.preventDefault());
+    el.addEventListener('dragstart', e => e.preventDefault());
+  });
+});
+</script>
 
       </div>
     </main><footer class="site-footer h-card">
