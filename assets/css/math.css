@@ -77,12 +77,6 @@
   vertical-align: middle;
 }
 
-/* Common adjustments for SVG */
-.math-block-svg svg,
-.math-inline-svg svg {
-  fill: currentColor;
-  stroke: none;
-}
 
 /* Error styling */
 .math-error {
