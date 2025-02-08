@@ -144,58 +144,58 @@
 
 <h2 id="1-difference-equations-for-powers">1. Difference Equations for Powers</h2>
 
-<p>The core idea is to relate the differential expression <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math_x_p__dx-cb7a0f47-8974be0a-8984-4be6-8ab3-2f9d0d6f233f.svg" alt="x^p\,dx" class="math-svg" /></span> to the difference between consecutive powers of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_x-9dd4e461-ecbf7dba-c025-4475-a628-69743b801ba2.svg" alt="x" class="math-svg" /></span>. For very small <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math_dx-acd2b09d-191d6392-2759-4ce8-8ca0-2054a2a5bfe4.svg" alt="dx" class="math-svg" /></span> (or in the limit as <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math_dx-acd2b09d-191d6392-2759-4ce8-8ca0-2054a2a5bfe4.svg" alt="dx" class="math-svg" /></span> becomes infinitesimal), we have the following difference equations:</p>
+<p>The core idea is to relate the differential expression <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math_x_p__dx-cb7a0f47-d5a7e99a-a840-433f-8e3d-fa5196702e25.png" alt="x^p\,dx" class="math-inline" /></span> to the difference between consecutive powers of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_x-9dd4e461-e0945bf0-d778-4ab8-a26e-c4f3ef41abc4.png" alt="x" class="math-inline" /></span>. For very small <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math_dx-acd2b09d-9cba7da8-0c78-4912-ba12-62529590596e.png" alt="dx" class="math-inline" /></span> (or in the limit as <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math_dx-acd2b09d-9cba7da8-0c78-4912-ba12-62529590596e.png" alt="dx" class="math-inline" /></span> becomes infinitesimal), we have the following difference equations:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__begin_aligned___x__-8ae4c5c7-5fe7e07d-e62e-441d-9d6b-aaa5c6cbe204.svg" alt="\begin{aligned}
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__begin_aligned___x__-8ae4c5c7-9ac61cf6-5dd4-4b57-953c-468ce26403f3.png" alt="\begin{aligned}
 x\, dx &amp;= \frac{(x + dx)^2 - x^2}{2},\\[1mm]
 x^2\, dx &amp;= \frac{(x + dx)^3 - x^3}{3},\\[1mm]
 x^3\, dx &amp;= \frac{(x + dx)^4 - x^4}{4},\\[1mm]
 x^4\, dx &amp;= \frac{(x + dx)^5 - x^5}{5}.
-\end{aligned}" class="math-svg" /></div>
+\end{aligned}" class="math-block" /></div>
 
 <h3 id="explanation">Explanation</h3>
 
 <ul>
-  <li>For the first equation:Expand <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__x___dx__2-8d09465b-b32426d4-8e6b-47aa-bb3c-b8906da1e6e5.svg" alt="(x + dx)^2" class="math-svg" /></span>:</li>
+  <li>For the first equation:Expand <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__x___dx__2-8d09465b-62621e30-c5b0-4c83-9415-cf3f281dc82d.png" alt="(x + dx)^2" class="math-inline" /></span>:</li>
 </ul>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__x___dx__2___x_2___2-6c3512dd-d5583aaf-1141-437e-9c90-054500c77b4a.svg" alt="(x + dx)^2 = x^2 + 2x\,dx + (dx)^2." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__x___dx__2___x_2___2-6c3512dd-953b217f-d813-4f5f-b046-234a9b9b0af6.png" alt="(x + dx)^2 = x^2 + 2x\,dx + (dx)^2." class="math-block" /></div>
 
-<p>Neglecting the <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__dx__2-1ca41b9b-6bd5e9c4-4532-405e-9c19-d3aaa81c7e69.svg" alt="(dx)^2" class="math-svg" /></span> term (since <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math_dx-acd2b09d-191d6392-2759-4ce8-8ca0-2054a2a5bfe4.svg" alt="dx" class="math-svg" /></span> is infinitesimally small), we obtain:</p>
+<p>Neglecting the <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__dx__2-1ca41b9b-94f472a3-01a2-4024-935f-51b267a07bb4.png" alt="(dx)^2" class="math-inline" /></span> term (since <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math_dx-acd2b09d-9cba7da8-0c78-4912-ba12-62529590596e.png" alt="dx" class="math-inline" /></span> is infinitesimally small), we obtain:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__x___dx__2___x_2__ap-b3224866-436ec36a-6d5e-4a44-aef4-93091880bae5.svg" alt="(x + dx)^2 - x^2 \approx 2x\,dx." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__x___dx__2___x_2__ap-b3224866-9d986a46-cd91-46f7-8c58-93bea4504eaa.png" alt="(x + dx)^2 - x^2 \approx 2x\,dx." class="math-block" /></div>
 
 <p>Dividing by 2 yields:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math_x__dx__approx__frac_-726bf28f-f2ac5b98-28ac-4a5f-bd8f-d677ea9bf3d2.svg" alt="x\,dx \approx \frac{(x + dx)^2 - x^2}{2}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math_x__dx__approx__frac_-726bf28f-3c1f9aa8-00dc-4b3f-aa37-0065423b924a.png" alt="x\,dx \approx \frac{(x + dx)^2 - x^2}{2}." class="math-block" /></div>
 
 <ul>
-  <li>For the second equation:Similarly, expand <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__x_dx__3-82ad4c36-0f68cacf-6ae2-42a3-ae90-9420582e04da.svg" alt="(x+dx)^3" class="math-svg" /></span>:</li>
+  <li>For the second equation:Similarly, expand <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__x_dx__3-82ad4c36-e28f0fdd-df4b-4366-a39f-a0d5be96c289.png" alt="(x+dx)^3" class="math-inline" /></span>:</li>
 </ul>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__x_dx__3___x_3___3x_-a8b62ef9-353c3126-0d33-46ce-8599-9c190cbb7065.svg" alt="(x+dx)^3 = x^3 + 3x^2\,dx + 3x\,(dx)^2 + (dx)^3." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__x_dx__3___x_3___3x_-a8b62ef9-fe543548-dd26-4400-a444-963984648248.png" alt="(x+dx)^3 = x^3 + 3x^2\,dx + 3x\,(dx)^2 + (dx)^3." class="math-block" /></div>
 
 <p>Ignoring the higher-order terms, we have:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__x_dx__3___x_3__appr-4ac224a5-53c3c489-7e67-45d7-a4ab-ddcc09c0b307.svg" alt="(x+dx)^3 - x^3 \approx 3x^2\,dx," class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__x_dx__3___x_3__appr-4ac224a5-38f04d7f-00cb-460e-bf27-5a88555c9478.png" alt="(x+dx)^3 - x^3 \approx 3x^2\,dx," class="math-block" /></div>
 
 <p>so that</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math_x_2__dx__approx__fra-4c077ab9-73788803-fedd-4cac-bc20-5a8ac04a9381.svg" alt="x^2\,dx \approx \frac{(x+dx)^3 - x^3}{3}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math_x_2__dx__approx__fra-4c077ab9-e457a891-a88c-48bb-a59b-c58499da640c.png" alt="x^2\,dx \approx \frac{(x+dx)^3 - x^3}{3}." class="math-block" /></div>
 
 <ul>
   <li>The subsequent equations follow the same idea.</li>
 </ul>
 
-<h2 id="2-adjusting-the-difference-equations-for-a-finite-increment-">2. Adjusting the Difference Equations for a Finite Increment <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__Delta_X-2dc5f9a8-224c93bc-e6e5-48b7-9d26-e8b999cfeaa1.svg" alt="\Delta X" class="math-svg" /></span></h2>
+<h2 id="2-adjusting-the-difference-equations-for-a-finite-increment-">2. Adjusting the Difference Equations for a Finite Increment <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__Delta_X-2dc5f9a8-7f8e2e1e-719c-4e5d-b5d2-fb8d520b718b.png" alt="\Delta X" class="math-inline" /></span></h2>
 
-<p>If instead of an infinitesimal <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math_dx-acd2b09d-191d6392-2759-4ce8-8ca0-2054a2a5bfe4.svg" alt="dx" class="math-svg" /></span> we have a finite increment <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__Delta_X-2dc5f9a8-224c93bc-e6e5-48b7-9d26-e8b999cfeaa1.svg" alt="\Delta X" class="math-svg" /></span>, the exact equations include higher-order terms. For example, using the binomial expansion we obtain:</p>
+<p>If instead of an infinitesimal <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math_dx-acd2b09d-9cba7da8-0c78-4912-ba12-62529590596e.png" alt="dx" class="math-inline" /></span> we have a finite increment <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__Delta_X-2dc5f9a8-7f8e2e1e-719c-4e5d-b5d2-fb8d520b718b.png" alt="\Delta X" class="math-inline" /></span>, the exact equations include higher-order terms. For example, using the binomial expansion we obtain:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__begin_aligned___x__-5203b25d-59b31a2c-5951-4198-914d-757447caf06a.svg" alt="\begin{aligned}
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__begin_aligned___x__-5203b25d-0e8d9aee-1b9b-4275-a557-9f912756738e.png" alt="\begin{aligned}
 x\,\Delta X + \frac{(\Delta X)^2}{2} &amp;= \frac{(x + \Delta X)^2 - x^2}{2}, \\[1mm]
 x^2\,\Delta X + x\,(\Delta X)^2 + \frac{(\Delta X)^3}{3} &amp;= \frac{(x + \Delta X)^3 - x^3}{3}, \\[1mm]
 x^3\,\Delta X + \frac{3x^2\,(\Delta X)^2}{2} + x\,(\Delta X)^3 + \frac{(\Delta X)^4}{2} &amp;= \frac{(x + \Delta X)^4 - x^4}{4}.
-\end{aligned}" class="math-svg" /></div>
+\end{aligned}" class="math-block" /></div>
 
 <h3 id="explanation-1">Explanation</h3>
 
@@ -203,145 +203,145 @@ x^3\,\Delta X + \frac{3x^2\,(\Delta X)^2}{2} + x\,(\Delta X)^3 + \frac{(\Delta X
   <li>In the first equation, the full expansion is:</li>
 </ul>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__x____Delta_X__2___x-bc066f77-6253dc6d-c012-4cad-a5fa-79f49fa6f2f2.svg" alt="(x + \Delta X)^2 = x^2 + 2x\,\Delta X + (\Delta X)^2." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__x____Delta_X__2___x-bc066f77-fe9228b7-646a-4788-a074-1836102a3c6f.png" alt="(x + \Delta X)^2 = x^2 + 2x\,\Delta X + (\Delta X)^2." class="math-block" /></div>
 
 <p>Hence,</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__frac__x____Delta_X_-302adb34-ed9a05cd-e6fb-4e45-a431-12b034246da7.svg" alt="\frac{(x + \Delta X)^2 - x^2}{2} = \frac{2x\,\Delta X + (\Delta X)^2}{2} = x\,\Delta X + \frac{(\Delta X)^2}{2}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__frac__x____Delta_X_-302adb34-543ba0e1-9c23-49bc-8fca-a9bb62f9ff34.png" alt="\frac{(x + \Delta X)^2 - x^2}{2} = \frac{2x\,\Delta X + (\Delta X)^2}{2} = x\,\Delta X + \frac{(\Delta X)^2}{2}." class="math-block" /></div>
 
 <ul>
-  <li>The higher equations are obtained by applying the binomial theorem to <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__x____Delta_X__k-dafadd7a-458ed885-54f6-48b7-afe0-3a7defda9e41.svg" alt="(x + \Delta X)^k" class="math-svg" /></span> and then subtracting <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math_x_k-1f31f8c0-e35cc2f1-7d87-446d-b582-1a8e5df45a32.svg" alt="x^k" class="math-svg" /></span>.</li>
+  <li>The higher equations are obtained by applying the binomial theorem to <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__x____Delta_X__k-dafadd7a-81138828-32ab-4ea6-9548-22997654ff62.png" alt="(x + \Delta X)^k" class="math-inline" /></span> and then subtracting <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math_x_k-1f31f8c0-7472f4c9-3416-4878-9898-da9518728628.png" alt="x^k" class="math-inline" /></span>.</li>
 </ul>
 
 <p>These equations illustrate how, when the increment is not infinitesimally small, additional terms appear to account for the full change.</p>
 
-<h2 id="3-application-deriving-the-antiderivative-of-">3. Application: Deriving the Antiderivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__cos_x_-7b8d097e-3d92bec8-b44b-403c-84e2-9b071ca83e98.svg" alt="\cos(x)" class="math-svg" /></span></h2>
+<h2 id="3-application-deriving-the-antiderivative-of-">3. Application: Deriving the Antiderivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__cos_x_-7b8d097e-6c60cdfb-8e0c-4c37-93a2-5a3322b86adf.png" alt="\cos(x)" class="math-inline" /></span></h2>
 
 <p>Let us now see how these difference equations connect with integration.</p>
 
-<h3 id="31-integration-of-">3.1 Integration of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__cos_x_-7b8d097e-3d92bec8-b44b-403c-84e2-9b071ca83e98.svg" alt="\cos(x)" class="math-svg" /></span></h3>
+<h3 id="31-integration-of-">3.1 Integration of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__cos_x_-7b8d097e-6c60cdfb-8e0c-4c37-93a2-5a3322b86adf.png" alt="\cos(x)" class="math-inline" /></span></h3>
 
 <p>We aim to show:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__int__cos_x_____dx__-e1f7e7b7-4d101d03-c12c-4a20-8b71-d94945e1c857.svg" alt="\int \cos(x) \, dx = \sin(x) + C." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__int__cos_x_____dx__-e1f7e7b7-a09e6f1b-9c30-4502-98e6-62f3a35c29d6.png" alt="\int \cos(x) \, dx = \sin(x) + C." class="math-block" /></div>
 
-<p>Step 1. Express the Increment in <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x_-3e21673c-0f6667d2-c9a4-4980-be34-04c6a88f0eb9.svg" alt="\sin(x)" class="math-svg" /></span>From the sine addition formula,</p>
+<p>Step 1. Express the Increment in <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x_-3e21673c-2231d930-6961-45ff-a5ff-ad5410c39cc1.png" alt="\sin(x)" class="math-inline" /></span>From the sine addition formula,</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__sin_x____Delta_x___-19d21fec-024ff78c-2f16-49b3-96fe-a944797eff7c.svg" alt="\sin(x + \Delta x) = \sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__sin_x____Delta_x___-19d21fec-d9e9cf47-55f7-4e64-93b0-01d93019e80b.png" alt="\sin(x + \Delta x) = \sin(x)\cos(\Delta x) + \cos(x)\sin(\Delta x)." class="math-block" /></div>
 
-<p>For very small <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x-b56546a8-ccbb33c1-8e21-4377-943b-698634081080.svg" alt="\Delta x" class="math-svg" /></span>, we use the approximations:</p>
+<p>For very small <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x-b56546a8-b2fc0135-4e09-4ee8-91ee-8c118a355294.png" alt="\Delta x" class="math-inline" /></span>, we use the approximations:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__cos__Delta_x___appr-1d690b4d-4b6c5fac-0bab-4d2c-8b2b-ba7fea630997.svg" alt="\cos(\Delta x) \approx 1 \quad \text{and} \quad \sin(\Delta x) \approx \Delta x." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__cos__Delta_x___appr-1d690b4d-5ddac85a-29ab-4176-a7eb-6844a1ef52b5.png" alt="\cos(\Delta x) \approx 1 \quad \text{and} \quad \sin(\Delta x) \approx \Delta x." class="math-block" /></div>
 
 <p>Thus,</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__sin_x____Delta_x___-5c3e461d-11a716de-54bd-44fb-a6d4-c38912374c4f.svg" alt="\sin(x + \Delta x) \approx \sin(x) + \cos(x) \Delta x." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__sin_x____Delta_x___-5c3e461d-bf610777-e2c0-4f83-8f36-cad13b013f29.png" alt="\sin(x + \Delta x) \approx \sin(x) + \cos(x) \Delta x." class="math-block" /></div>
 
-<p>Subtract <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x_-3e21673c-0f6667d2-c9a4-4980-be34-04c6a88f0eb9.svg" alt="\sin(x)" class="math-svg" /></span> from both sides:</p>
+<p>Subtract <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x_-3e21673c-2231d930-6961-45ff-a5ff-ad5410c39cc1.png" alt="\sin(x)" class="math-inline" /></span> from both sides:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__sin_x____Delta_x___-2f23aa28-7acc1713-3e86-4f39-a49b-ad977ded5efb.svg" alt="\sin(x + \Delta x) - \sin(x) \approx \cos(x)\Delta x." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__sin_x____Delta_x___-2f23aa28-b8450fa3-d95d-4bdd-b143-b5a5126bf489.png" alt="\sin(x + \Delta x) - \sin(x) \approx \cos(x)\Delta x." class="math-block" /></div>
 
-<p>Step 2. Forming the Telescoping SumDivide the interval <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__0___pi_-f74f8710-f5475c17-422d-42d7-9f67-c6c286cb715c.svg" alt="[0, \pi]" class="math-svg" /></span> into subintervals of width <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x-b56546a8-ccbb33c1-8e21-4377-943b-698634081080.svg" alt="\Delta x" class="math-svg" /></span>. Then</p>
+<p>Step 2. Forming the Telescoping SumDivide the interval <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__0___pi_-f74f8710-9dc0329d-c030-4a2e-845a-f7a7966d0f63.png" alt="[0, \pi]" class="math-inline" /></span> into subintervals of width <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x-b56546a8-b2fc0135-4e09-4ee8-91ee-8c118a355294.png" alt="\Delta x" class="math-inline" /></span>. Then</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__int__0____pi___cos_-69dc74c8-471dfcb0-6b1e-4dfa-9c1e-8fcc57fe17f0.svg" alt="\int_{0}^{\pi} \cos(x)\, dx \approx \sum_{i=0}^{\frac{n}{\Delta x}} \cos(i\Delta x) \, \Delta x." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__int__0____pi___cos_-69dc74c8-7973553a-1028-4d64-a9ae-e67c3eb58b3a.png" alt="\int_{0}^{\pi} \cos(x)\, dx \approx \sum_{i=0}^{\frac{n}{\Delta x}} \cos(i\Delta x) \, \Delta x." class="math-block" /></div>
 
-<p>But as we just observed, for each subinterval the change in <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x_-3e21673c-0f6667d2-c9a4-4980-be34-04c6a88f0eb9.svg" alt="\sin(x)" class="math-svg" /></span> is approximately:</p>
+<p>But as we just observed, for each subinterval the change in <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x_-3e21673c-2231d930-6961-45ff-a5ff-ad5410c39cc1.png" alt="\sin(x)" class="math-inline" /></span> is approximately:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__sin__i_1__Delta_x__-42c0f84c-a94b3979-a2a3-42e7-96cf-76b3ea2b1445.svg" alt="\sin((i+1)\Delta x) - \sin(i\Delta x) \approx \cos(i\Delta x)\Delta x." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__sin__i_1__Delta_x__-42c0f84c-e10cfc9d-92ac-4eba-8867-c12065c1d3a9.png" alt="\sin((i+1)\Delta x) - \sin(i\Delta x) \approx \cos(i\Delta x)\Delta x." class="math-block" /></div>
 
 <p>Thus, the sum becomes:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__sum__i_0____frac_n_-fa97f0e6-c98802aa-ba06-4dec-acd4-29c4b327d491.svg" alt="\sum_{i=0}^{\frac{n}{\Delta x}} \left[\sin((i+1)\Delta x) - \sin(i\Delta x)\right]." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__sum__i_0____frac_n_-fa97f0e6-ab25d486-40b3-4bc0-ae1a-f8fcba9cd9c7.png" alt="\sum_{i=0}^{\frac{n}{\Delta x}} \left[\sin((i+1)\Delta x) - \sin(i\Delta x)\right]." class="math-block" /></div>
 
 <p>This is a telescoping series; almost every term cancels:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__sin__Delta_x_____si-0608c25b-0db6d8ec-775b-403c-9b34-c8b313be4df6.svg" alt="\sin(\Delta x) - \sin(0) + \sin(2\Delta x) - \sin(\Delta x) + \cdots + \sin(N) - \sin(N-\Delta x) = \sin(N) - \sin(0)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__sin__Delta_x_____si-0608c25b-ed2478de-e204-4732-a994-8ed98375e5c6.png" alt="\sin(\Delta x) - \sin(0) + \sin(2\Delta x) - \sin(\Delta x) + \cdots + \sin(N) - \sin(N-\Delta x) = \sin(N) - \sin(0)." class="math-block" /></div>
 
-<p>Taking the limit as <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x__to_0-3e032043-f3521173-d92e-4d0a-8312-bf9ce7057877.svg" alt="\Delta x \to 0" class="math-svg" /></span> , we deduce:</p>
+<p>Taking the limit as <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x__to_0-3e032043-6269543a-1e1f-410b-be31-741bfdf16738.png" alt="\Delta x \to 0" class="math-inline" /></span> , we deduce:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__int__0____pi___cos_-93d3ae09-38d03e39-39fc-467e-aad7-1f5988e29dce.svg" alt="\int_{0}^{\pi} \cos(x)\, dx = \sin(\pi) - \sin(0) = 0 - 0 = 0." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__int__0____pi___cos_-93d3ae09-62f7a8af-3936-4287-b3d2-17da9ae21b94.png" alt="\int_{0}^{\pi} \cos(x)\, dx = \sin(\pi) - \sin(0) = 0 - 0 = 0." class="math-block" /></div>
 
-<p>(For the general antiderivative, one obtains <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__int__cos_x____dx___-c641b4a9-da3390b4-0110-483b-8e9a-b022f8963a90.svg" alt="\int \cos(x)\, dx = \sin(x) + C" class="math-svg" /></span>.)</p>
+<p>(For the general antiderivative, one obtains <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__int__cos_x____dx___-c641b4a9-fcca133c-7e49-4551-af67-463b888e2c45.png" alt="\int \cos(x)\, dx = \sin(x) + C" class="math-inline" /></span>.)</p>
 
-<h2 id="4-application-deriving-the-antiderivative-of-">4. Application: Deriving the Antiderivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x_-3e21673c-0f6667d2-c9a4-4980-be34-04c6a88f0eb9.svg" alt="\sin(x)" class="math-svg" /></span></h2>
+<h2 id="4-application-deriving-the-antiderivative-of-">4. Application: Deriving the Antiderivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x_-3e21673c-2231d930-6961-45ff-a5ff-ad5410c39cc1.png" alt="\sin(x)" class="math-inline" /></span></h2>
 
 <p>Similarly, consider:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__int__sin_x____dx_-94d158a1-5d2bd948-ac5c-4e42-beef-4f0fdfdc3e80.svg" alt="\int \sin(x)\, dx." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__int__sin_x____dx_-94d158a1-5e01a89e-9184-47d2-befd-961349a2fa21.png" alt="\int \sin(x)\, dx." class="math-block" /></div>
 
-<p>Step 1. Express the Increment in <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__cos_x_-7b8d097e-3d92bec8-b44b-403c-84e2-9b071ca83e98.svg" alt="\cos(x)" class="math-svg" /></span>Recall the cosine addition formula:</p>
+<p>Step 1. Express the Increment in <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__cos_x_-7b8d097e-6c60cdfb-8e0c-4c37-93a2-5a3322b86adf.png" alt="\cos(x)" class="math-inline" /></span>Recall the cosine addition formula:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__cos_x____Delta_x___-41bb5aff-f9feea8f-1c3c-4bb0-999a-73374669613b.svg" alt="\cos(x + \Delta x) = \cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__cos_x____Delta_x___-41bb5aff-edbe0da1-bec3-4914-8a46-46d5e01f4a56.png" alt="\cos(x + \Delta x) = \cos(x)\cos(\Delta x) - \sin(x)\sin(\Delta x)." class="math-block" /></div>
 
-<p>For small <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x-b56546a8-ccbb33c1-8e21-4377-943b-698634081080.svg" alt="\Delta x" class="math-svg" /></span>, this approximates to:</p>
+<p>For small <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x-b56546a8-b2fc0135-4e09-4ee8-91ee-8c118a355294.png" alt="\Delta x" class="math-inline" /></span>, this approximates to:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__cos_x____Delta_x___-4bcba814-aa9a934a-0999-456e-b21e-f44b8fa9ee65.svg" alt="\cos(x + \Delta x) \approx \cos(x) - \sin(x)\Delta x." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__cos_x____Delta_x___-4bcba814-f0efaf01-c2d0-4089-a3e9-4a6c367fe2b0.png" alt="\cos(x + \Delta x) \approx \cos(x) - \sin(x)\Delta x." class="math-block" /></div>
 
 <p>Rearrange to obtain:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/difference-equations/part8/math__cos_x_____cos_x____-6029f19a-21aec9f9-a42e-4bd8-9114-19615fdb2da8.svg" alt="\cos(x) - \cos(x + \Delta x) \approx \sin(x)\Delta x." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/difference-equations/part8/math__cos_x_____cos_x____-6029f19a-a83dcee1-0f6e-4a17-a785-2c30f0c164b7.png" alt="\cos(x) - \cos(x + \Delta x) \approx \sin(x)\Delta x." class="math-block" /></div>
 
 <p>Thus,</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x__Delta_x__app-5cce7690-356fa992-aa2a-4ec6-aa67-0a48598d699b.svg" alt="\sin(x)\Delta x \approx \cos(x) - \cos(x+\Delta x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x__Delta_x__app-5cce7690-e6e6d0fd-21e3-40d5-9869-f60a75d05567.png" alt="\sin(x)\Delta x \approx \cos(x) - \cos(x+\Delta x)." class="math-block" /></div>
 
 <p>Step 2. Telescoping SumDivide the interval and sum:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__sum__i_0___n__Delta-ab4a5700-4cfe676f-a141-44c1-970a-7e2b7762299b.svg" alt="\sum_{i=0}^{n/\Delta x} \left[\cos(i\Delta x) - \cos((i+1)\Delta x)\right]" class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__sum__i_0___n__Delta-ab4a5700-c64a18cd-acf2-4976-80d0-ee3a97c183b9.png" alt="\sum_{i=0}^{n/\Delta x} \left[\cos(i\Delta x) - \cos((i+1)\Delta x)\right]" class="math-block" /></div>
 
 <p>telescopes to:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__cos_0_____cos_n_Del-86781c58-120f7fb6-0103-444e-8810-7e778dca91d8.svg" alt="\cos(0) - \cos(n\Delta x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__cos_0_____cos_n_Del-86781c58-41e56b6d-4986-4183-978e-1801c7e21509.png" alt="\cos(0) - \cos(n\Delta x)." class="math-block" /></div>
 
-<p>Taking the limit as <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x__to_0-3e032043-f3521173-d92e-4d0a-8312-bf9ce7057877.svg" alt="\Delta x \to 0" class="math-svg" /></span> (and adjusting for the proper interval), we deduce:</p>
+<p>Taking the limit as <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x__to_0-3e032043-6269543a-1e1f-410b-be31-741bfdf16738.png" alt="\Delta x \to 0" class="math-inline" /></span> (and adjusting for the proper interval), we deduce:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__int__sin_x____dx___-303704ce-3f66eb81-a759-412d-a32f-18331665d5a7.svg" alt="\int \sin(x)\, dx = -\cos(x) + C." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__int__sin_x____dx___-303704ce-0728e9aa-36cf-4fb7-86b1-e572969decd1.png" alt="\int \sin(x)\, dx = -\cos(x) + C." class="math-block" /></div>
 
-<h2 id="5-application-deriving-the-antiderivative-of-">5. Application: Deriving the Antiderivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_-afc48b56-d7c8860f-5f3c-4d72-8f5d-8b2bddb3fb10.svg" alt="\frac{1}{x}" class="math-svg" /></span></h2>
+<h2 id="5-application-deriving-the-antiderivative-of-">5. Application: Deriving the Antiderivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_-afc48b56-01c45dde-90f2-49b5-97e0-4315c22f7f3f.png" alt="\frac{1}{x}" class="math-inline" /></span></h2>
 
 <p>Using the logarithm, note the following expansion from previous work:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__begin_aligned____lo-b57f023b-a1d247c8-9bc1-4181-a776-b125f8b24a82.svg" alt="\begin{aligned}
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__begin_aligned____lo-b57f023b-e0fd760a-c36f-47c1-855e-ef2d98d8c721.png" alt="\begin{aligned}
 \log(x+h) &amp;= \log(x) + \log\!\Bigl( \Bigl(1+\frac{h}{x}\Bigr)^{\frac{x}{h}} \Bigr)^{\frac{h}{x}} \\
 &amp;= \log(x) + \log\!\Bigl(e^{\frac{h}{x}}\Bigr) \\
 &amp;= \log(x) + \frac{h}{x}.
-\end{aligned}" class="math-svg" /></div>
+\end{aligned}" class="math-block" /></div>
 
 <p>Thus,</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__frac_h__x_____log_x-1b13b813-b33c3896-d0cf-496b-90ab-980b46467b82.svg" alt="\frac{h}{x} = \log(x+h) - \log(x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__frac_h__x_____log_x-1b13b813-be26c1a7-4971-44a8-8c87-265aefc22e71.png" alt="\frac{h}{x} = \log(x+h) - \log(x)." class="math-block" /></div>
 
 <p>When you sum these differences over an interval, the telescoping nature gives:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__int__frac_1__x___dx-a566c4c8-76d1ddb1-8f3e-4711-a137-260665764181.svg" alt="\int \frac{1}{x}\,dx = \ln|x| + C." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__int__frac_1__x___dx-a566c4c8-2a9e15ca-9dfa-4775-ae72-a02a892d9ce5.png" alt="\int \frac{1}{x}\,dx = \ln|x| + C." class="math-block" /></div>
 
 <h2 id="6-integration-by-parts-a-brief-mention">6. Integration by Parts (A Brief Mention)</h2>
 
-<p>An additional powerful tool is integration by parts, which can also be derived using difference equations. For example, if we write the expansion for functions <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_f_x_-50bbd36e-e1e7ecdc-a644-44f7-a591-df1ffedf0c7d.svg" alt="f(x)" class="math-svg" /></span> and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math_G_x_-5d096970-9b449598-d284-41ff-a7ce-ee2b35f07df7.svg" alt="G(x)" class="math-svg" /></span> (with <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math_G__x____g_x_-525f7daf-cd59d089-ab18-4376-90e3-6e43ea865cf7.svg" alt="G&#39;(x) = g(x)" class="math-svg" /></span>) as:</p>
+<p>An additional powerful tool is integration by parts, which can also be derived using difference equations. For example, if we write the expansion for functions <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_f_x_-50bbd36e-e5745c75-0055-4971-9428-3e049925ddba.png" alt="f(x)" class="math-inline" /></span> and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math_G_x_-5d096970-78105082-2ef9-4835-8f1b-3d2eb66aa153.png" alt="G(x)" class="math-inline" /></span> (with <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math_G__x____g_x_-525f7daf-aeed66da-b6bb-437a-9972-24dae78b2dae.png" alt="G&#39;(x) = g(x)" class="math-inline" /></span>) as:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__begin_aligned___f_x-7e2ad98f-692473ae-84dd-4f16-9582-75533507239a.svg" alt="\begin{aligned}
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__begin_aligned___f_x-7e2ad98f-4ae2a02c-5833-4e9c-a81a-bbd8dfe65de8.png" alt="\begin{aligned}
 f(x+\Delta x) &amp;= A_0 + A_1\,\Delta x + A_2\,(\Delta x)^2 + \cdots, \\
 G(x+\Delta x) &amp;= B_0 + B_1\,\Delta x + B_2\,(\Delta x)^2 + \cdots,
-\end{aligned}" class="math-svg" /></div>
+\end{aligned}" class="math-block" /></div>
 
-<p>then the product <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math_f_x_G_x_-84837e07-d4bf717d-e74f-4f2b-b09f-70473660a870.svg" alt="f(x)G(x)" class="math-svg" /></span> has a difference that telescopes. The careful grouping of terms ultimately leads to the familiar integration by parts formula:</p>
+<p>then the product <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math_f_x_G_x_-84837e07-b95be83b-a37e-425d-8b03-23507f9d2ae8.png" alt="f(x)G(x)" class="math-inline" /></span> has a difference that telescopes. The careful grouping of terms ultimately leads to the familiar integration by parts formula:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__boxed__int_u__dv___-51855280-93d81fc9-41fc-43a0-aeef-edfe4af643d2.svg" alt="\boxed{\int u\,dv = uv - \int v\,du.}" class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__boxed__int_u__dv___-51855280-8beca492-8407-401c-a086-f9173bb98719.png" alt="\boxed{\int u\,dv = uv - \int v\,du.}" class="math-block" /></div>
 
 <h2 id="7-conclusion">7. Conclusion</h2>
 
 <p>We have examined how difference equations can be used to “reverse-engineer” antiderivatives by considering the differences between successive values of a function. By writing:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__begin_aligned___x__-f3df9dd0-3a297848-aea8-43bc-b9e7-194f4f0c9d16.svg" alt="\begin{aligned}
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__begin_aligned___x__-f3df9dd0-170cd7d1-5abb-4248-9f55-64000858e91f.png" alt="\begin{aligned}
 x\,dx &amp;= \frac{(x+dx)^2 - x^2}{2},\\[1mm]
 x^2\,dx &amp;= \frac{(x+dx)^3 - x^3}{3},\\[1mm]
 x^3\,dx &amp;= \frac{(x+dx)^4 - x^4}{4},\\[1mm]
 x^4\,dx &amp;= \frac{(x+dx)^5 - x^5}{5},
-\end{aligned}" class="math-svg" /></div>
+\end{aligned}" class="math-block" /></div>
 
-<p>we see a clear pattern: the differential (or the infinitesimal change) times a power of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_x-9dd4e461-ecbf7dba-c025-4475-a628-69743b801ba2.svg" alt="x" class="math-svg" /></span> equals the difference of two successive higher powers of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_x-9dd4e461-ecbf7dba-c025-4475-a628-69743b801ba2.svg" alt="x" class="math-svg" /></span>, divided by a constant.</p>
+<p>we see a clear pattern: the differential (or the infinitesimal change) times a power of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_x-9dd4e461-e0945bf0-d778-4ab8-a26e-c4f3ef41abc4.png" alt="x" class="math-inline" /></span> equals the difference of two successive higher powers of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_x-9dd4e461-e0945bf0-d778-4ab8-a26e-c4f3ef41abc4.png" alt="x" class="math-inline" /></span>, divided by a constant.</p>
 
-<p>By summing these differences over a partition, we obtain telescoping sums that yield the net change in the antiderivative. This process provides a natural and intuitive derivation of the Fundamental Theorem of Calculus, as well as alternative derivations for integration formulas (for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__cos_x_-7b8d097e-3d92bec8-b44b-403c-84e2-9b071ca83e98.svg" alt="\cos(x)" class="math-svg" /></span>, <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x_-3e21673c-0f6667d2-c9a4-4980-be34-04c6a88f0eb9.svg" alt="\sin(x)" class="math-svg" /></span>, <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_-afc48b56-d7c8860f-5f3c-4d72-8f5d-8b2bddb3fb10.svg" alt="\frac{1}{x}" class="math-svg" /></span>, and even integration by parts).</p>
+<p>By summing these differences over a partition, we obtain telescoping sums that yield the net change in the antiderivative. This process provides a natural and intuitive derivation of the Fundamental Theorem of Calculus, as well as alternative derivations for integration formulas (for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__cos_x_-7b8d097e-6c60cdfb-8e0c-4c37-93a2-5a3322b86adf.png" alt="\cos(x)" class="math-inline" /></span>, <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/division/differentiation/part5-b/math__sin_x_-3e21673c-2231d930-6961-45ff-a5ff-ad5410c39cc1.png" alt="\sin(x)" class="math-inline" /></span>, <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_-afc48b56-01c45dde-90f2-49b5-97e0-4315c22f7f3f.png" alt="\frac{1}{x}" class="math-inline" /></span>, and even integration by parts).</p>
 
 <p>This approach emphasizes the importance of algebraic patterns and finite differences, reinforcing the idea that integration is simply the accumulation of infinitesimal changes. By understanding and working through these difference equations step by step, one gains a deeper insight into the structure of antiderivatives and the fundamental connections between discrete sums and continuous change.</p>
 

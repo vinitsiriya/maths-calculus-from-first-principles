@@ -140,14 +140,14 @@
 
 <h3 id="preface">Preface</h3>
 
-<p>In our previous articles, we developed an elementary, algebraic approach to express functions as sums of contributions from different orders of an infinitely small increment. We saw that by “peeling off” the constant term, then the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x-b56546a8-ccbb33c1-8e21-4377-943b-698634081080.svg" alt="\Delta x" class="math-svg" /></span>, then that of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math___Delta_x__2-73c3edf7-f47c0ae5-e955-4b99-9f7f-306ca6c50444.svg" alt="(\Delta x)^2" class="math-svg" /></span>, etc., we arrive naturally at the familiar Taylor series expansion.</p>
+<p>In our previous articles, we developed an elementary, algebraic approach to express functions as sums of contributions from different orders of an infinitely small increment. We saw that by “peeling off” the constant term, then the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x-b56546a8-b2fc0135-4e09-4ee8-91ee-8c118a355294.png" alt="\Delta x" class="math-inline" /></span>, then that of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math___Delta_x__2-73c3edf7-d24663a9-532e-4b81-8bfa-508b3cc2a5f7.png" alt="(\Delta x)^2" class="math-inline" /></span>, etc., we arrive naturally at the familiar Taylor series expansion.</p>
 
 <p>In this installment, we extend that approach to functions involving division. We will:</p>
 
 <ul>
-  <li>Develop a series expansion for reciprocal functions such as <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-42db31c5-c65d-4144-a161-f792893738cb.svg" alt="\frac{1}{x+h}" class="math-svg" /></span> using the method of long division.</li>
-  <li>Derive important differentiation formulas (for example, for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_x___1_-48ea9be7-b4ecb468-e857-41de-aa55-435c2e4c536e.svg" alt="x^{-1}" class="math-svg" /></span>) from these series.</li>
-  <li>Present infinite series formulas for functions like <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__1_x_-216d6b32-7deac6c1-30db-488b-b4ec-109fe75769eb.svg" alt="\frac{1}{1+x}" class="math-svg" /></span> in both the standard geometric and Laurent forms.</li>
+  <li>Develop a series expansion for reciprocal functions such as <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-67cf410d-7fe8-44f8-bcc0-dc6640401258.png" alt="\frac{1}{x+h}" class="math-inline" /></span> using the method of long division.</li>
+  <li>Derive important differentiation formulas (for example, for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_x___1_-48ea9be7-60e7ade5-d84a-4b51-a7bd-972b31dc2f20.png" alt="x^{-1}" class="math-inline" /></span>) from these series.</li>
+  <li>Present infinite series formulas for functions like <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__1_x_-216d6b32-33b17021-9769-43d8-9270-769c5a869920.png" alt="\frac{1}{1+x}" class="math-inline" /></span> in both the standard geometric and Laurent forms.</li>
   <li>Show how algebraic manipulation in series leads naturally to product and chain rules when division is involved.</li>
 </ul>
 
@@ -157,33 +157,33 @@
 
 <p>Let us begin by considering the derivative of a reciprocal function:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_d__dx__frac_1_-51093c98-64da5319-58d3-4f8b-8d5d-33a5c5b64af5.svg" alt="\frac{d}{dx}\frac{1}{x} \quad \text{or} \quad \frac{d}{dx}\,x^{-1}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_d__dx__frac_1_-51093c98-4275962b-65bb-49fc-b7e9-edf8a260bb47.png" alt="\frac{d}{dx}\frac{1}{x} \quad \text{or} \quad \frac{d}{dx}\,x^{-1}." class="math-block" /></div>
 
 <p>To understand this from first principles, we wish to expand</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math_f_x_h_____frac_1__x_-9d4b55eb-6d839bc5-19f9-43c2-aa8c-721df70df835.svg" alt="f(x+h) = \frac{1}{x+h}" class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math_f_x_h_____frac_1__x_-9d4b55eb-c1945068-2cb6-4c1d-bddb-f1aa75956624.png" alt="f(x+h) = \frac{1}{x+h}" class="math-block" /></div>
 
-<p>into a power series in <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span> (or <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x-b56546a8-ccbb33c1-8e21-4377-943b-698634081080.svg" alt="\Delta x" class="math-svg" /></span>) so that we can identify the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span>.</p>
+<p>into a power series in <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span> (or <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math__Delta_x-b56546a8-b2fc0135-4e09-4ee8-91ee-8c118a355294.png" alt="\Delta x" class="math-inline" /></span>) so that we can identify the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span>.</p>
 
 <h3 id="11-using-long-division">1.1 Using Long Division</h3>
 
-<p>To bring the expression into a form where the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span> is visible, we employ the Long Division method. If you have forgotten the process of long division, here is a brief revision:</p>
+<p>To bring the expression into a form where the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span> is visible, we employ the Long Division method. If you have forgotten the process of long division, here is a brief revision:</p>
 
 <p>Long Division RevisionTo perform the long division for, say,</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_x_4___4__x___2-715f2ab3-4a502e58-a9b4-46c6-a6e9-2da7230d1d1b.svg" alt="\frac{x^4 - 4}{x + 2}," class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_x_4___4__x___2-715f2ab3-2670e33d-42a8-4ffb-b78a-72956cbd2e78.png" alt="\frac{x^4 - 4}{x + 2}," class="math-block" /></div>
 
 <p>follow these steps:</p>
 
 <ol>
-  <li>Divide the first term of the numerator (<span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_x_4-3c626f97-1991ad14-1e2f-4c5e-ab1d-812e008ced68.svg" alt="x^4" class="math-svg" /></span>) by the first term of the denominator (<span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_x-9dd4e461-ecbf7dba-c025-4475-a628-69743b801ba2.svg" alt="x" class="math-svg" /></span>); this gives <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_x_3-8c0fb3b0-56280236-5944-4782-9840-87a95e836a2a.svg" alt="x^3" class="math-svg" /></span>.</li>
-  <li>Multiply the entire denominator (<span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_x___2-fa2f42b3-3a36c33b-8f09-49c9-8769-7feca5c0069e.svg" alt="x + 2" class="math-svg" /></span>) by <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_x_3-8c0fb3b0-56280236-5944-4782-9840-87a95e836a2a.svg" alt="x^3" class="math-svg" /></span> and subtract the result from the numerator.</li>
+  <li>Divide the first term of the numerator (<span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_x_4-3c626f97-9443ff6b-b17b-42a7-a3c2-33c389e8ebcb.png" alt="x^4" class="math-inline" /></span>) by the first term of the denominator (<span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_x-9dd4e461-e0945bf0-d778-4ab8-a26e-c4f3ef41abc4.png" alt="x" class="math-inline" /></span>); this gives <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_x_3-8c0fb3b0-b50518cf-6527-465f-bbff-8eb849ced537.png" alt="x^3" class="math-inline" /></span>.</li>
+  <li>Multiply the entire denominator (<span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_x___2-fa2f42b3-b132ebc9-c0c0-4d63-998a-2045dd3c7224.png" alt="x + 2" class="math-inline" /></span>) by <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_x_3-8c0fb3b0-b50518cf-6527-465f-bbff-8eb849ced537.png" alt="x^3" class="math-inline" /></span> and subtract the result from the numerator.</li>
   <li>Bring down the next term and repeat until all terms are used.</li>
 </ol>
 
 <p>An example of a long division layout in LaTeX is:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__begin_array__c_cccc-783288e9-31880373-b52f-47c4-8430-339d89dd7c4c.svg" alt="\begin{array}{c|cccc}
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__begin_array__c_cccc-783288e9-08ead6db-e032-4e94-b2ed-9afd5116a23c.png" alt="\begin{array}{c|cccc}
 &amp; x^3 &amp; -2x^2 &amp; +4x &amp; -8 \\ 
 \hline
 x + 2 &amp; x^4 &amp; 0 &amp; 0 &amp; -1 \\ 
@@ -199,33 +199,33 @@ x + 2 &amp; x^4 &amp; 0 &amp; 0 &amp; -1 \\
 &amp; &amp; &amp; &amp; -8x - 16 \\ 
 \hline
 &amp; &amp; &amp; &amp; 15 \\ 
-\end{array}" class="math-svg" /></div>
+\end{array}" class="math-block" /></div>
 
-<p>A step-by-step breakdown for dividing <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_x_4___1-b5a7ab8c-345e7319-7cf6-4cfc-a94b-69b1071102de.svg" alt="x^4 - 1" class="math-svg" /></span> by <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_x___2-fa2f42b3-3a36c33b-8f09-49c9-8769-7feca5c0069e.svg" alt="x + 2" class="math-svg" /></span> is given by:</p>
+<p>A step-by-step breakdown for dividing <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_x_4___1-b5a7ab8c-e37cbbfd-77b3-4f91-939f-aa38933dbb0f.png" alt="x^4 - 1" class="math-inline" /></span> by <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_x___2-fa2f42b3-b132ebc9-c0c0-4d63-998a-2045dd3c7224.png" alt="x + 2" class="math-inline" /></span> is given by:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__begin_aligned___x_4-85d6a95e-4e166236-2f0a-4329-b1f7-e4194a24abc7.svg" alt="\begin{aligned}
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__begin_aligned___x_4-85d6a95e-d82b0752-59e8-4680-8cd7-42bd9f092ddd.png" alt="\begin{aligned}
 x^4 - 1 &amp; = (x + 2)(x^3) - 2x^3 - 1 \\ 
 &amp; = (x + 2)(x^3) - (x + 2)(2x^2) + 4x^2 - 1 \\ 
 &amp; = (x + 2)(x^3) - (x + 2)(2x^2) + (x + 2)(4x) - 8x - 1 \\ 
 &amp; = (x + 2)(x^3) - (x + 2)(2x^2) + (x + 2)(4x) - (x + 2)(8) - 15 \\ 
 &amp; = (x + 2)(x^3 - 2x^2 + 4x - 8) - 15.
-\end{aligned}" class="math-svg" /></div>
+\end{aligned}" class="math-block" /></div>
 
 <p>This serves as a review for performing long division on polynomials.</p>
 
-<h2 id="2-series-expansion-for--via-long-division">2. Series Expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-42db31c5-c65d-4144-a161-f792893738cb.svg" alt="\frac{1}{x+h}" class="math-svg" /></span> via Long Division</h2>
+<h2 id="2-series-expansion-for--via-long-division">2. Series Expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-67cf410d-7fe8-44f8-bcc0-dc6640401258.png" alt="\frac{1}{x+h}" class="math-inline" /></span> via Long Division</h2>
 
 <p>We now apply the long division technique to derive the series expansion for the function</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_1__x_h__-adedb80f-42d8d11b-9e02-4412-8979-4bfda80a0139.svg" alt="\frac{1}{x+h}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_1__x_h__-adedb80f-0b42b836-b50a-4226-983b-5ce4b6daa993.png" alt="\frac{1}{x+h}." class="math-block" /></div>
 
 <p>Begin with the expression:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_1__x_h__-adedb80f-42d8d11b-9e02-4412-8979-4bfda80a0139.svg" alt="\frac{1}{x+h}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_1__x_h__-adedb80f-0b42b836-b50a-4226-983b-5ce4b6daa993.png" alt="\frac{1}{x+h}." class="math-block" /></div>
 
 <p>The idea is to rewrite and expand the expression into a series of the form:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_1__x_h_____fra-64680692-7957beaf-06e6-45c7-8b2a-bcaaa6ff0c85.svg" alt="\frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \ldots." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_1__x_h_____fra-64680692-b30e5d27-c970-43e6-9545-1e99f5248733.png" alt="\frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \ldots." class="math-block" /></div>
 
 <p>The derivation follows these steps:</p>
 
@@ -233,85 +233,85 @@ x^4 - 1 &amp; = (x + 2)(x^3) - 2x^3 - 1 \\
   <li>Rewriting the Expression:</li>
 </ol>
 
-<p>Write <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-42db31c5-c65d-4144-a161-f792893738cb.svg" alt="\frac{1}{x+h}" class="math-svg" /></span> as an expression in powers of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span>. One way to proceed is to factor out <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_x-9dd4e461-ecbf7dba-c025-4475-a628-69743b801ba2.svg" alt="x" class="math-svg" /></span>:</p>
+<p>Write <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-67cf410d-7fe8-44f8-bcc0-dc6640401258.png" alt="\frac{1}{x+h}" class="math-inline" /></span> as an expression in powers of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span>. One way to proceed is to factor out <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_x-9dd4e461-e0945bf0-d778-4ab8-a26e-c4f3ef41abc4.png" alt="x" class="math-inline" /></span>:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_1__x_h_____fra-1979c1d6-b830252f-c199-42b6-b690-c36a6d26a09d.svg" alt="\frac{1}{x+h} = \frac{1}{x\left(1 + \frac{h}{x}\right)} = \frac{1}{x} \cdot \frac{1}{1 + \frac{h}{x}}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_1__x_h_____fra-1979c1d6-828363bc-b8a8-4557-a6ce-9a7ce7c871bf.png" alt="\frac{1}{x+h} = \frac{1}{x\left(1 + \frac{h}{x}\right)} = \frac{1}{x} \cdot \frac{1}{1 + \frac{h}{x}}." class="math-block" /></div>
 
 <ol>
   <li>Expanding as a Geometric Series:</li>
 </ol>
 
-<p>For <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__left__frac_h__x__ri-63cc0279-5ce4075e-958a-4d0f-b6ac-bc8af388ad3b.svg" alt="\left|\frac{h}{x}\right| &lt; 1" class="math-svg" /></span>, the expression</p>
+<p>For <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__left__frac_h__x__ri-63cc0279-5b6968f4-fa05-4ad0-a749-c4dc71abf960.png" alt="\left|\frac{h}{x}\right| &lt; 1" class="math-inline" /></span>, the expression</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_1__1____frac_h-ca4f1cca-22531f50-ac67-4e13-b23e-a19832a53ef1.svg" alt="\frac{1}{1 + \frac{h}{x}}" class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_1__1____frac_h-ca4f1cca-ba865cba-0487-4f8a-8b53-970023a16dca.png" alt="\frac{1}{1 + \frac{h}{x}}" class="math-block" /></div>
 
 <p>can be expanded as a geometric series:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_1__1____frac_h-ad8b5fb9-671f4017-51f8-4b6e-9046-9b630622316c.svg" alt="\frac{1}{1 + \frac{h}{x}} = \sum_{n=0}^{\infty} \left(-\frac{h}{x}\right)^n." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_1__1____frac_h-ad8b5fb9-71428d32-1098-4ab1-9582-034f6d2a532b.png" alt="\frac{1}{1 + \frac{h}{x}} = \sum_{n=0}^{\infty} \left(-\frac{h}{x}\right)^n." class="math-block" /></div>
 
 <ol>
   <li>Writing the Final Series:</li>
 </ol>
 
-<p>Multiplying by <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_-afc48b56-d7c8860f-5f3c-4d72-8f5d-8b2bddb3fb10.svg" alt="\frac{1}{x}" class="math-svg" /></span> gives:</p>
+<p>Multiplying by <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_-afc48b56-01c45dde-90f2-49b5-97e0-4315c22f7f3f.png" alt="\frac{1}{x}" class="math-inline" /></span> gives:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_1__x_h_____fra-ba9590ec-01f68628-5077-45f5-8151-c82f0b232083.svg" alt="\frac{1}{x+h} = \frac{1}{x} \sum_{n=0}^{\infty} \left(-\frac{h}{x}\right)^n = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \cdots." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_1__x_h_____fra-ba9590ec-93509905-776d-4b36-ba01-b8016be038e6.png" alt="\frac{1}{x+h} = \frac{1}{x} \sum_{n=0}^{\infty} \left(-\frac{h}{x}\right)^n = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \cdots." class="math-block" /></div>
 
 <p>Notice that the general term in the series is:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac___1__n_h_n__x_-7bb29031-9cffc0c5-18cd-49e6-b05c-2287f5a00ec5.svg" alt="\frac{(-1)^n h^n}{x^{n+1}}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac___1__n_h_n__x_-7bb29031-26ee64f2-2692-4615-a885-aa29297ddad0.png" alt="\frac{(-1)^n h^n}{x^{n+1}}." class="math-block" /></div>
 
-<p>Thus, we have derived the series expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-42db31c5-c65d-4144-a161-f792893738cb.svg" alt="\frac{1}{x+h}" class="math-svg" /></span>.</p>
+<p>Thus, we have derived the series expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-67cf410d-7fe8-44f8-bcc0-dc6640401258.png" alt="\frac{1}{x+h}" class="math-inline" /></span>.</p>
 
-<h3 id="21-deriving-the-derivative-of-">2.1 Deriving the Derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_x___1_-48ea9be7-b4ecb468-e857-41de-aa55-435c2e4c536e.svg" alt="x^{-1}" class="math-svg" /></span></h3>
+<h3 id="21-deriving-the-derivative-of-">2.1 Deriving the Derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_x___1_-48ea9be7-60e7ade5-d84a-4b51-a7bd-972b31dc2f20.png" alt="x^{-1}" class="math-inline" /></span></h3>
 
-<p>The series expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-42db31c5-c65d-4144-a161-f792893738cb.svg" alt="\frac{1}{x+h}" class="math-svg" /></span> is:</p>
+<p>The series expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-67cf410d-7fe8-44f8-bcc0-dc6640401258.png" alt="\frac{1}{x+h}" class="math-inline" /></span> is:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_1__x_h_____fra-8e322a93-de05fcd4-a33e-4852-9bea-a5aca868e6c5.svg" alt="\frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \cdots." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_1__x_h_____fra-8e322a93-e479aab4-c138-48e4-8c4b-cd495d8c5c76.png" alt="\frac{1}{x+h} = \frac{1}{x} - \frac{h}{x^2} + \frac{h^2}{x^3} - \frac{h^3}{x^4} + \cdots." class="math-block" /></div>
 
-<p>The coefficient of the first-order term <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span> in this expansion is <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math___frac_1__x_2_-cc442087-d90868ad-c47c-496a-8eec-9dee408306f4.svg" alt="-\frac{1}{x^2}" class="math-svg" /></span>. Hence, by our first-principles method, we conclude that:</p>
+<p>The coefficient of the first-order term <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span> in this expansion is <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math___frac_1__x_2_-cc442087-4306d128-15e6-4074-942e-23a2dd0c4ac4.png" alt="-\frac{1}{x^2}" class="math-inline" /></span>. Hence, by our first-principles method, we conclude that:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_d__dx__left_x_-5f45c671-a0805cc8-7a88-4017-97dc-92167f26de94.svg" alt="\frac{d}{dx}\left(x^{-1}\right) = -\frac{1}{x^2}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_d__dx__left_x_-5f45c671-01efa129-9707-4faa-a16e-616ea7731ff9.png" alt="\frac{d}{dx}\left(x^{-1}\right) = -\frac{1}{x^2}." class="math-block" /></div>
 
 <h2 id="3-some-infinite-series-formulas">3. Some Infinite Series Formulas</h2>
 
 <p>Below are some classic infinite series expressions that follow naturally from the geometric series:</p>
 
 <ol>
-  <li>Binomial Series (for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__x____1-6a7d3dfd-68997172-81f8-43bb-b662-21971c35f328.svg" alt="|x| &lt; 1" class="math-svg" /></span>):</li>
+  <li>Binomial Series (for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__x____1-6a7d3dfd-37b79ee3-db0c-4498-b1f4-e860a07cda78.png" alt="|x| &lt; 1" class="math-inline" /></span>):</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_1__1_x_____sum-78bbf302-4f72b9bf-68bb-4fc8-bd37-df40c766763a.svg" alt="\frac{1}{1+x} = \sum_{n=0}^{\infty} (-1)^n x^n = 1 - x + x^2 - x^3 + x^4 - \ldots." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_1__1_x_____sum-78bbf302-501d6c54-1e45-40cb-b8ed-f11f39829dfe.png" alt="\frac{1}{1+x} = \sum_{n=0}^{\infty} (-1)^n x^n = 1 - x + x^2 - x^3 + x^4 - \ldots." class="math-block" /></div>
 
 <ol>
-  <li>Laurent Series (for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__x____1-9724e12c-37fce597-56e8-437c-9d4d-7026652d1707.svg" alt="|x| &gt; 1" class="math-svg" /></span>):</li>
+  <li>Laurent Series (for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__x____1-9724e12c-2ce6b63c-5346-4d6b-b8af-20a4abbf849c.png" alt="|x| &gt; 1" class="math-inline" /></span>):</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/series/division/part4/math__frac_1__1_x_____fra-a66aacf1-0e95162d-4066-4ed8-8a13-926f845d3c71.svg" alt="\frac{1}{1+x} = \frac{1}{x} \sum_{n=0}^{\infty} (-1)^n x^{-n} = \frac{1}{x} - \frac{1}{x^2} + \frac{1}{x^3} - \ldots." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/series/division/part4/math__frac_1__1_x_____fra-a66aacf1-4832cc86-8431-41d8-af3b-4ab29369fc45.png" alt="\frac{1}{1+x} = \frac{1}{x} \sum_{n=0}^{\infty} (-1)^n x^{-n} = \frac{1}{x} - \frac{1}{x^2} + \frac{1}{x^3} - \ldots." class="math-block" /></div>
 
 <ol>
   <li>Generalized Form:</li>
 </ol>
 
-<p>For example, for constants <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/limits/patterns/part3/math_a-0cc175b9-1404b17d-f168-4a01-bc35-05f71d5a29fd.svg" alt="a" class="math-svg" /></span> and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/limits/patterns/part3/math_b-92eb5ffe-10da0edc-2eed-46ab-8072-d1b81f5d4225.svg" alt="b" class="math-svg" /></span>, one may write:</p>
+<p>For example, for constants <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/limits/patterns/part3/math_a-0cc175b9-66b4610d-f596-4d57-acda-f32c67c149e6.png" alt="a" class="math-inline" /></span> and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/limits/patterns/part3/math_b-92eb5ffe-622bb141-356b-4c6b-8e23-738db250fd93.png" alt="b" class="math-inline" /></span>, one may write:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__ax_by_____f-eeafac5e-941641ae-5520-47c9-833f-354a5260cf25.svg" alt="\frac{1}{ax+by} = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n," class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__ax_by_____f-eeafac5e-e3d8f015-8625-4ca5-841c-c2ab91db72d1.png" alt="\frac{1}{ax+by} = \frac{1}{by} \sum_{n=0}^{\infty} (-1)^n \left(\frac{ax}{by}\right)^n," class="math-block" /></div>
 
-<p>valid when <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__left__frac_ax__by__-14b44951-d33f330e-97a1-438c-9fa0-309fe01560cf.svg" alt="\left|\frac{ax}{by}\right| &lt; 1" class="math-svg" /></span>.</p>
+<p>valid when <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__left__frac_ax__by__-14b44951-1170f68d-03bb-486e-90a0-fb2539779154.png" alt="\left|\frac{ax}{by}\right| &lt; 1" class="math-inline" /></span>.</p>
 
 <p>These series are examples of infinite geometric series, where the sum can be expressed as:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__text_Sum_____frac_a-cb6ac2e9-d5e66f20-8a77-4fd9-a50f-7513337e55ed.svg" alt="\text{Sum} = \frac{a}{1 - r}," class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__text_Sum_____frac_a-cb6ac2e9-897a06d7-3bfa-468a-a848-56220ec74e9f.png" alt="\text{Sum} = \frac{a}{1 - r}," class="math-block" /></div>
 
-<p>with <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/limits/patterns/part3/math_a-0cc175b9-1404b17d-f168-4a01-bc35-05f71d5a29fd.svg" alt="a" class="math-svg" /></span> the first term and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_r-4b43b0ae-60c3e709-121a-4ac2-9c8b-5f9c672b18b6.svg" alt="r" class="math-svg" /></span> the common ratio.</p>
+<p>with <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/limits/patterns/part3/math_a-0cc175b9-66b4610d-f596-4d57-acda-f32c67c149e6.png" alt="a" class="math-inline" /></span> the first term and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_r-4b43b0ae-fde8c10f-06a5-4737-b221-b3a2eeaf936e.png" alt="r" class="math-inline" /></span> the common ratio.</p>
 
 <h2 id="4-properties-involving-division">4. Properties Involving Division</h2>
 
-<h3 id="41-derivative-of-">4.1 Derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__sec_x_-f7a0ba83-7934dfd4-5c45-45dd-8bb6-9185381cc2f9.svg" alt="\sec(x)" class="math-svg" /></span></h3>
+<h3 id="41-derivative-of-">4.1 Derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__sec_x_-f7a0ba83-cf1def72-5c6e-47e7-a0a0-4ba0ee9e5d20.png" alt="\sec(x)" class="math-inline" /></span></h3>
 
 <p>Statement:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___sec_x_-81873456-200a4687-60b7-4d70-a24b-06cf4f65dc94.svg" alt="\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___sec_x_-81873456-70235211-c286-4f75-852e-67834e4f406c.png" alt="\frac{d}{dx}[\sec(x)] = \sec(x) \tan(x)." class="math-block" /></div>
 
 <p>Proof Sketch:</p>
 
@@ -319,59 +319,59 @@ x^4 - 1 &amp; = (x + 2)(x^3) - 2x^3 - 1 \\
   <li>Start with:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__sec_x_h_____frac_1_-edb66545-d67dc693-2665-46ea-95cc-9df6b9de454a.svg" alt="\sec(x+h) = \frac{1}{\cos(x+h)}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__sec_x_h_____frac_1_-edb66545-52390d49-afd9-46ed-ac93-a12f3022d8e9.png" alt="\sec(x+h) = \frac{1}{\cos(x+h)}." class="math-block" /></div>
 
 <ol>
-  <li>Express <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__cos_x_h_-553c5538-5f2fe9fb-4335-4e51-abc3-0ac204e42085.svg" alt="\cos(x+h)" class="math-svg" /></span> in its series form:</li>
+  <li>Express <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__cos_x_h_-553c5538-95a2cc95-19c6-4656-b904-13f693b29c21.png" alt="\cos(x+h)" class="math-inline" /></span> in its series form:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__cos_x_h_____cos_x__-3423d4b5-427d7364-8a0a-4f89-9d2c-11a2cc5bee4d.svg" alt="\cos(x+h) = \cos(x)\cos(h) - \sin(x)\sin(h)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__cos_x_h_____cos_x__-3423d4b5-2ea38a56-206c-40db-9fca-df97eb82df9c.png" alt="\cos(x+h) = \cos(x)\cos(h) - \sin(x)\sin(h)." class="math-block" /></div>
 
 <ol>
-  <li>For small <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span>, approximate:</li>
+  <li>For small <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span>, approximate:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__cos_h___approx_1__q-efea8e83-9bc3fe89-9be7-44bb-9b52-1434ebbff080.svg" alt="\cos(h) \approx 1 \quad \text{and} \quad \sin(h) \approx h." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__cos_h___approx_1__q-efea8e83-78e571c6-26fc-4c49-822e-dd65d2b73b1d.png" alt="\cos(h) \approx 1 \quad \text{and} \quad \sin(h) \approx h." class="math-block" /></div>
 
 <p>Hence:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__cos_x_h___approx__c-61ccae4d-94c8604d-e64b-4ee9-a67b-fd151e60835e.svg" alt="\cos(x+h) \approx \cos(x) - \sin(x) h." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__cos_x_h___approx__c-61ccae4d-409ce335-c6aa-4cf9-92b4-555814495965.png" alt="\cos(x+h) \approx \cos(x) - \sin(x) h." class="math-block" /></div>
 
 <ol>
   <li>Then:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__sec_x_h___approx__f-ae28829c-0e8f43d9-1989-44c8-a5f5-729f6b3295c4.svg" alt="\sec(x+h) \approx \frac{1}{\cos(x) - \sin(x) h}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__sec_x_h___approx__f-ae28829c-3e869a56-7eb3-492e-b874-26cb91e1f1f3.png" alt="\sec(x+h) \approx \frac{1}{\cos(x) - \sin(x) h}." class="math-block" /></div>
 
 <ol>
-  <li>Expanding this series (using a similar technique as for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-42db31c5-c65d-4144-a161-f792893738cb.svg" alt="\frac{1}{x+h}" class="math-svg" /></span>), one obtains an expansion where the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span> is <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math___frac__sin_x____cos-4b8ef80f-b47bab75-9e13-41c7-8309-9cddce895b3a.svg" alt="-\frac{\sin(x)}{\cos^2(x)}" class="math-svg" /></span>. Combining this with the constant term <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_1__cos_x_-d2e78d67-762ae00e-3f73-4fc5-b1f3-906aa0a0fd7c.svg" alt="1/\cos(x)" class="math-svg" /></span> leads to the derivative formula:</li>
+  <li>Expanding this series (using a similar technique as for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-67cf410d-7fe8-44f8-bcc0-dc6640401258.png" alt="\frac{1}{x+h}" class="math-inline" /></span>), one obtains an expansion where the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span> is <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math___frac__sin_x____cos-4b8ef80f-6510b850-d9be-4579-8952-935aa53f2543.png" alt="-\frac{\sin(x)}{\cos^2(x)}" class="math-inline" /></span>. Combining this with the constant term <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_1__cos_x_-d2e78d67-af554d68-6480-4aa1-af59-72212035b947.png" alt="1/\cos(x)" class="math-inline" /></span> leads to the derivative formula:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___sec_x_-6e8e7619-88758bf2-e14e-421c-b57f-d47892930117.svg" alt="\frac{d}{dx}[\sec(x)] = \sec(x)\tan(x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___sec_x_-6e8e7619-ea135197-0524-4c94-ae1b-ea15c04454bb.png" alt="\frac{d}{dx}[\sec(x)] = \sec(x)\tan(x)." class="math-block" /></div>
 
-<h3 id="42-chain-rule-example-using--and-other-functions">4.2 Chain Rule Example Using <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__sec_x_-f7a0ba83-7934dfd4-5c45-45dd-8bb6-9185381cc2f9.svg" alt="\sec(x)" class="math-svg" /></span> and Other Functions</h3>
+<h3 id="42-chain-rule-example-using--and-other-functions">4.2 Chain Rule Example Using <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__sec_x_-f7a0ba83-cf1def72-5c6e-47e7-a0a0-4ba0ee9e5d20.png" alt="\sec(x)" class="math-inline" /></span> and Other Functions</h3>
 
 <p>Consider the composite function</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_f_g_x_h_____f_B_0___-8e393e84-c680e93c-555d-4820-bc7f-719fe0c25099.svg" alt="f(g(x+h)) = f(B_0 + B_1h + B_2h^2 + \ldots)," class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_f_g_x_h_____f_B_0___-8e393e84-d15739ae-f649-4608-8208-487677a945b4.png" alt="f(g(x+h)) = f(B_0 + B_1h + B_2h^2 + \ldots)," class="math-block" /></div>
 
-<p>where <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_B_0___g_x_-fe0f9292-feb4385f-e3bb-419f-94a3-7ae637e26c0b.svg" alt="B_0 = g(x)" class="math-svg" /></span> and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_B_1___g__x_-8a45c80d-6684d61e-94a1-4310-8976-ad8b5489e7d6.svg" alt="B_1 = g&#39;(x)" class="math-svg" /></span>. By expanding <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_f-8fa14cdd-9022d0ce-b71f-4470-a6ef-87575c3bd836.svg" alt="f" class="math-svg" /></span> in a series around <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/limits/patterns/part3/math_g_x_-e84fec1e-79690a15-ec91-4c13-820f-fe1ce7e08db4.svg" alt="g(x)" class="math-svg" /></span>, one obtains:</p>
+<p>where <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_B_0___g_x_-fe0f9292-ebfad1cc-6ee6-4a96-8398-4a2e58ce0a06.png" alt="B_0 = g(x)" class="math-inline" /></span> and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_B_1___g__x_-8a45c80d-3dc9b413-f04a-46f6-aad5-5c2f187c61b1.png" alt="B_1 = g&#39;(x)" class="math-inline" /></span>. By expanding <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_f-8fa14cdd-acb806dc-b14d-4285-85bc-a5a864bceab0.png" alt="f" class="math-inline" /></span> in a series around <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/limits/patterns/part3/math_g_x_-e84fec1e-105698ff-19a2-40b9-ace0-23566c74bedd.png" alt="g(x)" class="math-inline" /></span>, one obtains:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_f_g_x_h_____C_0___C_-2fa71699-8554bce4-4b66-45e6-8e56-b8f18e339347.svg" alt="f(g(x+h)) = C_0 + C_1 (B_1h + B_2h^2 + \ldots) + C_2 (B_1h + B_2h^2 + \ldots)^2 + \cdots." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_f_g_x_h_____C_0___C_-2fa71699-7ba27ecd-9a79-4b0c-a9bf-3fa2f9c8c687.png" alt="f(g(x+h)) = C_0 + C_1 (B_1h + B_2h^2 + \ldots) + C_2 (B_1h + B_2h^2 + \ldots)^2 + \cdots." class="math-block" /></div>
 
-<p>Collecting the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span> yields:</p>
+<p>Collecting the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span> yields:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__text_Coefficient_of-02b19daa-eea2a6d0-2308-44bb-9b1a-aa138541e0ae.svg" alt="\text{Coefficient of } h = C_1B_1," class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__text_Coefficient_of-02b19daa-03ef832f-c12f-44ab-bd7f-086e74cecfae.png" alt="\text{Coefficient of } h = C_1B_1," class="math-block" /></div>
 
 <p>or in familiar terms,</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx__f_g_x__-553b4acc-886b48ac-ded2-41c6-a2e2-e3b5c94a3612.svg" alt="\frac{d}{dx}[f(g(x))] = f&#39;(g(x))\,g&#39;(x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx__f_g_x__-553b4acc-bda5102a-6886-434e-8e4f-a91ae1199cc3.png" alt="\frac{d}{dx}[f(g(x))] = f&#39;(g(x))\,g&#39;(x)." class="math-block" /></div>
 
-<h3 id="43-derivative-of-">4.3 Derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__csc_x_-58bfee03-cf4fff9a-b19e-41bd-a621-0ad1b723a92b.svg" alt="\csc(x)" class="math-svg" /></span></h3>
+<h3 id="43-derivative-of-">4.3 Derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__csc_x_-58bfee03-82db793d-ba6e-4b99-b3b8-16d247a77450.png" alt="\csc(x)" class="math-inline" /></span></h3>
 
 <p>Statement:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___csc_x_-8ea925fa-ef44d2f5-f0e2-4a47-87ec-b52a8963d2a5.svg" alt="\frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___csc_x_-8ea925fa-d6d4e34c-79e6-478f-9752-c113b50701dc.png" alt="\frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x)." class="math-block" /></div>
 
 <p>Proof Sketch:</p>
 
@@ -379,32 +379,32 @@ x^4 - 1 &amp; = (x + 2)(x^3) - 2x^3 - 1 \\
   <li>Start with:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__csc_x_h_____frac_1_-db0aaac3-e9972db4-7500-40b7-b681-3fd2d669e9ef.svg" alt="\csc(x+h) = \frac{1}{\sin(x+h)}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__csc_x_h_____frac_1_-db0aaac3-88a1d71c-c233-4b39-988d-ee9445550b3f.png" alt="\csc(x+h) = \frac{1}{\sin(x+h)}." class="math-block" /></div>
 
 <ol>
-  <li>Use the series expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__sin_x_h_-7166b9b9-b9fcdbb1-2dd3-4431-85ba-c4de4a9a93c9.svg" alt="\sin(x+h)" class="math-svg" /></span>:</li>
+  <li>Use the series expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__sin_x_h_-7166b9b9-9b998a1a-17ac-4273-a704-9921cff2270e.png" alt="\sin(x+h)" class="math-inline" /></span>:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__sin_x_h_____sin_x__-16ca0d24-837aef87-1e59-4560-8bc8-92fac9f9a3aa.svg" alt="\sin(x+h) = \sin(x) + \cos(x) h," class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__sin_x_h_____sin_x__-16ca0d24-0880d6a4-840e-4532-92cd-1460c9a715d7.png" alt="\sin(x+h) = \sin(x) + \cos(x) h," class="math-block" /></div>
 
 <p>(ignoring higher order terms).</p>
 <ol>
   <li>Then:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__csc_x_h___approx__f-6596a3ce-91822190-38ff-40da-afc2-9c1f4e647168.svg" alt="\csc(x+h) \approx \frac{1}{\sin(x) + \cos(x)h}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__csc_x_h___approx__f-6596a3ce-1f4ba68b-7643-4148-81d2-a62d88c517bc.png" alt="\csc(x+h) \approx \frac{1}{\sin(x) + \cos(x)h}." class="math-block" /></div>
 
 <ol>
-  <li>Expanding in a series shows that the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span> is <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math___frac__cos_x____sin-595804b3-d5a4fc14-af92-4ffb-bc9a-4d271a1550f9.svg" alt="-\frac{\cos(x)}{\sin^2(x)}" class="math-svg" /></span>. This algebraic pattern corresponds to:</li>
+  <li>Expanding in a series shows that the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span> is <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math___frac__cos_x____sin-595804b3-0e0cb7ea-cbf0-4bb9-a176-e7fab453fda5.png" alt="-\frac{\cos(x)}{\sin^2(x)}" class="math-inline" /></span>. This algebraic pattern corresponds to:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___csc_x_-8ea925fa-ef44d2f5-f0e2-4a47-87ec-b52a8963d2a5.svg" alt="\frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___csc_x_-8ea925fa-d6d4e34c-79e6-478f-9752-c113b50701dc.png" alt="\frac{d}{dx}[\csc(x)] = -\csc(x)\cot(x)." class="math-block" /></div>
 
-<h3 id="44-derivative-of-">4.4 Derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__tan_x_-f6c74d0b-626b6538-d936-4613-9fbe-a6521aca4fe6.svg" alt="\tan(x)" class="math-svg" /></span></h3>
+<h3 id="44-derivative-of-">4.4 Derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__tan_x_-f6c74d0b-9c60b9f6-9e5a-4b10-a231-7b97254175a4.png" alt="\tan(x)" class="math-inline" /></span></h3>
 
 <p>Statement:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___tan_x_-1d40968f-04046b44-badb-464e-bfc0-8e4e329818de.svg" alt="\frac{d}{dx}[\tan(x)] = \sec^2(x)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___tan_x_-1d40968f-bb79bf28-aafb-421f-916f-01867b544842.png" alt="\frac{d}{dx}[\tan(x)] = \sec^2(x)." class="math-block" /></div>
 
 <p>Proof Sketch:</p>
 
@@ -412,29 +412,29 @@ x^4 - 1 &amp; = (x + 2)(x^3) - 2x^3 - 1 \\
   <li>Express:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__tan_x_h_____frac__s-e5bc44dc-4bb928aa-7618-48a3-b03e-8734a0ca7626.svg" alt="\tan(x+h) = \frac{\sin(x+h)}{\cos(x+h)}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__tan_x_h_____frac__s-e5bc44dc-645c1974-ee01-429a-abe4-124586190c06.png" alt="\tan(x+h) = \frac{\sin(x+h)}{\cos(x+h)}." class="math-block" /></div>
 
 <ol>
-  <li>Expand both <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__sin_x_h_-7166b9b9-b9fcdbb1-2dd3-4431-85ba-c4de4a9a93c9.svg" alt="\sin(x+h)" class="math-svg" /></span> and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__cos_x_h_-553c5538-5f2fe9fb-4335-4e51-abc3-0ac204e42085.svg" alt="\cos(x+h)" class="math-svg" /></span> in series:</li>
+  <li>Expand both <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__sin_x_h_-7166b9b9-9b998a1a-17ac-4273-a704-9921cff2270e.png" alt="\sin(x+h)" class="math-inline" /></span> and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__cos_x_h_-553c5538-95a2cc95-19c6-4656-b904-13f693b29c21.png" alt="\cos(x+h)" class="math-inline" /></span> in series:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__sin_x_h___approx__s-186ea937-ce515200-f915-4346-a39c-af24004acf98.svg" alt="\sin(x+h) \approx \sin(x) + \cos(x)h, \quad \cos(x+h) \approx \cos(x) - \sin(x)h." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__sin_x_h___approx__s-186ea937-b6b6500b-f03f-414a-8d67-5a27e7cfb22b.png" alt="\sin(x+h) \approx \sin(x) + \cos(x)h, \quad \cos(x+h) \approx \cos(x) - \sin(x)h." class="math-block" /></div>
 
 <ol>
   <li>Write:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__tan_x_h___approx__f-d4cfa4c2-94207b45-3697-4ee7-8316-c75eea4fc9cf.svg" alt="\tan(x+h) \approx \frac{\sin(x) + \cos(x)h}{\cos(x) - \sin(x)h}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__tan_x_h___approx__f-d4cfa4c2-e4a90095-45f4-40cb-9841-e5cb470565b2.png" alt="\tan(x+h) \approx \frac{\sin(x) + \cos(x)h}{\cos(x) - \sin(x)h}." class="math-block" /></div>
 
 <ol>
-  <li>By finding the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span> in this quotient (using an expansion of the reciprocal of the denominator), one finds that it equals <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__sec_2_x_-369941e2-83ec4130-e757-48b0-ad10-f8af1a15be3b.svg" alt="\sec^2(x)" class="math-svg" /></span>.</li>
+  <li>By finding the coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span> in this quotient (using an expansion of the reciprocal of the denominator), one finds that it equals <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__sec_2_x_-369941e2-adad779d-f6f1-4385-a682-b932253fca89.png" alt="\sec^2(x)" class="math-inline" /></span>.</li>
 </ol>
 
-<h3 id="45-derivative-of-">4.5 Derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__log_x_-35319e69-f87b75d1-2084-4ccf-8c24-0f546c34ce40.svg" alt="\log(x)" class="math-svg" /></span></h3>
+<h3 id="45-derivative-of-">4.5 Derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__log_x_-35319e69-b5c80a99-c8a5-499e-afa0-91768b5371f5.png" alt="\log(x)" class="math-inline" /></span></h3>
 
 <p>Statement:</p>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___log_x_-2b110145-d44b1619-a0d6-48f0-8cc9-ef66063fa4e2.svg" alt="\frac{d}{dx}[\log(x)] = \frac{1}{x}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___log_x_-2b110145-88576296-f948-446e-9b69-da208fc58aa3.png" alt="\frac{d}{dx}[\log(x)] = \frac{1}{x}." class="math-block" /></div>
 
 <p>Proof Sketch:</p>
 
@@ -442,25 +442,25 @@ x^4 - 1 &amp; = (x + 2)(x^3) - 2x^3 - 1 \\
   <li>Express:</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__log_x_h_____log_lef-c1273adb-ed498e29-4b4d-4332-b183-4606c0b22265.svg" alt="\log(x+h) = \log\left(x\left(1+\frac{h}{x}\right)\right) = \log(x) + \log\left(1+\frac{h}{x}\right)." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__log_x_h_____log_lef-c1273adb-4c976c71-00ca-40dd-8cce-d04c876ed66e.png" alt="\log(x+h) = \log\left(x\left(1+\frac{h}{x}\right)\right) = \log(x) + \log\left(1+\frac{h}{x}\right)." class="math-block" /></div>
 
 <ol>
-  <li>Use the series expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__log_1__frac_h__x__-09dd27f7-5201a9d6-44a8-4975-a136-1c7dfd2e3a0f.svg" alt="\log(1+\frac{h}{x})" class="math-svg" /></span> (which is <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_h__x_-e94b92c4-203ab87b-9931-4bbf-b225-78b4afb71777.svg" alt="\frac{h}{x}" class="math-svg" /></span> to first order):</li>
+  <li>Use the series expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__log_1__frac_h__x__-09dd27f7-1a289ce7-72fb-46b9-b8f8-33410b878e62.png" alt="\log(1+\frac{h}{x})" class="math-inline" /></span> (which is <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_h__x_-e94b92c4-f4da7044-18cf-4460-a8ea-67b203455386.png" alt="\frac{h}{x}" class="math-inline" /></span> to first order):</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__log_left_1__frac_h_-c81d6ebf-b08474c1-cb0b-41a4-90c2-0950ed6b85d5.svg" alt="\log\left(1+\frac{h}{x}\right) \approx \frac{h}{x}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__log_left_1__frac_h_-c81d6ebf-473f59b4-a086-48e3-a5fa-8428c1c58010.png" alt="\log\left(1+\frac{h}{x}\right) \approx \frac{h}{x}." class="math-block" /></div>
 
 <ol>
   <li>Therefore,</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__log_x_h___approx__l-997302a6-8c463efb-658f-4ba1-8942-21e01b1eccf2.svg" alt="\log(x+h) \approx \log(x) + \frac{h}{x}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__log_x_h___approx__l-997302a6-81bb9489-2cad-4e2c-97a2-7c57bab36135.png" alt="\log(x+h) \approx \log(x) + \frac{h}{x}." class="math-block" /></div>
 
 <ol>
-  <li>The coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-e95556d6-7342-42c1-aac2-ab49b75b5383.svg" alt="h" class="math-svg" /></span> in this expansion is <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_-afc48b56-d7c8860f-5f3c-4d72-8f5d-8b2bddb3fb10.svg" alt="\frac{1}{x}" class="math-svg" /></span>, giving</li>
+  <li>The coefficient of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/foundations/part6-a/math_h-2510c390-62758df3-7474-46cb-b2b5-97ac6ca89bf0.png" alt="h" class="math-inline" /></span> in this expansion is <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_-afc48b56-01c45dde-90f2-49b5-97e0-4315c22f7f3f.png" alt="\frac{1}{x}" class="math-inline" /></span>, giving</li>
 </ol>
 
-<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___log_x_-2b110145-d44b1619-a0d6-48f0-8cc9-ef66063fa4e2.svg" alt="\frac{d}{dx}[\log(x)] = \frac{1}{x}." class="math-svg" /></div>
+<div class="math-block"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_d__dx___log_x_-2b110145-88576296-f948-446e-9b69-da208fc58aa3.png" alt="\frac{d}{dx}[\log(x)] = \frac{1}{x}." class="math-block" /></div>
 
 <h2 id="5-pedagogical-benefits-of-the-pattern-based-approach">5. Pedagogical Benefits of the Pattern-Based Approach</h2>
 
@@ -486,7 +486,7 @@ x^4 - 1 &amp; = (x + 2)(x^3) - 2x^3 - 1 \\
 
 <h2 id="6-conclusion">6. Conclusion</h2>
 
-<p>In this article, we have extended our first-principles approach to include division properties and infinite series. By using the method of long division and series expansion, we derived the expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-42db31c5-c65d-4144-a161-f792893738cb.svg" alt="\frac{1}{x+h}" class="math-svg" /></span> and demonstrated how the coefficients in this series yield the derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math_x___1_-48ea9be7-b4ecb468-e857-41de-aa55-435c2e4c536e.svg" alt="x^{-1}" class="math-svg" /></span> (namely, <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__x___2_-67c09ca6-132d2cfc-a720-405f-bb50-87c5bac38a9d.svg" alt="-x^{-2}" class="math-svg" /></span>). We further explored how infinite series formulas, such as those for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__frac_1__1_x_-216d6b32-7deac6c1-30db-488b-b4ec-109fe75769eb.svg" alt="\frac{1}{1+x}" class="math-svg" /></span>, naturally arise from these ideas. Finally, we showed that the algebraic patterns in these series lead directly to standard differentiation formulas for functions like <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__sec_x_-f7a0ba83-7934dfd4-5c45-45dd-8bb6-9185381cc2f9.svg" alt="\sec(x)" class="math-svg" /></span>, <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__tan_x_-f6c74d0b-626b6538-d936-4613-9fbe-a6521aca4fe6.svg" alt="\tan(x)" class="math-svg" /></span>, and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/svg/math/mathematics/calculus/integration/theorems/part7/math__log_x_-35319e69-f87b75d1-2084-4ccf-8c24-0f546c34ce40.svg" alt="\log(x)" class="math-svg" /></span>.</p>
+<p>In this article, we have extended our first-principles approach to include division properties and infinite series. By using the method of long division and series expansion, we derived the expansion for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__x_h_-5165de28-67cf410d-7fe8-44f8-bcc0-dc6640401258.png" alt="\frac{1}{x+h}" class="math-inline" /></span> and demonstrated how the coefficients in this series yield the derivative of <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math_x___1_-48ea9be7-60e7ade5-d84a-4b51-a7bd-972b31dc2f20.png" alt="x^{-1}" class="math-inline" /></span> (namely, <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__x___2_-67c09ca6-ada9c0bf-7f33-44bb-80f1-11f886b1c9fe.png" alt="-x^{-2}" class="math-inline" /></span>). We further explored how infinite series formulas, such as those for <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__frac_1__1_x_-216d6b32-33b17021-9769-43d8-9270-769c5a869920.png" alt="\frac{1}{1+x}" class="math-inline" /></span>, naturally arise from these ideas. Finally, we showed that the algebraic patterns in these series lead directly to standard differentiation formulas for functions like <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__sec_x_-f7a0ba83-cf1def72-5c6e-47e7-a0a0-4ba0ee9e5d20.png" alt="\sec(x)" class="math-inline" /></span>, <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__tan_x_-f6c74d0b-9c60b9f6-9e5a-4b10-a231-7b97254175a4.png" alt="\tan(x)" class="math-inline" /></span>, and <span class="math-inline"><img src="/maths-calculus-from-first-principles/assets/png/math/mathematics/calculus/integration/theorems/part7/math__log_x_-35319e69-b5c80a99-c8a5-499e-afa0-91768b5371f5.png" alt="\log(x)" class="math-inline" /></span>.</p>
 
 <p>This pattern-based, algebraic approach provides a clear and elementary entry point to calculus, emphasizing that the fundamental rules of differentiation are built into the very structure of the series expansions. By exposing these patterns, we offer both a new perspective for learners and a rigorous foundation from which more advanced topics can later be developed.</p>
 
