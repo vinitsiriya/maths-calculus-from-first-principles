@@ -72,6 +72,11 @@
   transform: scale(0.75);
 }
 
+.math-inline img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* Common adjustments for SVG */
 .math-block-svg svg,
 .math-inline-svg svg {
@@ -111,4 +116,13 @@
     max-width: 100% !important;
     transform: none !important;
   }
+
+  .math-block-svg img,
+  .math-inline-svg img {
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+
+ 
 }
